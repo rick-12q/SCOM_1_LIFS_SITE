@@ -1,0 +1,74 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LIFS UNESP</title>
+  <!-- AUXILIO DE IA PARA FAZER OS LINKS, IA USADA: GEMINI -->
+  <meta name="description" content="Repositório de trabalhos, acervo de máquinas e membros do Lab LIFS.">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <!-- O uso do skiplink foi uma ideia que nasceu de um vídeo do youtube, link: https://www.youtube.com/watch?v=zWARLxSSDHI -->
+  <a class="skip-link" href="#main">Ir para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="logo">Lab LIFS</div>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html" aria-current="page">Início</a></li>
+        <li><a href="repositorio.html">Repositório</a></li>
+        <li><a href="maquinas.html">Máquinas</a></li>
+        <li><a href="membros.html">Membros</a></li>
+      </ul>
+    </nav>
+    <a href="login.html" class="btn btn-login">Login</a>
+  </header>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" aria-label="Acesso rápido">
+      <h2>Acesso rápido</h2>
+      <ul>
+        <li><a href="repositorio.html">Trabalhos e prêmios</a></li>
+        <li><a href="maquinas.html">Máquinas do lab</a></li>
+        <li><a href="membros.html">Membros</a></li>
+      </ul>
+    </aside>
+
+    <main id="main">
+      <h1>Laboratório de Investigação de Filmes Semicondutores</h1>
+
+      <section class="carousel" aria-label="Destaques do laboratório">
+        <div class="carousel-track" id="carousel-track">
+          <figure class="carousel-slide">
+            <img src="img/carrossel/samurai-pixel-art.jpg" alt="CBCUHWDHCB" loading="lazy" width="1200" height="600">
+            <figcaption>teste de figura</figcaption>
+          </figure>
+          <!-- mais sldes -->
+        </div>
+        <button class="carousel-btn prev" aria-label="Slide anterior">‹</button>
+        <button class="carousel-btn next" aria-label="Próximo slide">›</button>
+      </section>
+
+      <section class="news" aria-labelledby="news-title">
+        <h2 id="news-title">Notícias recentes</h2>
+        <article class="news-card">
+          <h3>Artigo aceito no congresso SEI LA KKKKK</h3>
+          <p>Boatr noticia...</p>
+        </article>
+        <!-- mais artigo -->
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Lab LIFS. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="js/carrossel.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
