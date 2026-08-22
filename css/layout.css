@@ -1,0 +1,52 @@
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.page-wrapper {
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  gap: var(--space-lg);
+  padding: var(--space-lg) var(--space-md);
+}
+/* Eu aprendi a fazer isso com o Paulo de Melo, na aula 02 do Lab */
+.sidebar {
+  border-right: 1px solid #e0e0e0;
+  padding-right: var(--space-md);
+}
+
+/* IA me indicou usar a estrutura Mobile-first pq em telas pequenas ai sidebar vira bloco acima do conteúdo, dai o codigo foi otimizado por IA  */
+@media (max-width: 768px) {
+  .page-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: var(--space-md);
+  }
+  .main-nav ul {
+    display: none; 
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .page-wrapper {
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-md);
+  }
+}
