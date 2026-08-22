@@ -1,0 +1,32 @@
+/* Peguei a referencia da documentação do CSS e desse site aqui: https://developer.mozilla.org/pt-BR/docs/Web/CSS/Reference/Selectors/:root*/
+:root {
+  /* Cor*/
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-primary: #1b4332;
+  --color-primary-light: #2d6a4f;
+  --color-text: #1a1a1a;
+  --color-text-muted: #5a5a5a;
+  --color-accent: #d97706;
+
+  /* estilo das letra */
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+  --font-size-base: 1rem;
+  --line-height-base: 1.6;
+
+  /* espacamento */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+
+  /* borda */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* layout */
+  --max-width: 1200px;
+  --sidebar-width: 260px;
+}
