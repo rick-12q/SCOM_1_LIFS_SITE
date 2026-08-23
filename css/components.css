@@ -1,0 +1,54 @@
+.carousel { 
+  position: relative; 
+  overflow: hidden; 
+  border-radius: var(--radius-md); 
+  width: 100%;
+  aspect-ratio: 2 / 1; /* Mantém a proporção do carrossel */
+}
+
+.carousel-track { 
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide { 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0; /* Invisível por padrão */
+  transition: opacity 0.8s ease-in-out; /* Efeito de Fade suave */
+  pointer-events: none; /* Evita cliques em slides escondidos */
+}
+
+/* Classe aplicada via JS na imagem visível */
+.carousel-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.carousel-slide img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+}
+
+.carousel-btn {
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5); 
+  color: white; 
+  border: none;
+  width: 40px; 
+  height: 40px; 
+  border-radius: 50%; 
+  cursor: pointer;
+  z-index: 2; /* Garante que os botões fiquem acima das fotos */
+}
+
+.carousel-btn.prev { left: var(--space-sm); }
+.carousel-btn.next { right: var(--space-sm); }
