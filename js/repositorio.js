@@ -1,0 +1,50 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.getElementById('lista-trabalhos');
+  const filtroTipo = document.getElementById('filtro-tipo');
+  const filtroAno = document.getElementById('filtro-ano');
+
+  if (!container) {
+    return;
+  }
+
+  const trabalhos = readStorage('trabalhos');
+
+  function render() {
+    const tipo = filtroTipo?.value ?? 'todos';
+    const ano = filtroAno?.value ?? 'todos';
+
+    const filtrados = trabalhos.filter((trabalho) => {
+      const correspondeTipo = tipo === 'todos' || trabalho.tipo.toLowerCase() === tipo;
+      const correspondeAno = ano === 'todos' || String(trabalho.ano) === ano;
+      return correspondeTipo && correspondeAno;
+    });
+
+    if (filtrados.length === 0) {
+      container.innerHTML = '<p class="empty-state">Nenhum trabalho corresponde aos filtros selecionados.</p>';
+      return;
+    }
+
+    container.innerHTML = filtrados.map((trabalho) => `
+      <article class="card">
+        <span class="badge">${escapeHtml(trabalho.tipo)}</span>
+        <h2>${escapeHtml(trabalho.titulo)}</h2>
+        <p><strong>Autores:</strong> ${escapeHtml(trabalho.autores)}</p>
+        <p><strong>Ano:</strong> ${escapeHtml(String(trabalho.ano))}</p>
+        <p class="help-text">Registro disponível no acervo local do protótipo.</p>
+      </article>
+    `).join('');
+  }
+
+  function escapeHtml(value) {
+    return String(value)
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;');
+  }
+
+  filtroTipo?.addEventListener('change', render);
+  filtroAno?.addEventListener('change', render);
+  render();
+});

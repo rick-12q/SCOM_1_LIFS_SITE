@@ -1,0 +1,32 @@
+<main id="main">
+  <h1>Acervo de Máquinas e Equipamentos</h1>
+  <p>Confira a disponibilidade dos equipamentos e faça seu agendamento.</p>
+
+  <!-- Onde o JavaScript carrega os cards -->
+  <section id="lista-maquinas" class="grid-maquinas" aria-live="polite">
+    <!-- Gerado dinamicamente via JS -->
+  </section>
+
+  <!-- Janela Modal de Agendamento -->
+  <dialog id="modal-agendamento" class="modal">
+    <form id="form-agendamento">
+      <h2>Agendar Máquina</h2>
+      <input type="hidden" id="maquina-id">
+
+      <div class="form-field">
+        <label for="data-agendamento">Data do Agendamento</label>
+        <input type="date" id="data-agendamento" required>
+      </div>
+
+      <div class="form-field">
+        <label for="hora-agendamento">Horário</label>
+        <input type="time" id="hora-agendamento" required>
+      </div>
+
+      <div class="modal-actions">
+        <button type="submit" class="btn btn-primary">Confirmar</button>
+        <button type="button" class="btn btn-secondary" id="cancelar-modal">Cancelar</button>
+      </div>
+    </form>
+  </dialog>
+</main>

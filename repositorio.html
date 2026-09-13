@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Repositório do Lab LIFS com trabalhos acadêmicos, congressos e registros científicos.">
+  <title>Lab LIFS | Repositório</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="logo"><a href="index.html" aria-label="Lab LIFS — página inicial">Lab LIFS</a></div>
+    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+    <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="repositorio.html" aria-current="page">Repositório</a></li>
+        <li><a href="maquinas.html">Máquinas</a></li>
+        <li><a href="membros.html">Membros</a></li>
+      </ul>
+    </nav>
+    <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
+  </header>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" aria-labelledby="quick-title">
+      <h2 id="quick-title">Acesso rápido</h2>
+      <ul>
+        <li><a href="index.html">Página inicial</a></li>
+        <li><a href="adicionar-trabalho.html">Adicionar trabalho</a></li>
+        <li><a href="membros.html">Consultar membros</a></li>
+      </ul>
+    </aside>
+
+    <main class="site-main" id="main">
+      <header class="page-intro">
+        <h1>Repositório científico</h1>
+        <p>Consulte registros acadêmicos cadastrados no protótipo e filtre os resultados por tipo ou ano.</p>
+      </header>
+
+      <section class="card" aria-labelledby="filtros-title">
+        <h2 id="filtros-title">Filtros de pesquisa</h2>
+        <div class="card-grid">
+          <div class="form-field">
+            <label for="filtro-tipo">Tipo</label>
+            <select id="filtro-tipo">
+              <option value="todos">Todos</option>
+              <option value="artigo">Artigo</option>
+              <option value="anais">Anais</option>
+              <option value="congresso">Congresso</option>
+              <option value="premio">Prêmio</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="filtro-ano">Ano</label>
+            <select id="filtro-ano">
+              <option value="todos">Todos</option>
+              <option value="2026">2026</option>
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-spaced" aria-labelledby="lista-title">
+        <h2 id="lista-title">Trabalhos cadastrados</h2>
+        <div id="lista-trabalhos" class="card-grid" aria-live="polite"></div>
+        <p class="notice">O protótipo utiliza <code>localStorage</code>. Arquivos PDF selecionados no cadastro têm apenas o nome armazenado; nenhum servidor faz upload neste projeto estático.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-current-year>2026</span> Lab LIFS. Portal acadêmico demonstrativo.</p>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/repositorio.js" defer></script>
+</body>
+</html>

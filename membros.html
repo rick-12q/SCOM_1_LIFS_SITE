@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Membros e colaboradores do Laboratório de Investigação de Filmes Semicondutores.">
+  <title>Lab LIFS | Membros</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="logo"><a href="index.html" aria-label="Lab LIFS — página inicial">Lab LIFS</a></div>
+    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+    <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="repositorio.html">Repositório</a></li>
+        <li><a href="maquinas.html">Máquinas</a></li>
+        <li><a href="membros.html" aria-current="page">Membros</a></li>
+      </ul>
+    </nav>
+    <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
+  </header>
+
+  <div class="page-wrapper">
+    <aside class="sidebar" aria-labelledby="quick-title">
+      <h2 id="quick-title">Acesso rápido</h2>
+      <ul>
+        <li><a href="index.html">Página inicial</a></li>
+        <li><a href="repositorio.html">Produção científica</a></li>
+        <li><a href="maquinas.html">Equipamentos</a></li>
+      </ul>
+    </aside>
+
+    <main class="site-main" id="main">
+      <header class="page-intro">
+        <h1>Membros do laboratório</h1>
+        <p>Conheça os integrantes cadastrados no protótipo e acesse seus perfis acadêmicos.</p>
+      </header>
+
+      <section id="lista-membros" class="card-grid" aria-live="polite" aria-label="Lista de membros"></section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-current-year>2026</span> Lab LIFS. Portal acadêmico demonstrativo.</p>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/membros.js" defer></script>
+</body>
+</html>

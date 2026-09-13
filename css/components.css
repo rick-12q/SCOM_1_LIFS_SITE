@@ -52,3 +52,43 @@
 
 .carousel-btn.prev { left: var(--space-sm); }
 .carousel-btn.next { right: var(--space-sm); }
+
+/* Layout da lista de máquinas */
+.grid-maquinas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.card-maquina {
+  background: var(--color-surface);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+/* Modal <dialog> e fundo escurecido (backdrop) */
+dialog.modal {
+  margin: auto;
+  padding: var(--space-lg);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  max-width: 400px;
+  width: 90%;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.modal-actions {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
