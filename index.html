@@ -4,6 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } 
+    else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+</script>
   <meta name="description" content="Portal do Laboratório de Investigação de Filmes Semicondutores: trabalhos, equipamentos, membros e notícias.">
   <meta name="theme-color" content="#1b4332">
   <title>Lab LIFS | Início</title>
@@ -30,7 +40,19 @@
       </ul>
     </nav>
 
-    <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
+<div class="header-actions">
+  <button
+    class="theme-toggle"
+    type="button"
+    aria-label="Ativar tema escuro"
+    title="Ativar tema escuro"
+  >
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+    <span class="theme-toggle-text">Tema</span>
+  </button>
+
+  <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
+</div>
   </header>
 <!--Adicao para melhorar a pag inicial e o landing page-->
    <main class="home-main" id="main">
@@ -151,5 +173,6 @@
   <script src="js/ui.js" defer></script>
   <script src="js/auth.js" defer></script>
   <script src="js/carrossel.js" defer></script>
+  <script src="js/tema.js" defer></script>
 </body>
 </html>

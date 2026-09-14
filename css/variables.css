@@ -1,16 +1,31 @@
 /*Trecho das variables in css, eu tinha um modelo, para melhor se aproximar do resultaedo que eu queria, usei o GEMINI PRO para um approach.*/
+/*Agora eu mudei um pouco para add tema*/
 :root {
-  --color-bg: #f4f6f4;
+  --color-bg: #f7f7f5;
   --color-surface: #ffffff;
   --color-primary: #1b4332;
   --color-primary-dark: #123125;
-  --color-accent: #b45309;
-  --color-text: #17211b;
+  --color-primary-light: #2d6a4f;
+  --color-text: #1a1a1a;
+  --color-text-muted: #5a5a5a;
+  --color-border: #e0e0e0;
 
-  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --color-accent: #d97706;
+  --color-accent-soft: #e6a15a;
+
+  --dark-bg: #101a16;
+  --dark-surface: #17251f;
+  --dark-surface-alt: #1d2d26;
+  --dark-text: #ede8d0;
+  --dark-text-muted: #c9c5b2;
+  --dark-border: #34483e;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
   --font-size-base: 1rem;
   --line-height-base: 1.6;
 
+  --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -23,6 +38,21 @@
 
   --max-width: 1200px;
   --sidebar-width: 250px;
+
   --shadow-sm: 0 0.25rem 1rem rgb(23 33 27 / 0.08);
   --shadow-md: 0 0.75rem 2rem rgb(23 33 27 / 0.12);
+}
+
+html[data-theme="dark"] {
+  --color-bg: var(--dark-bg);
+  --color-surface: var(--dark-surface);
+  --color-text: var(--dark-text);
+  --color-text-muted: var(--dark-text-muted);
+  --color-border: var(--dark-border);
+
+  --color-primary: #2d6a4f;
+  --color-primary-dark: #ede8d0;
+  --color-primary-light: #52a276;
+
+  --color-accent: #e6a15a;
 }

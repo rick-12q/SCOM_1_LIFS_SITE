@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+  } else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+  }
+  </script>
   <meta name="description" content="Membros e colaboradores do Laboratório de Investigação de Filmes Semicondutores.">
   <title>Lab LIFS | Membros</title>
   <link rel="stylesheet" href="css/reset.css">
@@ -25,7 +34,19 @@
         <li><a href="membros.html" aria-current="page">Membros</a></li>
       </ul>
     </nav>
-    <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
+    <div class="header-actions">
+  <button
+    class="theme-toggle"
+    type="button"
+    aria-label="Ativar tema escuro"
+    title="Ativar tema escuro"
+  >
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+    <span class="theme-toggle-text">Tema</span>
+  </button>
+
+  <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
+</div>
   </header>
 
   <div class="page-wrapper">
@@ -56,5 +77,6 @@
   <script src="js/ui.js" defer></script>
   <script src="js/auth.js" defer></script>
   <script src="js/membros.js" defer></script>
+  <script src="js/tema.js" defer></script>
 </body>
 </html>

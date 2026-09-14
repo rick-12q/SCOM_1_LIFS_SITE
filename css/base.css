@@ -1,15 +1,17 @@
 /*tentando seguir a ideia de tamanhos de fonte*/
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-body);
   font-size: var(--font-size-base);
   color: var(--color-text);
   background: var(--color-bg);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1,
 h2,
 h3,
 h4 {
+  font-family: var(--font-display);
   color: var(--color-primary-dark);
   line-height: 1.2;
 }
@@ -46,11 +48,11 @@ main a:not(.btn),
   text-decoration-thickness: 0.12em;
   text-underline-offset: 0.18em;
 }
-/*IDEIA DO GPT isso e o .skip-link*/
+
 main a:not(.btn):hover,
 .sidebar a:hover,
 .main-nav a:hover {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 :focus-visible {
@@ -76,12 +78,31 @@ main a:not(.btn):hover,
 [hidden] {
   display: none !important;
 }
-
-/* Ajustes solicitados: tipografia com tamanho fixo entre as páginas */
-h1 {
-  font-size: 3rem;
+/* Dark mode, eu tava com problema nessa parte, resolvido por CHAT GPT */
+html[data-theme="dark"] h1:not(#page-title),
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] strong,
+html[data-theme="dark"] label {
+  color: #EDE8D0;
 }
 
-h2 {
-  font-size: 2rem;
+#page-title {
+  color: #E6A15A;
+}
+
+html[data-theme="dark"] #page-title {
+  color: #E6A15A;
+}
+
+html[data-theme="dark"] p,
+html[data-theme="dark"] li {
+  color: #EDE8D0;
+}
+
+html[data-theme="dark"] .text-muted,
+html[data-theme="dark"] .help-text,
+html[data-theme="dark"] .form-field small {
+  color: var(--dark-text-muted);
 }

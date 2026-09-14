@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
   <meta name="description" content="Cadastro de trabalho acadêmico para membros do Lab LIFS.">
   <title>Lab LIFS | Adicionar trabalho</title>
   <link rel="stylesheet" href="css/reset.css">
@@ -25,7 +34,19 @@
         <li><a href="membros.html">Membros</a></li>
       </ul>
     </nav>
-    <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
+    <div class="header-actions">
+  <button
+    class="theme-toggle"
+    type="button"
+    aria-label="Ativar tema escuro"
+    title="Ativar tema escuro"
+  >
+    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+    <span class="theme-toggle-text">Tema</span>
+  </button>
+
+  <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
+</div>
   </header>
 <!-- Esse trecho ai foi 100% gerado por IA, usei o Gemini PRO -->
   <main class="container page-container" id="main">
@@ -83,5 +104,6 @@
   <script src="js/ui.js" defer></script>
   <script src="js/auth.js" defer></script>
   <script src="js/adicionar-trabalho.js" defer></script>
+  <script src="js/tema.js" defer></script>
 </body>
 </html>
