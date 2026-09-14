@@ -1,28 +1,87 @@
-<form id="form-trabalho" novalidate>
-  <div class="form-field">
-    <label for="titulo">Título do trabalho</label>
-    <input type="text" id="titulo" required>
-  </div>
-  <div class="form-field">
-    <label for="autores">Autores</label>
-    <input type="text" id="autores" required placeholder="Sobrenome, N.; Sobrenome, N.">
-  </div>
-  <div class="form-field">
-    <label for="ano">Ano</label>
-    <input type="number" id="ano" min="2000" max="2026" required>
-  </div>
-  <div class="form-field">
-    <label for="tipo">Tipo</label>
-    <select id="tipo" required>
-      <option value="artigo">Artigo</option>
-      <option value="anais">Anais</option>
-      <option value="congresso">Congresso</option>
-      <option value="premio">Prêmio</option>
-    </select>
-  </div>
-  <div class="form-field">
-    <label for="pdf">Arquivo PDF</label>
-    <input type="file" id="pdf" accept="application/pdf">
-  </div>
-  <button type="submit" class="btn btn-primary">Salvar trabalho</button>
-</form>
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cadastro de trabalho acadêmico para membros do Lab LIFS.">
+  <title>Lab LIFS | Adicionar trabalho</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body data-protected="true">
+  <a class="skip-link" href="#main">Ir para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="logo"><a href="index.html" aria-label="Lab LIFS — página inicial">Lab LIFS</a></div>
+    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+    <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="repositorio.html" aria-current="page">Repositório</a></li>
+        <li><a href="maquinas.html">Máquinas</a></li>
+        <li><a href="membros.html">Membros</a></li>
+      </ul>
+    </nav>
+    <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
+  </header>
+<!-- Esse trecho ai foi 100% gerado por IA, usei o Gemini PRO -->
+  <main class="container page-container" id="main">
+    <section class="form-card" aria-labelledby="title">
+      <h1 id="title">Adicionar trabalho</h1>
+      <p>Cadastre um novo registro no repositório local do protótipo.</p>
+
+      <p id="mensagem-trabalho" class="form-success" role="status" hidden></p>
+
+      <form id="form-trabalho" novalidate>
+        <div class="form-field">
+          <label for="titulo">Título do trabalho</label>
+          <input type="text" id="titulo" name="titulo" required maxlength="180">
+        </div>
+
+        <div class="form-field">
+          <label for="autores">Autores</label>
+          <input type="text" id="autores" name="autores" required maxlength="240" placeholder="Sobrenome, N.; Sobrenome, N.">
+        </div>
+
+        <div class="form-field">
+          <label for="ano">Ano</label>
+          <input type="number" id="ano" name="ano" min="2000" max="2026" required inputmode="numeric">
+        </div>
+
+        <div class="form-field">
+          <label for="tipo">Tipo</label>
+          <select id="tipo" name="tipo" required>
+            <option value="Artigo">Artigo</option>
+            <option value="Anais">Anais</option>
+            <option value="Congresso">Congresso</option>
+            <option value="Prêmio">Prêmio</option>
+          </select>
+        </div>
+
+        <div class="form-field">
+          <label for="pdf">Arquivo PDF (opcional)</label>
+          <input type="file" id="pdf" name="pdf" accept="application/pdf">
+          <small>Em um site puramente estático, o protótipo armazena apenas o nome do arquivo selecionado.</small>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Salvar trabalho</button>
+          <a href="repositorio.html" class="btn btn-secondary">Voltar ao repositório</a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-current-year>2026</span> Lab LIFS. Portal do grupo de pesquisa.</p>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/adicionar-trabalho.js" defer></script>
+</body>
+</html>

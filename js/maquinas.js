@@ -9,14 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderMaquinas() {
     const maquinas = JSON.parse(localStorage.getItem('maquinas')) || [];
     if (!container) return;
-
-    container.innerHTML = maquinas.map(m => `
-      <article class="card-maquina">
-        <h3>${m.nome}</h3>
-        <p><strong>Local:</strong> ${m.local}</p>
-        <button class="btn btn-primary btn-agendar" data-id="${m.id}">Agendar</button>
-      </article>
-    `).join('');
+//Parte adequafda com ajuda do GPT para adequar as adcoes de descricao das maquinas
+container.innerHTML = maquinas.map(m => `
+  <article class="card-maquina">
+    <h3>${m.nome}</h3>
+    <p><strong>Fabricante:</strong> ${m.fabricante || 'Não informado'}</p>
+    <p><strong>Modelo:</strong> ${m.modelo || 'Não informado'}</p>
+    <p><strong>Local:</strong> ${m.local}</p>
+    <p><strong>Descrição:</strong> ${m.descricao || 'Não informado'}</p>
+    <button class="btn btn-primary btn-agendar" data-id="${m.id}">Agendar</button>
+  </article>
+`).join('');
 
     vincularEventos();
   }

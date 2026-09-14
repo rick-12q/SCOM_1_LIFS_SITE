@@ -1,15 +1,64 @@
-<main id="main">
-  <h1>Login de membro</h1>
-  <form id="login-form" novalidate>
-    <div class="form-field">
-      <label for="email">E-mail institucional</label>
-      <input type="email" id="email" name="email" required autocomplete="email">
-    </div>
-    <div class="form-field">
-      <label for="senha">Senha</label>
-      <input type="password" id="senha" name="senha" required autocomplete="current-password">
-    </div>
-    <p id="login-erro" class="form-error" role="alert" hidden>E-mail ou senha inválidos.</p>
-    <button type="submit" class="btn btn-primary">Entrar</button>
-  </form>
-</main>
+<!-- parte do login.html. A estrutura do código foi revisada e refinada por IA, utilizei o gemini, na versão pro para revisão e refinamento.-->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Área de autenticação para membros do Lab LIFS.">
+  <title>Lab LIFS | Login</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Ir para o conteúdo principal</a>
+
+  <header class="site-header">
+    <div class="logo"><a href="index.html" aria-label="Lab LIFS — página inicial">Lab LIFS</a></div>
+    <nav class="main-nav" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="repositorio.html">Repositório</a></li>
+        <li><a href="maquinas.html">Máquinas</a></li>
+        <li><a href="membros.html">Membros</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container page-container" id="main">
+    <section class="form-card" aria-labelledby="login-title">
+      <h1 id="login-title">Login de membro</h1>
+      <p>Entre para acessar o cadastro de trabalhos. Esta autenticação é apenas demonstrativa e funciona localmente no navegador.</p>
+
+      <div class="notice">
+        <strong>Conta de demonstração:</strong> membro@lab.edu / 123456
+      </div>
+
+      <form id="login-form" novalidate>
+        <div class="form-field">
+          <label for="email">E-mail institucional</label>
+          <input type="email" id="email" name="email" required autocomplete="email" inputmode="email">
+        </div>
+
+        <div class="form-field">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" name="senha" required autocomplete="current-password">
+        </div>
+
+        <p id="login-erro" class="form-error" role="alert" hidden>E-mail ou senha inválidos.</p>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span data-current-year>2026</span> Lab LIFS. Portal do grupo de pesquisa.</p>
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</body>
+</html>

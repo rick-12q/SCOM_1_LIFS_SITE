@@ -1,10 +1,12 @@
-<html>
+<!-- parte do index.html. A estrutura do código foi revisada  e refinada por IA, utilizei o gemini, na versão pro para revisão e refinamento.-->
+<!doctype html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LIFS UNESP</title>
-  <!-- AUXILIO DE IA PARA FAZER OS LINKS, IA USADA: GEMINI -->
-  <meta name="description" content="Repositório de trabalhos, acervo de máquinas e membros do Lab LIFS.">
+  <meta name="description" content="Portal do Laboratório de Investigação de Filmes Semicondutores: trabalhos, equipamentos, membros e notícias.">
+  <meta name="theme-color" content="#1b4332">
+  <title>Lab LIFS | Início</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/variables.css">
   <link rel="stylesheet" href="css/base.css">
@@ -12,12 +14,14 @@
   <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-  <!-- O uso do skiplink foi uma ideia que nasceu de um vídeo do youtube, link: https://www.youtube.com/watch?v=zWARLxSSDHI -->
   <a class="skip-link" href="#main">Ir para o conteúdo principal</a>
 
   <header class="site-header">
-    <div class="logo">Lab LIFS</div>
-    <nav class="main-nav" aria-label="Navegação principal">
+    <div class="logo"><a href="index.html" aria-label="Lab LIFS — página inicial">Lab LIFS</a></div>
+
+    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+
+    <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
       <ul>
         <li><a href="index.html" aria-current="page">Início</a></li>
         <li><a href="repositorio.html">Repositório</a></li>
@@ -25,65 +29,72 @@
         <li><a href="membros.html">Membros</a></li>
       </ul>
     </nav>
-    <a href="login.html" class="btn btn-login">Login</a>
+
+    <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
   </header>
 
   <div class="page-wrapper">
-    <aside class="sidebar" aria-label="Acesso rápido">
-      <h2>Acesso rápido</h2>
+    <aside class="sidebar" aria-labelledby="quick-title">
+      <h2 id="quick-title">Acesso rápido</h2>
       <ul>
         <li><a href="repositorio.html">Trabalhos e prêmios</a></li>
-        <li><a href="maquinas.html">Máquinas do lab</a></li>
-        <li><a href="membros.html">Membros</a></li>
+        <li><a href="maquinas.html">Equipamentos</a></li>
+        <li><a href="membros.html">Membros e ex-membros</a></li>
       </ul>
     </aside>
 
-    <main id="main">
-      <h1>Laboratório de Investigação de Filmes Semicondutores</h1>
+    <main class="site-main" id="main">
+      <section class="page-intro" aria-labelledby="page-title">
+        <h1 id="page-title">Laboratório de Investigação de Filmes Semicondutores</h1>
+        <p>Portal institucional para organizar a produção científica, os equipamentos e os integrantes do LIFS em uma interface acessível, responsiva e fácil de consultar.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="repositorio.html">Explorar repositório</a>
+          <a class="btn btn-secondary" href="maquinas.html">Consultar equipamentos</a>
+        </div>
+      </section>
+<!--A colocada do carrossel é aq, lembrar de atualizar as imagens e legnds delas-->
+      <section class="carousel" aria-label="Destaques visuais do laboratório">
+        <div class="carousel-track" id="carousel-track">
+          <figure class="carousel-slide active">
+            <img src="img/carrossel/calibrando_medidor.jpg" alt="Ilustração em pixel art de um samurai em uma paisagem noturna" loading="eager" width="3840" height="2160">
+            <figcaption>Calibração do novo medidor de pressão adquirido.</figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img src="img/carrossel/reator_com_plasma.jpg" alt="Paisagem em pixel art usada como imagem de destaque do portal" loading="lazy" width="3840" height="2160">
+            <figcaption>Reator de baixa pressão em regime de plasma, produzindo filmes finos.</figcaption>
+          </figure>
+          <figure class="carousel-slide">
+            <img src="img/carrossel/polonesa.JPG" alt="Ilustração de macaco usada como imagem de destaque do portal" loading="lazy" width="1920" height="1080">
+            <figcaption>Aluna intercambista, Anna (ao centro) ao lado de seu colega Luiz, a esquerda, e seu orientador, Prof. José Bortoleto, a direita..</figcaption>
+          </figure>
+        </div>
+        <button class="carousel-btn prev" type="button" aria-label="Slide anterior">‹</button>
+        <button class="carousel-btn next" type="button" aria-label="Próximo slide">›</button>
+      </section>
 
-<!-- CARROSSEL Aq -->
-<section class="carousel" aria-label="Destaques do laboratório">
-  <div class="carousel-track" id="carousel-track">
-    <!-- primeira img -->
-    <figure class="carousel-slide active">
-      <img src="img/carrossel/samurai-pixel-art.jpg" alt="Descrição da imagem 1" loading="lazy" width="1200" height="600">
-      <figcaption>Legenda da primeira foto</figcaption>
-    </figure>
-
-    <!-- SEGUNDA iMAGEM -->
-    <figure class="carousel-slide">
-      <img src="img/carrossel/land_pixel_art.jpg" alt="Descrição da imagem 2" loading="lazy" width="1200" height="600">
-      <figcaption>Legenda da segunda foto</figcaption>
-    </figure>
-
-    <!-- Terceira imgem -->
-    <figure class="carousel-slide">
-      <img src="img/carrossel/macaco_wallpaper.jpg" alt="Descrição da imagem 3" loading="lazy" width="1200" height="600">
-      <figcaption>Legenda da terceira foto</figcaption>
-    </figure>
-
-  </div>
-  
-  <button class="carousel-btn prev" aria-label="Slide anterior">‹</button>
-  <button class="carousel-btn next" aria-label="Próximo slide">›</button>
-</section>
-
-      <section class="news" aria-labelledby="news-title">
+      <section aria-labelledby="news-title">
         <h2 id="news-title">Notícias recentes</h2>
-        <article class="news-card">
-          <h3>Artigo aceito no congresso SEI LA KKKKK</h3>
-          <p>Boatr noticia...</p>
-        </article>
-        <!-- mais artigo -->
+        <div class="news-list">
+          <article class="news-card">
+            <h3>Produção científica organizada em um único portal</h3>
+            <p>O repositório permite consultar publicações, congressos e registros acadêmicos do laboratório.</p>
+          </article>
+          <article class="news-card">
+            <h3>Acervo de equipamentos</h3>
+            <p>O catálogo apresenta informações básicas dos equipamentos e oferece fluxo de agendamento para membros.</p>
+          </article>
+        </div>
       </section>
     </main>
   </div>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Lab LIFS. Todos os direitos reservados.</p>
+    <p>&copy; <span data-current-year>2026</span> Lab LIFS. Portal do grupo de pesquisa.</p>
   </footer>
 
-  <script src="js/carrossel.js"></script>
-  <script src="js/auth.js"></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/carrossel.js" defer></script>
 </body>
 </html>
