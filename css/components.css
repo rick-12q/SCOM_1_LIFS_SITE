@@ -76,7 +76,7 @@
   align-items: center;
   gap: var(--space-md);
 }
-/* Imagem da máquina agr fica redondinha, igual dos membros */
+/* Imagem da máquina agr fica redondinha, igual dos membros - e ver que ta clicavel */
 .imagem-maquina {
   width: 150px;
   height: 150px;
@@ -84,6 +84,12 @@
   flex-shrink: 0;
   border-radius: 50%;
   background: var(--color-bg);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.imagem-maquina:hover {
+  transform: scale(1.04);
 }
 
 .maquina-info {
@@ -220,4 +226,31 @@ dialog::backdrop {
 }
 #lista-membros {
   gap: 30px;
+}
+
+/* pra exibir imagem ampliada */
+.modal-imagem {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.modal-imagem::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal-imagem img {
+  display: block;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-md);
 }

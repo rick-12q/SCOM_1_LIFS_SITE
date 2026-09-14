@@ -2,6 +2,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('lista-maquinas');
   const modal = document.getElementById('modal-agendamento');
+  const modalImagem = document.getElementById('modal-imagem');
+  const imagemAmpliada = document.getElementById('imagem-ampliada');
   const form = document.getElementById('form-agendamento');
   const btnCancelar = document.getElementById('cancelar-modal');
   const inputMaquinaId = document.getElementById('maquina-id');
@@ -56,19 +58,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
     vincularEventos();
   }
-
-  function vincularEventos() {
-    document.querySelectorAll('.btn-agendar').forEach(btn => {
-      btn.addEventListener('click', () => {
-        inputMaquinaId.value = btn.dataset.id;
-        modal.showModal();
-      });
+//ajuste tecnico com o GEMINI PRO para fazer a imagem clicavel
+function vincularEventos() {
+  document.querySelectorAll('.btn-agendar').forEach(btn => {
+    btn.addEventListener('click', () => {
+      inputMaquinaId.value = btn.dataset.id;
+      modal.showModal();
     });
-  }
-
-  btnCancelar?.addEventListener('click', () => {
-    modal.close();
   });
+
+  document.querySelectorAll('.imagem-maquina').forEach(img => {
+    img.addEventListener('click', () => {
+      imagemAmpliada.src = img.src;
+      imagemAmpliada.alt = img.alt;
+      modalImagem.showModal();
+    });
+  });
+}
+
+btnCancelar?.addEventListener('click', () => {
+  modal.close();
+});
+
+modalImagem?.addEventListener('click', () => {
+  modalImagem.close();
+});
 
   form?.addEventListener('submit', (e) => {
     e.preventDefault();

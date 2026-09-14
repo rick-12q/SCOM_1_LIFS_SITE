@@ -81,7 +81,7 @@ const SEED_MEMBROS = [
     nome: "Luiz Henrique Corrêa Monteiro",
     tipo: "aluno de iniciação",
     situacao: "atual",
-    imagem: "img/membros/rick.jpg",
+    imagem: "img/membros/rick.jpeg",
     lattes: "http://lattes.cnpq.br/0250660115526685",
     orcid: "0009-0005-1095-3221"
   },
