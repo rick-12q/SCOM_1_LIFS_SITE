@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/components.css">
 </head>
-<body>
+<body class="login-page">
   <a class="skip-link" href="#main">Ir para o conteúdo principal</a>
 
   <header class="site-header">
@@ -26,39 +26,76 @@
       </ul>
     </nav>
   </header>
+<!--Aletardo para os backg. etc-->
+  <main class="login-main" id="main">
 
-  <main class="container page-container" id="main">
-    <section class="form-card" aria-labelledby="login-title">
-      <h1 id="login-title">Login de membro</h1>
-      <p>Entre para acessar o cadastro de trabalhos. Esta autenticação é apenas demonstrativa e funciona localmente no navegador.</p>
+  <div class="login-background" aria-hidden="true">
+    <div class="login-bg-slide active">
+      <img src="img/carrossel/globo_plasma.jpg" alt="">
+    </div>
 
-      <div class="notice">
-        <strong>Conta de demonstração:</strong> membro@lab.edu / 123456
+    <div class="login-bg-slide">
+      <img src="img/carrossel/Plasma_ar.jpg" alt="">
+    </div>
+
+    <div class="login-bg-slide">
+      <img src="img/carrossel/Plasma_lidi.jpg" alt="">
+    </div>
+  </div>
+
+  <section class="form-card login-card" aria-labelledby="login-title">
+    <h1 id="login-title">Login de membro</h1>
+
+    <p>
+      Entre para acessar o cadastro de trabalhos.
+      Esta autenticação é apenas demonstrativa e funciona localmente no navegador.
+    </p>
+
+    <div class="notice">
+      <strong>Conta de demonstração:</strong> membro@lab.edu / 123456
+    </div>
+
+    <form id="login-form" novalidate>
+      <div class="form-field">
+        <label for="email">E-mail institucional</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="email"
+          inputmode="email"
+        >
       </div>
 
-      <form id="login-form" novalidate>
-        <div class="form-field">
-          <label for="email">E-mail institucional</label>
-          <input type="email" id="email" name="email" required autocomplete="email" inputmode="email">
-        </div>
+      <div class="form-field">
+        <label for="senha">Senha</label>
+        <input
+          type="password"
+          id="senha"
+          name="senha"
+          required
+          autocomplete="current-password"
+        >
+      </div>
 
-        <div class="form-field">
-          <label for="senha">Senha</label>
-          <input type="password" id="senha" name="senha" required autocomplete="current-password">
-        </div>
+      <p id="login-erro" class="form-error" role="alert" hidden>
+        E-mail ou senha inválidos.
+      </p>
 
-        <p id="login-erro" class="form-error" role="alert" hidden>E-mail ou senha inválidos.</p>
-        <button type="submit" class="btn btn-primary">Entrar</button>
-      </form>
-    </section>
-  </main>
+      <button type="submit" class="btn btn-primary">Entrar</button>
+    </form>
+  </section>
+
+</main>
 
   <footer class="site-footer">
     <p>&copy; <span data-current-year>2026</span> Lab LIFS. Portal do grupo de pesquisa.</p>
   </footer>
 
-  <script src="js/data.js" defer></script>
-  <script src="js/ui.js" defer></script>
-  <script src="js/auth.js" defer></script>
+<script src="js/data.js" defer></script>
+<script src="js/ui.js" defer></script>
+<script src="js/auth.js" defer></script>
+<script src="js/login-carrossel.js" defer></script>
 </body>
 </html>
