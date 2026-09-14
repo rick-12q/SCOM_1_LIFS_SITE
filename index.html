@@ -32,63 +32,118 @@
 
     <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
   </header>
+<!--Adicao para melhorar a pag inicial e o landing page-->
+   <main class="home-main" id="main">
 
-  <div class="page-wrapper">
-    <aside class="sidebar" aria-labelledby="quick-title">
-      <h2 id="quick-title">Acesso rápido</h2>
-      <ul>
-        <li><a href="repositorio.html">Trabalhos e prêmios</a></li>
-        <li><a href="maquinas.html">Equipamentos</a></li>
-        <li><a href="membros.html">Membros e ex-membros</a></li>
-      </ul>
-    </aside>
+    <section class="home-hero" aria-labelledby="page-title">
 
-    <main class="site-main" id="main">
-      <section class="page-intro" aria-labelledby="page-title">
+      <!--A colocada do carrossel é aq, lembrar de atualizar as imagens e legnds delas-->
+      <div class="home-hero-background">
+        <div class="carousel-track" id="carousel-track">
+
+          <figure class="carousel-slide active">
+            <img src="img/carrossel/operadores_reator.JPG" alt="" loading="eager" width="3840" height="2160">
+          </figure>
+
+          <figure class="carousel-slide">
+            <img src="img/carrossel/reator_operando2.jpg" alt="" loading="lazy" width="3840" height="2160">
+          </figure>
+
+          <figure class="carousel-slide">
+            <img src="img/carrossel/globo_plasma.jpg" alt="" loading="lazy" width="1920" height="1080">
+          </figure>
+
+          <figure class="carousel-slide">
+            <img src="img/carrossel/plasma_main (1).jpg" alt="" loading="lazy" width="1920" height="1080">
+          </figure>
+
+          <figure class="carousel-slide">
+            <img src="img/carrossel/experimento.jpg" alt="" loading="lazy" width="1920" height="1080">
+          </figure>
+
+          <figure class="carousel-slide">
+            <img src="img/carrossel/reator_laptec.jpg" alt="" loading="lazy" width="1920" height="1080">
+          </figure>
+
+          <figure class="carousel-slide">
+            <img src="img/carrossel/reator_com_plasma.jpg" alt="" loading="lazy" width="1920" height="1080">
+          </figure>
+
+        </div>
+
+        <div class="home-hero-overlay"></div>
+      </div>
+
+      <div class="home-hero-content">
+
+        <span class="badge">Lab LIFS — UNESP</span>
+
         <h1 id="page-title">Laboratório de Investigação de Filmes Semicondutores</h1>
-        <p>Portal institucional para organizar a produção científica, os equipamentos e os integrantes do LIFS em uma interface acessível, responsiva e fácil de consultar.</p>
+
+        <p>
+          Pesquisa, desenvolvimento e caracterização de filmes finos
+          semicondutores para aplicações em tecnologia e ciência.
+        </p>
+
         <div class="hero-actions">
           <a class="btn btn-primary" href="repositorio.html">Explorar repositório</a>
           <a class="btn btn-secondary" href="maquinas.html">Consultar equipamentos</a>
         </div>
-      </section>
-<!--A colocada do carrossel é aq, lembrar de atualizar as imagens e legnds delas-->
-      <section class="carousel" aria-label="Destaques visuais do laboratório">
-        <div class="carousel-track" id="carousel-track">
-          <figure class="carousel-slide active">
-            <img src="img/carrossel/calibrando_medidor.jpg" alt="Ilustração em pixel art de um samurai em uma paisagem noturna" loading="eager" width="3840" height="2160">
-            <figcaption>Calibração do novo medidor de pressão adquirido.</figcaption>
-          </figure>
-          <figure class="carousel-slide">
-            <img src="img/carrossel/reator_com_plasma.jpg" alt="Paisagem em pixel art usada como imagem de destaque do portal" loading="lazy" width="3840" height="2160">
-            <figcaption>Reator de baixa pressão em regime de plasma, produzindo filmes finos.</figcaption>
-          </figure>
-          <figure class="carousel-slide">
-            <img src="img/carrossel/polonesa.JPG" alt="Ilustração de macaco usada como imagem de destaque do portal" loading="lazy" width="1920" height="1080">
-            <figcaption>Aluna intercambista, Anna (ao centro) ao lado de seu colega Luiz, a esquerda, e seu orientador, Prof. José Bortoleto, a direita..</figcaption>
-          </figure>
-        </div>
-        <button class="carousel-btn prev" type="button" aria-label="Slide anterior">‹</button>
-        <button class="carousel-btn next" type="button" aria-label="Próximo slide">›</button>
-      </section>
 
-      <section aria-labelledby="news-title">
-        <h2 id="news-title">Notícias recentes</h2>
-        <div class="news-list">
-          <article class="news-card">
-            <h3>Produção científica organizada em um único portal</h3>
-            <p>O repositório permite consultar publicações, congressos e registros acadêmicos do laboratório.</p>
-          </article>
-          <article class="news-card">
-            <h3>Acervo de equipamentos</h3>
-            <p>O catálogo apresenta informações básicas dos equipamentos e oferece fluxo de agendamento para membros.</p>
-          </article>
-        </div>
-      </section>
-    </main>
-  </div>
+      </div>
 
-  <footer class="site-footer">
+      <button class="carousel-btn prev" type="button" aria-label="Slide anterior">‹</button>
+      <button class="carousel-btn next" type="button" aria-label="Próximo slide">›</button>
+
+      <div class="home-hero-scroll" aria-hidden="true">
+        <span>Role para conhecer o laboratório</span>
+        <span class="home-hero-scroll-arrow">↓</span>
+      </div>
+
+    </section>
+
+    <section class="home-content">
+
+      <aside class="sidebar" aria-labelledby="quick-title">
+        <h2 id="quick-title">Acesso rápido</h2>
+        <ul>
+          <li><a href="repositorio.html">Trabalhos e prêmios</a></li>
+          <li><a href="maquinas.html">Equipamentos</a></li>
+          <li><a href="membros.html">Membros e ex-membros</a></li>
+        </ul>
+      </aside>
+
+      <div class="site-main">
+
+        <section aria-labelledby="news-title">
+          <h2 id="news-title">Notícias recentes</h2>
+
+          <div class="news-list">
+
+            <article class="news-card">
+              <h3>Produção científica organizada em um único portal</h3>
+              <p>
+                O repositório permite consultar publicações, congressos e
+                registros acadêmicos do laboratório.
+              </p>
+            </article>
+
+            <article class="news-card">
+              <h3>Acervo de equipamentos</h3>
+              <p>
+                O catálogo apresenta informações básicas dos equipamentos
+                e oferece fluxo de agendamento para membros.
+              </p>
+            </article>
+
+          </div>
+        </section>
+
+      </div>
+
+    </section>
+
+  </main>
     <p>&copy; <span data-current-year>2026</span> Lab LIFS. Portal do grupo de pesquisa.</p>
   </footer>
 
