@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!container) {
     return;
   }
-
-  const trabalhos = readStorage('trabalhos');
+// eu leio o localstorage, so p demo do frontend. As vezes da pau e preciso limpar o localstorage do browser. 
+  const trabalhos = JSON.parse(localStorage.getItem('trabalhos') || '[]');
 
   function render() {
     const tipo = filtroTipo?.value ?? 'todos';
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       container.innerHTML = '<p class="empty-state">Nenhum trabalho corresponde aos filtros selecionados.</p>';
       return;
     }
-
+//aqui foi usada IA para funcionar.
     container.innerHTML = filtrados.map((trabalho) => `
       <article class="card">
         <span class="badge">${escapeHtml(trabalho.tipo)}</span>

@@ -1,32 +1,28 @@
-/* Peguei a referencia da documentação do CSS e desse site aqui: https://developer.mozilla.org/pt-BR/docs/Web/CSS/Reference/Selectors/:root*/
+/*Trecho das variables in css, eu tinha um modelo, para melhor se aproximar do resultaedo que eu queria, usei o GEMINI PRO para um approach.*/
 :root {
-  /* Cor*/
-  --color-bg: #f7f7f5;
+  --color-bg: #f4f6f4;
   --color-surface: #ffffff;
   --color-primary: #1b4332;
-  --color-primary-light: #2d6a4f;
-  --color-text: #1a1a1a;
-  --color-text-muted: #5a5a5a;
-  --color-accent: #d97706;
+  --color-primary-dark: #123125;
+  --color-accent: #b45309;
+  --color-text: #17211b;
 
-  /* estilo das letra */
-  --font-display: "Fraunces", serif;
-  --font-body: "Inter", sans-serif;
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-size-base: 1rem;
   --line-height-base: 1.6;
 
-  /* espacamento */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2.5rem;
   --space-xl: 4rem;
 
-  /* borda */
-  --radius-sm: 4px;
-  --radius-md: 8px;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
 
-  /* layout */
   --max-width: 1200px;
-  --sidebar-width: 260px;
+  --sidebar-width: 250px;
+  --shadow-sm: 0 0.25rem 1rem rgb(23 33 27 / 0.08);
+  --shadow-md: 0 0.75rem 2rem rgb(23 33 27 / 0.12);
 }

@@ -1,256 +1,591 @@
-.carousel { 
-  position: relative; 
-  overflow: hidden; 
-  border-radius: var(--radius-md); 
-  width: 100%;
-  aspect-ratio: 2 / 1; /* Mantém a proporção do carrossel */
+/*ESSE CODIGO GIGANTE, eu montei a mao a paret das maquinas e membros. Fiz um esboço geral e o GPT + CLAUDE fizeram esse código, melhoraram aquilo que eu tinha feito.*/
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+min-height: 2.75rem;
+padding: 0.65rem 1rem;
+border: 1px solid transparent;
+border-radius: var(--radius-sm);
+font-weight: 700;
+text-decoration: none;
+cursor: pointer;
+transition: transform 0.15s ease, background-color 0.15s ease;
 }
 
-.carousel-track { 
-  position: relative;
-  width: 100%;
-  height: 100%;
+.btn:hover {
+transform: translateY(-1px);
 }
 
-.carousel-slide { 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  opacity: 0; /* Invisível por padrão */
-  transition: opacity 0.8s ease-in-out; /* Efeito de Fade suave */
-  pointer-events: none; /* Evita cliques em slides escondidos */
+.btn-primary {
+color: #fff;
+background: var(--color-primary);
 }
 
-/* Classe aplicada via JS na imagem visível */
+.btn-primary:hover {
+background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+color: var(--color-primary-dark);
+background: var(--color-surface);
+border-color: rgb(23 33 27 / 0.22);
+}
+
+.btn-accent {
+color: #fff;
+background: var(--color-accent);
+}
+
+.card-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: var(--space-md);
+}
+
+.card {
+padding: var(--space-md);
+background: var(--color-surface);
+border: 1px solid rgb(23 33 27 / 0.12);
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-sm);
+}
+
+.card p:last-child {
+margin-bottom: 0;
+}
+
+.badge {
+display: inline-flex;
+align-items: center;
+width: fit-content;
+padding: 0.25rem 0.6rem;
+margin-bottom: 0.5rem;
+color: var(--color-primary-dark);
+background: rgb(27 67 50 / 0.1);
+border-radius: 999px;
+font-size: 0.85rem;
+font-weight: 700;
+}
+
+.news-list {
+display: grid;
+gap: var(--space-md);
+}
+
+.news-card {
+padding: var(--space-md);
+background: var(--color-surface);
+border-left: 0.35rem solid var(--color-accent);
+border-radius: var(--radius-sm);
+box-shadow: var(--shadow-sm);
+}
+
+/* Carrossel */
+
+.carousel {
+position: relative;
+overflow: hidden;
+aspect-ratio: 2 / 1;
+margin-bottom: var(--space-lg);
+background: var(--color-primary-dark);
+border-radius: var(--radius-lg);
+box-shadow: var(--shadow-md);
+}
+
+.carousel-track {
+position: relative;
+width: 100%;
+height: 100%;
+}
+
+.carousel-slide {
+position: absolute;
+inset: 0;
+margin: 0;
+opacity: 0;
+pointer-events: none;
+transition: opacity 0.45s ease;
+}
+
 .carousel-slide.active {
-  opacity: 1;
-  pointer-events: auto;
+opacity: 1;
+pointer-events: auto;
 }
 
-.carousel-slide img { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
+.carousel-slide img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.carousel-slide figcaption {
+position: absolute;
+right: 0;
+bottom: 0;
+left: 0;
+padding: 1rem 1.25rem;
+color: #fff;
+background: linear-gradient(transparent, rgb(0 0 0 / 0.76));
 }
 
 .carousel-btn {
-  position: absolute; 
-  top: 50%; 
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5); 
-  color: white; 
-  border: none;
-  width: 40px; 
-  height: 40px; 
-  border-radius: 50%; 
-  cursor: pointer;
-  z-index: 2; /* Garante que os botões fiquem acima das fotos */
+position: absolute;
+top: 50%;
+z-index: 2;
+width: 2.75rem;
+height: 2.75rem;
+color: #fff;
+background: rgb(0 0 0 / 0.58);
+border: 1px solid rgb(255 255 255 / 0.3);
+border-radius: 50%;
+cursor: pointer;
+transform: translateY(-50%);
 }
 
-.carousel-btn.prev { left: var(--space-sm); }
-.carousel-btn.next { right: var(--space-sm); }
+.carousel-btn.prev {
+left: 1rem;
+}
+
+.carousel-btn.next {
+right: 1rem;
+}
+
+.carousel-btn:hover {
+background: rgb(0 0 0 / 0.78);
+}
+
+/* Formulários */
+
+.form-card {
+max-width: 720px;
+padding: var(--space-lg);
+background: var(--color-surface);
+border: 1px solid rgb(23 33 27 / 0.12);
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-sm);
+}
+
+.form-field {
+display: grid;
+gap: 0.4rem;
+margin-bottom: var(--space-md);
+}
+
+.form-field label {
+color: var(--color-primary-dark);
+font-weight: 700;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+width: 100%;
+min-height: 2.75rem;
+padding: 0.65rem 0.75rem;
+color: var(--color-text);
+background: var(--color-surface);
+border: 1px solid rgb(23 33 27 / 0.28);
+border-radius: var(--radius-sm);
+}
+
+.form-field input[type="file"] {
+min-height: auto;
+}
+
+.form-field small,
+.help-text {
+color: rgb(23 33 27 / 0.76);
+}
+
+.form-actions {
+display: flex;
+flex-wrap: wrap;
+gap: var(--space-sm);
+}
+
+.form-error,
+.form-success,
+.notice {
+padding: 0.85rem 1rem;
+margin-bottom: var(--space-md);
+border-radius: var(--radius-sm);
+}
+
+.form-error {
+color: #7a1f1f;
+background: #fbeaea;
+border: 1px solid #e9baba;
+}
+
+.form-success {
+color: var(--color-primary-dark);
+background: #e6f2e9;
+border: 1px solid #b8d7bf;
+}
+
+.notice {
+background: rgb(27 67 50 / 0.07);
+border: 1px solid rgb(27 67 50 / 0.16);
+}
+
+/* Tabelas */
+
+.table-wrapper {
+overflow-x: auto;
+margin-top: var(--space-md);
+}
+
+table {
+width: 100%;
+border-collapse: collapse;
+background: var(--color-surface);
+}
+
+th,
+td {
+padding: 0.75rem;
+text-align: left;
+border: 1px solid rgb(23 33 27 / 0.15);
+vertical-align: top;
+}
+
+th {
+color: #fff;
+background: var(--color-primary);
+}
+
+/* Modal */
+
+.modal {
+width: min(92vw, 32rem);
+padding: var(--space-lg);
+margin: auto;
+border: 0;
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-md);
+}
+
+.modal::backdrop {
+background: rgb(0 0 0 / 0.56);
+}
+
+.modal-actions {
+display: flex;
+flex-wrap: wrap;
+gap: var(--space-sm);
+}
+
+.hero-actions {
+display: flex;
+flex-wrap: wrap;
+gap: var(--space-sm);
+margin-top: var(--space-md);
+}
+
+/* Estatísticas */
+
+.stats-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: var(--space-md);
+margin: var(--space-lg) 0;
+}
+
+.stat {
+padding: var(--space-md);
+text-align: center;
+background: var(--color-surface);
+border: 1px solid rgb(23 33 27 / 0.12);
+border-radius: var(--radius-md);
+}
+
+.stat strong {
+display: block;
+color: var(--color-primary);
+font-size: 2rem;
+line-height: 1.1;
+}
+
+.empty-state {
+padding: var(--space-lg);
+color: rgb(23 33 27 / 0.76);
+text-align: center;
+background: var(--color-surface);
+border: 1px dashed rgb(23 33 27 / 0.25);
+border-radius: var(--radius-md);
+}
 
 /* Layout da lista de máquinas */
+
 .grid-maquinas {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-md);
-  margin-top: var(--space-md);
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: var(--space-md);
+margin-top: var(--space-md);
 }
 
 .card-maquina {
-  background: var(--color-surface);
-  border: 1px solid #e0e0e0;
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-xs);
-}
-/* Imagem da máquina que eu coloquei dps -- Trecho auxiliado por IA - usei o GEMINI PRo */
-.maquina-conteudo {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-}
-/* Imagem da máquina agr fica redondinha, igual dos membros - e ver que ta clicavel */
-.imagem-maquina {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--color-bg);
-  cursor: pointer;
-  transition: transform 0.2s ease;
+display: flex;
+flex-direction: column;
+gap: var(--space-xs);
+padding: var(--space-md);
+background: var(--color-surface);
+border: 1px solid rgb(23 33 27 / 0.12);
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-sm);
 }
 
+/* Imagem da máquina que eu coloquei dps -- Trecho auxiliado por IA - usei o GEMINI PRo */
+
+.maquina-conteudo {
+display: flex;
+align-items: center;
+gap: var(--space-md);
+}
+
+.imagem-maquina {
+width: 150px;
+height: 150px;
+flex-shrink: 0;
+object-fit: cover;
+background: var(--color-bg);
+border-radius: 50%;
+cursor: pointer;
+transition: transform 0.2s ease;
+}
+
+/* Imagem da máquina agr fica redondinha, igual dos membros - e ver que ta clicavel */
+
 .imagem-maquina:hover {
-  transform: scale(1.04);
+transform: scale(1.04);
 }
 
 .maquina-info {
-  flex: 1;
-  min-width: 0;
+flex: 1;
+min-width: 0;
 }
 
 .maquina-info h3 {
-  margin-bottom: var(--space-2xs);
+margin-bottom: var(--space-2xs);
 }
 
 .maquina-info .card-actions {
-  margin-top: var(--space-sm);
-}
-
-/* Modal <dialog> e fundo escurecido (backdrop) */
-dialog.modal {
-  margin: auto;
-  padding: var(--space-lg);
-  border: none;
-  border-radius: var(--radius-md);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  max-width: 400px;
-  width: 90%;
+margin-top: var(--space-sm);
 }
 
 /* Membros foi alterado pelo GPT para melhorar a questao de ajuste em telas diferentes */
 
 #lista-membros {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(24px, 3vw, 40px);
+display: grid;
+grid-template-columns: 1fr;
+gap: var(--space-md);
 }
 
 .card-membro {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
+padding: var(--space-md);
+background: var(--color-surface);
+border: 1px solid rgb(23 33 27 / 0.12);
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-sm);
 }
 
 .membro-conteudo {
-  display: flex;
-  align-items: center;
-  gap: clamp(16px, 2.5vw, 28px);
+display: flex;
+align-items: center;
+gap: clamp(16px, 2.5vw, 28px);
 }
 
 .imagem-membro {
-  width: clamp(72px, 8vw, 96px);
-  height: clamp(72px, 8vw, 96px);
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-  border: 3px solid var(--color-bg);
-  box-shadow: var(--shadow-sm);
+width: clamp(72px, 8vw, 96px);
+height: clamp(72px, 8vw, 96px);
+flex-shrink: 0;
+object-fit: cover;
+border: 3px solid var(--color-bg);
+border-radius: 50%;
+box-shadow: var(--shadow-sm);
 }
 
 .membro-info {
-  flex: 1;
-  min-width: 0;
+flex: 1;
+min-width: 0;
 }
 
 .membro-info h3 {
-  margin-bottom: var(--space-2xs);
+margin-bottom: var(--space-2xs);
 }
 
 .links-membro {
-  display: flex;
-  gap: var(--space-sm);
-  margin-top: var(--space-sm);
-  padding: 0;
-  list-style: none;
-  flex-wrap: wrap;
+display: flex;
+flex-wrap: wrap;
+gap: var(--space-sm);
+padding: 0;
+margin-top: var(--space-sm);
+list-style: none;
 }
 
 .links-membro a {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--color-accent);
+color: var(--color-accent);
+font-size: 0.9rem;
+font-weight: 600;
 }
 
 .links-membro a:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }
 
+/* Abas dos membros */
+
 .membros-tabs {
-  display: flex;
-  gap: var(--space-2xs);
-  margin-bottom: var(--space-md);
-  border-bottom: 1px solid var(--color-border);
+display: flex;
+gap: var(--space-2xs);
+margin-bottom: var(--space-md);
+border-bottom: 1px solid rgb(23 33 27 / 0.15);
 }
 
 .membros-tabs button {
-  padding: var(--space-xs) var(--space-sm);
-  font-weight: 600;
-  color: var(--color-text-muted);
-  border-bottom: 2px solid transparent;
+padding: var(--space-xs) var(--space-sm);
+color: var(--color-text-muted);
+font-weight: 600;
+border-bottom: 2px solid transparent;
 }
 
 .membros-tabs button[aria-selected="true"] {
-  color: var(--color-primary);
-  border-bottom-color: var(--color-accent);
+color: var(--color-primary);
+border-bottom-color: var(--color-accent);
 }
 
-@media (max-width: 480px) {
-  .membro-conteudo {
-    align-items: flex-start;
-    gap: 14px;
-  }
+/* Modal <dialog> e fundo escurecido (backdrop) */
 
-  .imagem-membro {
-    width: 64px;
-    height: 64px;
-  }
-
-  .membro-info h3 {
-    font-size: 1.05rem;
-  }
-
-  .links-membro {
-    gap: 10px;
-  }
+dialog.modal {
+width: min(90%, 400px);
+max-width: 400px;
+padding: var(--space-lg);
+margin: auto;
+border: 0;
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-md);
 }
 
 dialog::backdrop {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
+background: rgb(0 0 0 / 0.56);
+backdrop-filter: blur(2px);
 }
 
 .modal-actions {
-  display: flex;
-  gap: var(--space-xs);
-  margin-top: var(--space-md);
-}
-#lista-membros {
-  gap: 30px;
+display: flex;
+flex-wrap: wrap;
+gap: var(--space-sm);
+margin-top: var(--space-md);
 }
 
 /* pra exibir imagem ampliada */
+
 .modal-imagem {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: transparent;
-  max-width: 90vw;
-  max-height: 90vh;
+position: fixed;
+top: 50%;
+left: 50%;
+width: auto;
+max-width: 90vw;
+max-height: 90vh;
+padding: 0;
+margin: 0;
+border: 0;
+background: transparent;
+transform: translate(-50%, -50%);
 }
 
 .modal-imagem::backdrop {
-  background: rgba(0, 0, 0, 0.75);
+background: rgb(0 0 0 / 0.75);
+backdrop-filter: blur(2px);
 }
 
 .modal-imagem img {
-  display: block;
-  max-width: 90vw;
-  max-height: 90vh;
-  width: auto;
-  height: auto;
-  border-radius: var(--radius-md);
+display: block;
+width: auto;
+height: auto;
+max-width: 90vw;
+max-height: 90vh;
+border-radius: var(--radius-md);
+}
+
+.page-container {
+padding-block: var(--space-xl);
+}
+
+.section-spaced {
+margin-top: var(--space-xl);
+}
+
+@media (max-width: 700px) {
+.stats-grid {
+grid-template-columns: 1fr;
+}
+
+.carousel {
+aspect-ratio: 4 / 3;
+}
+
+.maquina-conteudo {
+align-items: flex-start;
+}
+
+.imagem-maquina {
+width: 110px;
+height: 110px;
+}
+}
+
+@media (max-width: 480px) {
+.membro-conteudo {
+align-items: flex-start;
+gap: 14px;
+}
+
+.imagem-membro {
+width: 64px;
+height: 64px;
+}
+
+.membro-info h3 {
+font-size: 1.05rem;
+}
+
+.links-membro {
+gap: 10px;
+}
+
+.maquina-conteudo {
+flex-direction: column;
+align-items: flex-start;
+}
+
+.imagem-maquina {
+width: 120px;
+height: 120px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+html {
+scroll-behavior: auto;
+}
+
+*,
+*::before,
+*::after {
+transition-duration: 0.01ms !important;
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+}
+}
+/* Ajustes solicitados: máquinas uma abaixo da outra, como os membros */
+#lista-maquinas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+#lista-maquinas .card-maquina {
+  width: 100%;
 }
