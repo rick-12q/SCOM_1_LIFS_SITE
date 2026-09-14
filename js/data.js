@@ -70,7 +70,7 @@ const SEED_MEMBROS = [
   {
     id: 1,
     nome: "Prof. Dr. José Roberto Ribeiro Bortoleto",
-    tipo: "docente",
+    tipo: "Docente chefe do grupo",
     situacao: "atual",
     imagem: "img/membros/bortoleto.JPG",
     lattes: "http://lattes.cnpq.br/0104980613925349",
@@ -79,7 +79,7 @@ const SEED_MEMBROS = [
   {
     id: 2,
     nome: "Luiz Henrique Corrêa Monteiro",
-    tipo: "aluno de iniciação",
+    tipo: "Aluno de iniciação científica",
     situacao: "atual",
     imagem: "img/membros/rick.jpeg",
     lattes: "http://lattes.cnpq.br/0250660115526685",
@@ -88,7 +88,7 @@ const SEED_MEMBROS = [
   {
     id: 3,
     nome: "Paulo Silas Oliveira",
-    tipo: "aluno de doutorado",
+    tipo: "Aluno de doutorado",
     situacao: "atual",
     imagem: "img/membros/paulo.jpg",
     lattes: "http://lattes.cnpq.br/8312977684358988",
@@ -97,7 +97,7 @@ const SEED_MEMBROS = [
   {
     id: 4,
     nome: "Raul Ramos",
-    tipo: "aluno de pós-doutorado",
+    tipo: "Aluno de pós-doutorado",
     situacao: "atual",
     imagem: "img/membros/raul.jpg",
     lattes: "http://lattes.cnpq.br/4183764742951944",
@@ -106,7 +106,7 @@ const SEED_MEMBROS = [
   {
     id: 5,
     nome: "Anna Florkowska",
-    tipo: "aluna de intercâmbio",
+    tipo: "Aluna de intercâmbio",
     situacao: "atual",
     imagem: "img/membros/ania.JPG",
     lattes: "-",
@@ -115,7 +115,7 @@ const SEED_MEMBROS = [
   {
     id: 6,
     nome: "Maja Poleczka",
-    tipo: "aluna de intercâmbio",
+    tipo: "Aluna de intercâmbio",
     situacao: "atual",
     imagem: "img/membros/none.jpg",
     lattes: "-",
