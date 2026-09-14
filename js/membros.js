@@ -1,37 +1,74 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const container = document.getElementById('lista-membros');
+function getMembros() {
+  return JSON.parse(localStorage.getItem("membros")) || [];
+}
 
-  if (!container) {
-    return;
-  }
+function renderMembros(situacao) {
+  const container = document.getElementById("lista-membros");
+  if (!container) return;
 
-  const membros = readStorage('membros');
+  const membros = getMembros().filter(m => m.situacao === situacao);
 
   if (membros.length === 0) {
-    container.innerHTML = '<p class="empty-state">Nenhum membro cadastrado.</p>';
+    container.innerHTML = `<p class="empty-state">Nenhum membro cadastrado nesta categoria.</p>`;
     return;
   }
 
-  container.innerHTML = membros.map((membro) => `
-    <article class="card">
-      <span class="badge">${escapeHtml(membro.tipo)}</span>
-      <h2>${escapeHtml(membro.nome)}</h2>
-      <p>Informações acadêmicas e profissionais do integrante do laboratório.</p>
-      <p><a href="${escapeAttribute(membro.lattes)}" target="_blank" rel="noopener noreferrer">Currículo Lattes</a></p>
-      <p><a href="${escapeAttribute(membro.orcid)}" target="_blank" rel="noopener noreferrer">ORCID</a></p>
+  container.innerHTML = membros.map(m => `
+    <article class="card-membro">
+      <div class="membro-conteudo">
+
+        <img
+          class="imagem-membro"
+          src="${m.imagem}"
+          alt="Foto de ${m.nome}"
+        >
+
+        <div class="membro-info">
+          <h3>${m.nome}</h3>
+
+          <p class="text-muted">${m.tipo}</p>
+
+          <ul class="links-membro">
+            ${m.lattes !== "-" ? `
+              <li>
+                <a href="${m.lattes}" target="_blank" rel="noopener noreferrer">
+                  Lattes
+                </a>
+              </li>
+            ` : ''}
+
+            ${m.orcid !== "-" ? `
+              <li>
+                <a href="https://orcid.org/${m.orcid}" target="_blank" rel="noopener noreferrer">
+                  ORCID
+                </a>
+              </li>
+            ` : ''}
+          </ul>
+        </div>
+
+      </div>
     </article>
-  `).join('');
+  `).join("");
+}
 
-  function escapeHtml(value) {
-    return String(value)
-      .replaceAll('&', '&amp;')
-      .replaceAll('<', '&lt;')
-      .replaceAll('>', '&gt;')
-      .replaceAll('"', '&quot;')
-      .replaceAll("'", '&#039;');
-  }
+function initTabsMembros() {
+  const tabs = document.querySelectorAll(".membros-tabs button");
 
-  function escapeAttribute(value) {
-    return escapeHtml(value);
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.setAttribute("aria-selected", "false"));
+
+      tab.setAttribute("aria-selected", "true");
+
+      renderMembros(tab.dataset.situacao);
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.getElementById("lista-membros")) {
+    initTabsMembros();
+    renderMembros("atual");
   }
 });

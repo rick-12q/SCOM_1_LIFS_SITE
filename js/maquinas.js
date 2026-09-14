@@ -1,3 +1,4 @@
+//Esse codigo estava dando problema com a implementaçao das fotos dos equipamentos do lado, dai foi utilizada ajuda de IA para a reestruturaçao do codigo, e agora esta funcionando corretamente. do codigo, especialemnte tirar redundancias. Usei o GPT.
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.getElementById('lista-maquinas');
   const modal = document.getElementById('modal-agendamento');
@@ -5,43 +6,76 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCancelar = document.getElementById('cancelar-modal');
   const inputMaquinaId = document.getElementById('maquina-id');
 
-  // Renderiza máquinas vindas do localStorage
+  function getMaquinas() {
+    return JSON.parse(localStorage.getItem('maquinas')) || [];
+  }
+
   function renderMaquinas() {
-    const maquinas = JSON.parse(localStorage.getItem('maquinas')) || [];
     if (!container) return;
-//Parte adequafda com ajuda do GPT para adequar as adcoes de descricao das maquinas
-container.innerHTML = maquinas.map(m => `
-  <article class="card-maquina">
-    <h3>${m.nome}</h3>
-    <p><strong>Fabricante:</strong> ${m.fabricante || 'Não informado'}</p>
-    <p><strong>Modelo:</strong> ${m.modelo || 'Não informado'}</p>
-    <p><strong>Local:</strong> ${m.local}</p>
-    <p><strong>Descrição:</strong> ${m.descricao || 'Não informado'}</p>
-    <button class="btn btn-primary btn-agendar" data-id="${m.id}">Agendar</button>
-  </article>
-`).join('');
+
+    const maquinas = getMaquinas();
+
+    container.innerHTML = maquinas.map(m => `
+      <article class="card-maquina">
+        <div class="maquina-conteudo">
+
+          <img
+            class="imagem-maquina"
+            src="${m.imagem}"
+            alt="${m.nome}"
+          >
+
+          <div class="maquina-info">
+            <h3>${m.nome}</h3>
+
+            <p class="text-muted">${m.local}</p>
+
+            <p class="text-muted">
+              ${m.fabricante || ''}
+              ${m.modelo && m.modelo !== '--' ? ' — ' + m.modelo : ''}
+            </p>
+
+            <span class="status ${m.disponivel ? 'disponivel' : 'indisponivel'}">
+              <span class="status-dot"></span>
+              ${m.disponivel ? 'Disponível' : 'Em uso'}
+            </span>
+
+            <div class="card-actions">
+              <button
+                class="btn btn-primary btn-agendar"
+                data-id="${m.id}"
+              >
+                Agendar
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </article>
+    `).join('');
 
     vincularEventos();
   }
 
-  // Ativa os botões de abrir o modal
   function vincularEventos() {
     document.querySelectorAll('.btn-agendar').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        inputMaquinaId.value = e.target.getAttribute('data-id');
-        modal.showModal(); // API nativa HTML5
+      btn.addEventListener('click', () => {
+        inputMaquinaId.value = btn.dataset.id;
+        modal.showModal();
       });
     });
   }
 
-  // Botão fechar modal
-  btnCancelar?.addEventListener('click', () => modal.close());
+  btnCancelar?.addEventListener('click', () => {
+    modal.close();
+  });
 
-  // Salva o agendamento no localStorage
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    const agendamentos = JSON.parse(localStorage.getItem('agendamentos')) || [];
-    
+
+    const agendamentos =
+      JSON.parse(localStorage.getItem('agendamentos')) || [];
+
     agendamentos.push({
       id: Date.now(),
       maquinaId: inputMaquinaId.value,
@@ -49,9 +83,14 @@ container.innerHTML = maquinas.map(m => `
       hora: document.getElementById('hora-agendamento').value
     });
 
-    localStorage.setItem('agendamentos', JSON.stringify(agendamentos));
+    localStorage.setItem(
+      'agendamentos',
+      JSON.stringify(agendamentos)
+    );
+
     modal.close();
     form.reset();
+
     alert('Agendamento realizado com sucesso!');
   });
 

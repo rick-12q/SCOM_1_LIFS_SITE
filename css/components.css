@@ -70,6 +70,34 @@
   flex-direction: column;
   gap: var(--space-xs);
 }
+/* Imagem da máquina que eu coloquei dps -- Trecho auxiliado por IA - usei o GEMINI PRo */
+.maquina-conteudo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.imagem-maquina {
+  width: 180px;
+  height: 140px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+}
+
+.maquina-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.maquina-info h3 {
+  margin-bottom: var(--space-2xs);
+}
+
+.maquina-info .card-actions {
+  margin-top: var(--space-sm);
+}
 
 /* Modal <dialog> e fundo escurecido (backdrop) */
 dialog.modal {
@@ -82,6 +110,104 @@ dialog.modal {
   width: 90%;
 }
 
+/* Membros foi alterado pelo GPT para melhorar a questao de ajuste em telas diferentes */
+
+#lista-membros {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 3vw, 40px);
+}
+
+.card-membro {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.membro-conteudo {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.5vw, 28px);
+}
+
+.imagem-membro {
+  width: clamp(72px, 8vw, 96px);
+  height: clamp(72px, 8vw, 96px);
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid var(--color-bg);
+  box-shadow: var(--shadow-sm);
+}
+
+.membro-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.membro-info h3 {
+  margin-bottom: var(--space-2xs);
+}
+
+.links-membro {
+  display: flex;
+  gap: var(--space-sm);
+  margin-top: var(--space-sm);
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.links-membro a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.links-membro a:hover {
+  text-decoration: underline;
+}
+
+.membros-tabs {
+  display: flex;
+  gap: var(--space-2xs);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.membros-tabs button {
+  padding: var(--space-xs) var(--space-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border-bottom: 2px solid transparent;
+}
+
+.membros-tabs button[aria-selected="true"] {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-accent);
+}
+
+@media (max-width: 480px) {
+  .membro-conteudo {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .imagem-membro {
+    width: 64px;
+    height: 64px;
+  }
+
+  .membro-info h3 {
+    font-size: 1.05rem;
+  }
+
+  .links-membro {
+    gap: 10px;
+  }
+}
+
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(2px);
@@ -91,4 +217,7 @@ dialog::backdrop {
   display: flex;
   gap: var(--space-xs);
   margin-top: var(--space-md);
+}
+#lista-membros {
+  gap: 30px;
 }

@@ -10,6 +10,7 @@ const SEED_MAQUINAS = [
     nome: "Reator de baixa pressão 1",
     fabricante: "Fabricação própria do laboratório",
     modelo: "--",
+    imagem: "img/maquinas/R1.jpeg",
     local: "Lab LIFS",
     disponivel: true
   },
@@ -19,6 +20,7 @@ const SEED_MAQUINAS = [
     nome: "Reator de baixa pressão 2",
     fabricante: "Fabricação própria do laboratório",
     modelo: "--",
+    imagem: "img/maquinas/R2.jpg",
     local: "Lab LIFS",
     disponivel: true
   },
@@ -28,6 +30,7 @@ const SEED_MAQUINAS = [
     nome: "Microscópio de força atômica",
     fabricante: "Park Systems",
     modelo: "XE-100",
+    imagem: "img/maquinas/afm.jpg",
     local: "Lab LIFS",
     disponivel: true
   },
@@ -37,6 +40,7 @@ const SEED_MAQUINAS = [
     nome: "Espectrômetro UVVIS",
     fabricante: "Perkin Elmer",
     modelo: "ScanLambda 750",
+    imagem: "img/maquinas/UVVIS.jpg",
     local: "Lab LIFS",
     disponivel: true
   },
@@ -46,6 +50,7 @@ const SEED_MAQUINAS = [
     nome: "Quatro Pontas Elétricas Linear",
     fabricante: "Fabricação própria do laboratório",
     modelo: "Special 4P",
+    imagem: "img/maquinas/solartron.jpeg",
     local: "Lab LIFS",
     disponivel: true
   },
@@ -55,19 +60,67 @@ const SEED_MAQUINAS = [
     nome: " Fonte de Radiofrequeência 13,56 MHz",
     fabricante: "Tokyo High Power",
     modelo: "THP-13.56-1000",
+    imagem: "img/maquinas/RF_generator.jpg",
     local: "Lab LIFS",
     disponivel: true
   }
 ];
-
+//Mudei para add a foto dos membros tb
 const SEED_MEMBROS = [
-  { id: 1, nome: "Prof. Dr. José Roberto Ribeiro Bortoleto", tipo: "docente", lattes: " http://lattes.cnpq.br/0104980613925349", orcid: "0000-0003-4129-7819" },
-  { id: 2, nome: "Luiz Henrique Corrêa Monteiro", tipo: "aluno de iniciação", lattes: "http://lattes.cnpq.br/0250660115526685", orcid: "0009-0005-1095-3221" },
-  { id: 3, nome: "Paulo Silas Oliveira", tipo: "aluno de doutorado", lattes: "http://lattes.cnpq.br/8312977684358988", orcid: "0000-0001-8367-8287" },
-  { id: 4, nome: "Raul Ramos", tipo: "doutor auxiliar", lattes: "http://lattes.cnpq.br/4183764742951944", orcid: "0000-0002-6949-485X" },
-  { id: 5, nome: "Anna Florkowska", tipo: "aluna de intercâmbio", lattes: "-", orcid: "-" },
-  { id: 6, nome: "Maja Poleczka", tipo: "aluna de intercâmbio", lattes: "-", orcid: "-" },
-
+  {
+    id: 1,
+    nome: "Prof. Dr. José Roberto Ribeiro Bortoleto",
+    tipo: "docente",
+    situacao: "atual",
+    imagem: "img/membros/bortoleto.JPG",
+    lattes: "http://lattes.cnpq.br/0104980613925349",
+    orcid: "0000-0003-4129-7819"
+  },
+  {
+    id: 2,
+    nome: "Luiz Henrique Corrêa Monteiro",
+    tipo: "aluno de iniciação",
+    situacao: "atual",
+    imagem: "img/membros/rick.jpg",
+    lattes: "http://lattes.cnpq.br/0250660115526685",
+    orcid: "0009-0005-1095-3221"
+  },
+  {
+    id: 3,
+    nome: "Paulo Silas Oliveira",
+    tipo: "aluno de doutorado",
+    situacao: "atual",
+    imagem: "img/membros/paulo.jpg",
+    lattes: "http://lattes.cnpq.br/8312977684358988",
+    orcid: "0000-0001-8367-8287"
+  },
+  {
+    id: 4,
+    nome: "Raul Ramos",
+    tipo: "aluno de pós-doutorado",
+    situacao: "atual",
+    imagem: "img/membros/raul.jpg",
+    lattes: "http://lattes.cnpq.br/4183764742951944",
+    orcid: "0000-0002-6949-485X"
+  },
+  {
+    id: 5,
+    nome: "Anna Florkowska",
+    tipo: "aluna de intercâmbio",
+    situacao: "atual",
+    imagem: "img/membros/ania.JPG",
+    lattes: "-",
+    orcid: "-"
+  },
+  {
+    id: 6,
+    nome: "Maja Poleczka",
+    tipo: "aluna de intercâmbio",
+    situacao: "atual",
+    imagem: "img/membros/none.jpg",
+    lattes: "-",
+    orcid: "-"
+  }
 ];
 
 function initData() {
