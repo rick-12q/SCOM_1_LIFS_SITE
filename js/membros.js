@@ -86,9 +86,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("languagechange", () => {
-  const tab = document.querySelector(".membros-tabs button[aria-selected='true']");
-
-  if (tab) {
-    renderMembros(tab.dataset.situacao);
-  }
+  renderMembros("atual");
 });

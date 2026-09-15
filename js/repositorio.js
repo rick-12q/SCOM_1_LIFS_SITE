@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <span class="badge">${escapeHtml(trabalho.tipo)}</span>
         <h2>${escapeHtml(trabalho.titulo)}</h2>
         <p><strong>${t('repository.authors')}</strong> ${escapeHtml(trabalho.autores)}</p>
-        <p><strong>Ano:</strong> ${escapeHtml(String(trabalho.ano))}</p>
+        <p><strong>${t('repository.year')}</strong> ${escapeHtml(String(trabalho.ano))}</p>
         <p class="help-text">${t('repository.record')}</p>
       </article>
     `).join('');
