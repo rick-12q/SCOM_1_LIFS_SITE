@@ -29,30 +29,74 @@
   <header class="site-header">
     <div class="logo"><a href="index.html" aria-label="Lab LIFS — página inicial">Lab LIFS</a></div>
 
-    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+      data-i18n="nav.menu"
+    >
+      Menu
+    </button>
 
     <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
       <ul>
-        <li><a href="index.html" aria-current="page">Início</a></li>
-        <li><a href="repositorio.html">Repositório</a></li>
-        <li><a href="maquinas.html">Máquinas</a></li>
-        <li><a href="membros.html">Membros</a></li>
+        <li>
+          <a href="index.html" aria-current="page" data-i18n="nav.home">
+            Início
+          </a>
+        </li>
+      
+        <li>
+          <a href="repositorio.html" data-i18n="nav.repository">
+            Repositório
+          </a>
+        </li>
+      
+        <li>
+          <a href="maquinas.html" data-i18n="nav.machines">
+            Máquinas
+          </a>
+        </li>
+      
+        <li>
+          <a href="membros.html" data-i18n="nav.members">
+            Membros
+          </a>
+        </li>
       </ul>
     </nav>
 
-<div class="header-actions">
-  <button
-    class="theme-toggle"
-    type="button"
-    aria-label="Ativar tema escuro"
-    title="Ativar tema escuro"
-  >
-    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
-    <span class="theme-toggle-text">Tema</span>
-  </button>
-
-  <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
-</div>
+    <div class="header-actions">
+    
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Ativar tema escuro"
+        title="Ativar tema escuro"
+      >
+        <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+        <span class="theme-toggle-text">Tema</span>
+      </button>
+    
+      <button
+        id="language-toggle"
+        class="language-toggle"
+        type="button"
+        aria-label="Switch to English"
+      >
+        EN
+      </button>
+    
+      <a
+        href="login.html"
+        class="btn btn-login btn-secondary"
+        data-i18n="nav.login"
+      >
+        Entrar
+      </a>
+    
+    </div>
   </header>
 <!--Adicao para melhorar a pag inicial e o landing page-->
    <main class="home-main" id="main">
@@ -97,28 +141,51 @@
       </div>
 
       <div class="home-hero-content">
-
+      
         <span class="badge">Lab LIFS — UNESP</span>
+      
+        <h1 id="page-title" data-i18n="home.title">
+          Laboratório de Investigação de Filmes Semicondutores
+        </h1>
+      
+        <p data-i18n="home.description">
+          Portal institucional para organizar a produção científica, os equipamentos e os integrantes do LIFS em uma interface acessível, responsiva e fácil de consultar.
+        </p>
 
-        <h1 id="page-title">Laboratório de Investigação de Filmes Semicondutores</h1>
-
-        <p>
+        <p data-i18n="home.research">
           Pesquisa, desenvolvimento e caracterização de filmes finos
           semicondutores para aplicações em tecnologia e ciência.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="repositorio.html">Explorar repositório</a>
-          <a class="btn btn-secondary" href="maquinas.html">Consultar equipamentos</a>
+          <a class="btn btn-primary" href="repositorio.html" data-i18n="home.repository">
+            Explorar repositório</a>
+          <a class="btn btn-secondary" href="maquinas.html" data-i18n="home.machines">
+            Consultar equipamentos</a>
         </div>
 
       </div>
 
-      <button class="carousel-btn prev" type="button" aria-label="Slide anterior">‹</button>
-      <button class="carousel-btn next" type="button" aria-label="Próximo slide">›</button>
+      <button
+        class="carousel-btn prev"
+        type="button"
+        aria-label="Slide anterior"
+        data-i18n-aria-label="home.previous"
+      >
+        ‹
+      </button>
+
+      <button
+        class="carousel-btn next"
+        type="button"
+        aria-label="Próximo slide"
+        data-i18n-aria-label="home.next"
+      >
+        ›
+      </button>
 
       <div class="home-hero-scroll" aria-hidden="true">
-        <span>Role para conhecer o laboratório</span>
+        <span data-i18n="home.scroll">Role para conhecer o laboratório</span>
         <span class="home-hero-scroll-arrow">↓</span>
       </div>
 
@@ -127,36 +194,56 @@
     <section class="home-content">
 
       <aside class="sidebar" aria-labelledby="quick-title">
-        <h2 id="quick-title">Acesso rápido</h2>
+        <h2 id="quick-title" data-i18n="sidebar.title">Acesso rápido</h2>
         <ul>
-          <li><a href="repositorio.html">Trabalhos e prêmios</a></li>
-          <li><a href="maquinas.html">Equipamentos</a></li>
-          <li><a href="membros.html">Membros e ex-membros</a></li>
+          <li>
+            <a href="repositorio.html" data-i18n="sidebar.worksAwards">
+              Trabalhos e prêmios
+            </a>
+          </li>
+          
+          <li>
+            <a href="maquinas.html" data-i18n="sidebar.machines">
+              Equipamentos
+            </a>
+          </li>
+          
+          <li>
+            <a href="membros.html" data-i18n="sidebar.members">
+              Membros e ex-membros
+            </a>
+          </li>
         </ul>
       </aside>
 
       <div class="site-main">
 
         <section aria-labelledby="news-title">
-          <h2 id="news-title">Notícias recentes</h2>
+          <h2 id="news-title" data-i18n="home.news">Notícias recentes</h2>
 
           <div class="news-list">
 
-            <article class="news-card">
-              <h3>Produção científica organizada em um único portal</h3>
-              <p>
-                O repositório permite consultar publicações, congressos e
-                registros acadêmicos do laboratório.
-              </p>
-            </article>
+          <article class="news-card">
+            <h3 data-i18n="home.newsScientificTitle">
+              Produção científica organizada em um único portal
+            </h3>
+          
+            <p data-i18n="home.newsScientificText">
+              O repositório permite consultar publicações, congressos e
+              registros acadêmicos do laboratório.
+            </p>
+          </article>
 
-            <article class="news-card">
-              <h3>Acervo de equipamentos</h3>
-              <p>
-                O catálogo apresenta informações básicas dos equipamentos
-                e oferece fluxo de agendamento para membros.
-              </p>
-            </article>
+          <article class="news-card">
+            <h3 data-i18n="home.newsEquipmentTitle">
+              Acervo de equipamentos
+            </h3>
+          
+            <p data-i18n="home.newsEquipmentText">
+              O catálogo apresenta informações básicas dos equipamentos
+              e oferece fluxo de agendamento para membros.
+            </p>
+          </article>
 
           </div>
         </section>
@@ -166,10 +253,18 @@
     </section>
 
   </main>
-    <p>&copy; <span data-current-year>2026</span> Lab LIFS. Portal do grupo de pesquisa.</p>
+  
+  <footer class="site-footer">
+    <p>
+      &copy; <span data-current-year>2026</span>
+      <span data-i18n="footer.copyright">
+        Lab LIFS. Portal do grupo de pesquisa.
+      </span>
+    </p>
   </footer>
 
   <script src="js/data.js" defer></script>
+  <script src="js/i18n.js" defer></script>
   <script src="js/ui.js" defer></script>
   <script src="js/auth.js" defer></script>
   <script src="js/carrossel.js" defer></script>

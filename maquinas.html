@@ -45,7 +45,24 @@
     <span class="theme-toggle-text">Tema</span>
   </button>
 
-  <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
+  <div class="header-actions">
+  <button
+    id="language-toggle"
+    class="language-toggle"
+    type="button"
+    aria-label="Switch to English"
+  >
+    EN
+  </button>
+
+  <a
+    href="login.html"
+    class="btn btn-login btn-secondary"
+    data-i18n="nav.login"
+  >
+    Entrar
+  </a>
+</div>
 </div>
   </header>
 
@@ -102,6 +119,7 @@
   </footer>
 
   <script src="js/data.js" defer></script>
+  <script src="js/i18n.js" defer></script>
   <script src="js/ui.js" defer></script>
   <script src="js/auth.js" defer></script>
   <script src="js/maquinas.js" defer></script>

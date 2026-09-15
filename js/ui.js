@@ -7,11 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('is-open');
       toggle.setAttribute('aria-expanded', String(isOpen));
-      toggle.textContent = isOpen ? 'Fechar menu' : 'Menu';
+      toggle.textContent = isOpen? t("nav.closeMenu"): t("nav.menu");
     });
   }
 
   if (year) {
     year.textContent = String(new Date().getFullYear());
   }
+});
+document.addEventListener("languagechange", () => {
+  if (!toggle) {
+    return;
+  }
+
+  const isOpen =
+    toggle.getAttribute("aria-expanded") === "true";
+
+  toggle.textContent = isOpen
+    ? t("nav.closeMenu")
+    : t("nav.menu");
 });

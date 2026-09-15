@@ -1374,3 +1374,50 @@ html[data-theme="dark"] #modal-agendamento .btn-secondary:hover {
     flex-basis: auto;
   }
 }
+
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.7rem;
+  color: var(--color-primary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.language-toggle:hover {
+  color: var(--color-accent);
+  background: var(--color-bg);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+html[data-theme="dark"] .language-toggle {
+  color: #EDE8D0;
+  background: #202F28;
+  border-color: #465B50;
+}
+
+html[data-theme="dark"] .language-toggle:hover {
+  color: #E6A15A;
+  background: #25362E;
+  border-color: #64796D;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
