@@ -9,6 +9,13 @@ const TRANSLATIONS = {
     "nav.logout": "Sair",
     "nav.menu": "Menu",
     "nav.closeMenu": "Fechar menu",
+    "nav.theme": "Tema",
+    "nav.darkTheme": "Ativar tema escuro",
+    "nav.lightTheme": "Ativar tema claro",
+    "nav.switchEnglish": "Mudar para inglês",
+    "nav.switchPortuguese": "Mudar para português",
+    "nav.mainNavigation": "Navegação principal",
+    "nav.skip": "Ir para o conteúdo principal",
 
     "sidebar.title": "Acesso rápido",
     "sidebar.home": "Página inicial",
@@ -53,6 +60,8 @@ const TRANSLATIONS = {
     "repository.authors": "Autores:",
     "repository.record": "Registro disponível no acervo local do protótipo.",
     "repository.empty": "Nenhum trabalho corresponde aos filtros selecionados.",
+    "repository.title": "Repositório científico",
+    "repository.description": "Consulte registros acadêmicos cadastrados no protótipo e filtre os resultados por tipo ou ano.",
 
     "machines.title": "Acervo de máquinas e equipamentos",
     "machines.description": "Confira os equipamentos cadastrados e solicite um horário de uso no protótipo.",
@@ -69,6 +78,21 @@ const TRANSLATIONS = {
     "machines.cancel": "Cancelar",
     "machines.success": "Agendamento realizado com sucesso.",
     "machines.conflict": "Já existe um agendamento para esse equipamento nesse horário.",
+    "machines.r1": "Reator de baixa pressão 1",
+    "machines.r2": "Reator de baixa pressão 2",
+    "machines.afm": "Microscópio de força atômica",
+    "machines.uvvis": "Espectrômetro UVVIS",
+    "machines.probe": "Quatro Pontas Elétricas Linear",
+    "machines.rf": "Fonte de Radiofrequência 13,56 MHz",
+
+    "machines.lab": "Lab LIFS",
+    "machines.labManufactured": "Fabricação própria do laboratório",
+
+    "members.professor": "Docente chefe do grupo",
+    "members.undergraduate": "Aluno de iniciação científica",
+    "members.phd": "Aluno de doutorado",
+    "members.postdoc": "Aluno de pós-doutorado",
+    "members.exchange": "Aluno de intercâmbio",
 
     "members.title": "Membros do laboratório",
     "members.description": "Conheça os integrantes cadastrados no laboratório e acesse seus perfis acadêmicos.",
@@ -98,6 +122,7 @@ const TRANSLATIONS = {
     "work.save": "Salvar trabalho",
     "work.back": "Voltar ao repositório",
     "work.success": "Trabalho cadastrado no acervo local com sucesso.",
+    "work.required": "Preencha todos os campos obrigatórios.",
 
     "error.404": "Erro 404",
     "error.title": "Página não encontrada",
@@ -114,6 +139,13 @@ const TRANSLATIONS = {
     "nav.logout": "Sign out",
     "nav.menu": "Menu",
     "nav.closeMenu": "Close menu",
+    "nav.theme": "Theme",
+    "nav.darkTheme": "Enable dark theme",
+    "nav.lightTheme": "Enable light theme",
+    "nav.switchEnglish": "Switch to English",
+    "nav.switchPortuguese": "Switch to Portuguese",
+    "nav.mainNavigation": "Main navigation",
+    "nav.skip": "Skip to main content",
 
     "sidebar.title": "Quick access",
     "sidebar.home": "Home page",
@@ -158,6 +190,8 @@ const TRANSLATIONS = {
     "repository.authors": "Authors:",
     "repository.record": "Record available in the prototype's local collection.",
     "repository.empty": "No work matches the selected filters.",
+    "repository.title": "Repositório científico",
+    "repository.description": "Consulte registros acadêmicos cadastrados no protótipo e filtre os resultados por tipo ou ano.",
 
     "machines.title": "Equipment collection",
     "machines.description": "Check the registered equipment and request a usage time in the prototype.",
@@ -174,6 +208,21 @@ const TRANSLATIONS = {
     "machines.cancel": "Cancel",
     "machines.success": "Schedule completed successfully.",
     "machines.conflict": "There is already a schedule for this equipment at this time.",
+    "machines.r1": "Low-pressure reactor 1",
+    "machines.r2": "Low-pressure reactor 2",
+    "machines.afm": "Atomic force microscope",
+    "machines.uvvis": "UV-Vis spectrometer",
+    "machines.probe": "Linear four-point probe",
+    "machines.rf": "13.56 MHz radio-frequency source",
+
+    "machines.lab": "LIFS Laboratory",
+    "machines.labManufactured": "Laboratory-built",
+
+    "members.professor": "Group leader",
+    "members.undergraduate": "Undergraduate research student",
+    "members.phd": "PhD student",
+    "members.postdoc": "Postdoctoral researcher",
+    "members.exchange": "Exchange student",
 
     "members.title": "Laboratory members",
     "members.description": "Meet the members registered in the laboratory and access their academic profiles.",
@@ -203,6 +252,7 @@ const TRANSLATIONS = {
     "work.save": "Save work",
     "work.back": "Back to repository",
     "work.success": "Work successfully added to the local collection.",
+    "work.required": "Please fill in all required fields.",
 
     "error.404": "Error 404",
     "error.title": "Page not found",
@@ -268,8 +318,8 @@ function applyTranslations() {
     languageButton.setAttribute(
       "aria-label",
       language === "pt"
-        ? "Switch to English"
-        : "Mudar para português"
+        ? t("nav.switchEnglish")
+        : t("nav.switchPortuguese")
     );
   }
 

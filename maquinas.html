@@ -25,13 +25,26 @@
 
   <header class="site-header">
     <div class="logo"><a href="index.html" aria-label="Lab LIFS — página inicial">Lab LIFS</a></div>
-    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
-    <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+      data-i18n="nav.menu"
+    >
+      Menu
+    </button>
+    <nav
+      class="main-nav"
+      id="main-navigation"
+      aria-label="Navegação principal"
+      data-i18n-aria-label="nav.mainNavigation"
+    >
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="repositorio.html">Repositório</a></li>
-        <li><a href="maquinas.html" aria-current="page">Máquinas</a></li>
-        <li><a href="membros.html">Membros</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+        <li><a href="repositorio.html" data-i18n="nav.repository">Repositório</a></li>
+        <li><a href="maquinas.html" aria-current="page" data-i18n="nav.machines">Máquinas</a></li>
+        <li><a href="membros.html" data-i18n="nav.members">Membros</a></li>
       </ul>
     </nav>
     <div class="header-actions">
@@ -40,9 +53,11 @@
     type="button"
     aria-label="Ativar tema escuro"
     title="Ativar tema escuro"
+    data-i18n-aria-label="nav.darkTheme"
+    data-i18n-title="nav.darkTheme"
   >
     <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
-    <span class="theme-toggle-text">Tema</span>
+    <span class="theme-toggle-text" data-i18n="nav.theme">Tema</span>
   </button>
 
   <div class="header-actions">
@@ -68,42 +83,48 @@
 
   <div class="page-wrapper">
     <aside class="sidebar" aria-labelledby="quick-title">
-      <h2 id="quick-title">Acesso rápido</h2>
+      <h2 id="quick-title" data-i18n="sidebar.title">Acesso rápido</h2>
       <ul>
-        <li><a href="index.html">Página inicial</a></li>
-        <li><a href="repositorio.html">Repositório</a></li>
-        <li><a href="membros.html">Membros</a></li>
+        <li><a href="index.html" data-i18n="sidebar.home">Página inicial</a></li>
+        <li><a href="repositorio.html" data-i18n="sidebar.repository">Repositório</a></li>
+        <li><a href="membros.html" data-i18n="sidebar.members">Membros</a></li>
       </ul>
     </aside>
 
     <main class="site-main" id="main">
       <header class="page-intro">
-        <h1>Acervo de máquinas e equipamentos</h1>
-        <p>Confira os equipamentos cadastrados e solicite um horário de uso no protótipo.</p>
+        <h1 data-i18n="machines.title">Acervo de máquinas e equipamentos</h1>
+        <p data-i18n="machines.description">Confira os equipamentos cadastrados e solicite um horário de uso no protótipo.</p>
       </header>
 
       <p id="mensagem-agendamento" class="form-success" role="status" hidden></p>
 
-      <section id="lista-maquinas" class="card-grid" aria-live="polite" aria-label="Lista de máquinas"></section>
+      <section
+        id="lista-maquinas"
+        class="card-grid"
+        aria-live="polite"
+        aria-label="Lista de máquinas"
+        data-i18n-aria-label="machines.list"
+      ></section>
 
       <dialog id="modal-agendamento" class="modal" aria-labelledby="modal-title">
         <form id="form-agendamento">
-          <h2 id="modal-title">Agendar equipamento</h2>
+          <h2 id="modal-title" data-i18n="machines.scheduleTitle">Agendar equipamento</h2>
           <input type="hidden" id="maquina-id">
 
           <div class="form-field">
-            <label for="data-agendamento">Data do agendamento</label>
+            <label for="data-agendamento" data-i18n="machines.date">Data do agendamento</label>
             <input type="date" id="data-agendamento" required>
           </div>
 
           <div class="form-field">
-            <label for="hora-agendamento">Horário</label>
+            <label for="hora-agendamento" data-i18n="machines.time">Horário</label>
             <input type="time" id="hora-agendamento" required>
           </div>
 
           <div class="modal-actions">
-            <button type="submit" class="btn btn-primary">Confirmar agendamento</button>
-            <button type="button" class="btn btn-secondary" id="cancelar-modal">Cancelar</button>
+            <button type="submit" class="btn btn-primary" data-i18n="machines.confirm">Confirmar agendamento</button>
+            <button type="button" class="btn btn-secondary" id="cancelar-modal" data-i18n="machines.cancel">Cancelar</button>
           </div>
         </form>
       </dialog>

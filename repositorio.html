@@ -22,88 +22,146 @@
   <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Ir para o conteúdo principal</a>
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Ir para o conteúdo principal</a>
 
   <header class="site-header">
     <div class="logo"><a href="index.html" aria-label="Lab LIFS — página inicial">Lab LIFS</a></div>
-    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
-    <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+      data-i18n="nav.menu"
+    >
+      Menu
+    </button>
+    <nav
+      class="main-nav"
+      id="main-navigation"
+      aria-label="Navegação principal"
+      data-i18n-aria-label="nav.mainNavigation"
+    >
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="repositorio.html" aria-current="page">Repositório</a></li>
-        <li><a href="maquinas.html">Máquinas</a></li>
-        <li><a href="membros.html">Membros</a></li>
+        <li>
+          <a href="index.html" data-i18n="nav.home">
+            Início
+          </a>
+        </li>
+      
+        <li>
+          <a
+            href="repositorio.html"
+            aria-current="page"
+            data-i18n="nav.repository"
+          >
+            Repositório
+          </a>
+        </li>
+      
+        <li>
+          <a href="maquinas.html" data-i18n="nav.machines">
+            Máquinas
+          </a>
+        </li>
+      
+        <li>
+          <a href="membros.html" data-i18n="nav.members">
+            Membros
+          </a>
+        </li>
       </ul>
     </nav>
-    <div class="header-actions">
-  <button
-    class="theme-toggle"
-    type="button"
-    aria-label="Ativar tema escuro"
-    title="Ativar tema escuro"
-  >
-    <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
-    <span class="theme-toggle-text">Tema</span>
-  </button>
+   <div class="header-actions">
 
-  <a href="login.html" class="btn btn-login btn-secondary">Entrar</a>
-</div>
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Ativar tema escuro"
+        title="Ativar tema escuro"
+      >
+        <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
+        <span class="theme-toggle-text" data-i18n="nav.theme">Tema</span>
+      </button>
+    
+      <button
+        id="language-toggle"
+        class="language-toggle"
+        type="button"
+        aria-label="Mudar para inglês"
+      >
+        EN
+      </button>
+    
+      <a
+        href="login.html"
+        class="btn btn-login btn-secondary"
+        data-i18n="nav.login"
+      >
+        Entrar
+      </a>
+    
+    </div>
   </header>
 
   <div class="page-wrapper">
     <aside class="sidebar" aria-labelledby="quick-title">
-      <h2 id="quick-title">Acesso rápido</h2>
+      <h2 id="quick-title" data-i18n="sidebar.title">Acesso rápido</h2>
       <ul>
-        <li><a href="index.html">Página inicial</a></li>
-        <li><a href="adicionar-trabalho.html">Adicionar trabalho</a></li>
-        <li><a href="membros.html">Consultar membros</a></li>
+        <li><a href="index.html" data-i18n="sidebar.home">Página inicial</a></li>
+        <li><a href="adicionar-trabalho.html" data-i18n="work.title">Adicionar trabalho</a></li>
+        <li><a href="membros.html" data-i18n="sidebar.members">Consultar membros</a></li>
       </ul>
     </aside>
 
     <main class="site-main" id="main">
       <header class="page-intro">
-        <h1>Repositório científico</h1>
-        <p>Consulte registros acadêmicos cadastrados no protótipo e filtre os resultados por tipo ou ano.</p>
+        <h1 data-i18n="repository.title">Repositório científico</h1>
+        <p data-i18n="repository.description">Consulte registros acadêmicos cadastrados no protótipo e filtre os resultados por tipo ou ano.</p>
       </header>
 <!-- Filtros de pesquisa por TIPO e ANO do trabalho, esse trecho eu contei com a ajuda do CHAT GPT-->
       <section class="card" aria-labelledby="filtros-title">
-        <h2 id="filtros-title">Filtros de pesquisa</h2>
+        <h2 id="filtros-title" data-i18n="repository.filters">Filtros de pesquisa</h2>
         <div class="card-grid">
           <div class="form-field">
-            <label for="filtro-tipo">Tipo</label>
+            <label for="filtro-tipo" data-i18n="repository.type">Tipo</label>
             <select id="filtro-tipo">
-              <option value="todos">Todos</option>
-              <option value="artigo">Artigo</option>
-              <option value="anais">Anais</option>
-              <option value="congresso">Congresso</option>
-              <option value="premio">Prêmio</option>
+              <option value="todos" data-i18n="repository.all">Todos</option>
+              <option value="artigo" data-i18n="repository.article">Artigo</option>
+              <option value="anais" data-i18n="repository.proceedings">Anais</option>
+              <option value="congresso" data-i18n="repository.congress">Congresso</option>
+              <option value="premio" data-i18n="repository.award">Prêmio</option>
             </select>
           </div>
           <div class="form-field">
-            <label for="filtro-ano">Ano</label>
+            <label for="filtro-ano" data-i18n="repository.year">Ano</label>
             <select id="filtro-ano">
-              <option value="todos">Todos</option>
-              <option value="2026">2026</option>
-              <option value="2025">2025</option>
-              <option value="2024">2024</option>
+              <option value="todos" data-i18n="repository.all">Todos</option>
+              <option value="2026" data-i18n="repository.year2026">2026</option>
+              <option value="2025" data-i18n="repository.year2025">2025</option>
+              <option value="2024" data-i18n="repository.year2024">2024</option>
             </select>
           </div>
         </div>
       </section>
 
       <section class="section-spaced" aria-labelledby="lista-title">
-        <h2 id="lista-title">Trabalhos cadastrados</h2>
+        <h2 id="lista-title" data-i18n="repository.registered">Trabalhos cadastrados</h2>
         <div id="lista-trabalhos" class="card-grid" aria-live="polite"></div>
-        <p class="notice">O protótipo utiliza <code>localStorage</code>. Arquivos PDF selecionados no cadastro têm apenas o nome armazenado; nenhum servidor faz upload neste projeto estático.</p>
+        <p class="notice">
+          <span data-i18n="repository.notice">
+            O protótipo utiliza localStorage. Arquivos PDF selecionados no cadastro têm apenas o nome armazenado; nenhum servidor faz upload neste projeto estático.
+          </span>
+        </p>
       </section>
     </main>
   </div>
 <!--Rodape atualizado, nao sei como faz para atualizar o ano automaticvo, mas assim ja esta bom-->
   <footer class="site-footer">
-    <p>&copy; <span data-current-year>2026</span> Lab LIFS. Portal do grupo de pesquisa.</p>
+    <p>&copy; <span data-current-year>2026</span> <span data-i18n="footer.copyright"> Lab LIFS. Portal do grupo de pesquisa.</span></p>
   </footer>
 
   <script src="js/data.js" defer></script>
+  <script src="js/i18n.js" defer></script>
   <script src="js/ui.js" defer></script>
   <script src="js/auth.js" defer></script>
   <script src="js/repositorio.js" defer></script>
