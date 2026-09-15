@@ -28,18 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
           >
 
           <div class="maquina-info">
-            <h3>${m.nome}</h3>
+            <h3>${getMachineName(m)}</h3>
 
             <p class="text-muted">${m.local}</p>
 
             <p class="text-muted">
-              ${m.fabricante || ''}
+              ${getMachineManufacturer(m)}
               ${m.modelo && m.modelo !== '--' ? ' — ' + m.modelo : ''}
             </p>
 
             <span class="status ${m.disponivel ? 'disponivel' : 'indisponivel'}">
               <span class="status-dot"></span>
-              ${m.disponivel ? 'Disponível' : 'Em uso'}
+              ${m.disponivel ? t('machines.available') : t('machines.inUse')}
             </span>
 
             <div class="card-actions">
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 class="btn btn-primary btn-agendar"
                 data-id="${m.id}"
               >
-                Agendar
+                ${t('machines.schedule')}
               </button>
             </div>
           </div>
@@ -107,6 +107,32 @@ modalImagem?.addEventListener('click', () => {
 
     alert('Agendamento realizado com sucesso!');
   });
-
+  function getMachineName(machine) {
+    const keys = {
+      1: 'machines.r1',
+      2: 'machines.r2',
+      3: 'machines.afm',
+      4: 'machines.uvvis',
+      5: 'machines.probe',
+      6: 'machines.rf'
+    };
+  
+    return t(keys[machine.id]) || machine.nome;
+  }
+  
+  function getMachineManufacturer(machine) {
+    if (!machine.fabricante) {
+      return '';
+    }
+  
+    if (
+      machine.fabricante === 'Fabricação própria do laboratório'
+    ) {
+      return t('machines.labManufactured');
+    }
+  
+    return machine.fabricante;
+  }
   renderMaquinas();
+  document.addEventListener('languagechange', renderMaquinas);
 });

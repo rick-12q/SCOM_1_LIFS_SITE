@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const arquivo = document.querySelector('#arquivo')?.files[0];
 
         if (!titulo || !autores || !ano || !tipo) {
-            alert('Preencha todos os campos obrigatórios.');
+            alert(t('work.required'));
             return;
         }
 
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         localStorage.setItem('trabalhos', JSON.stringify(trabalhos));
 
-        alert('Trabalho cadastrado com sucesso!');
+        alert(t('work.success'));
 
         form.reset();
     });

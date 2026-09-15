@@ -84,6 +84,7 @@ const TRANSLATIONS = {
     "machines.uvvis": "Espectrômetro UVVIS",
     "machines.probe": "Quatro Pontas Elétricas Linear",
     "machines.rf": "Fonte de Radiofrequência 13,56 MHz",
+    "machines.photo": "Imagem de",
 
     "machines.lab": "Lab LIFS",
     "machines.labManufactured": "Fabricação própria do laboratório",
@@ -99,6 +100,7 @@ const TRANSLATIONS = {
     "members.list": "Lista de membros",
     "members.photo": "Foto de",
     "members.empty": "Nenhum membro cadastrado.",
+    "members.emptyCategory": "Nenhum membro cadastrado nesta categoria.",
     "members.academicInfo": "Informações acadêmicas e profissionais do integrante do laboratório.",
     "members.lattes": "Lattes",
     "members.orcid": "ORCID",
@@ -190,8 +192,8 @@ const TRANSLATIONS = {
     "repository.authors": "Authors:",
     "repository.record": "Record available in the prototype's local collection.",
     "repository.empty": "No work matches the selected filters.",
-    "repository.title": "Repositório científico",
-    "repository.description": "Consulte registros acadêmicos cadastrados no protótipo e filtre os resultados por tipo ou ano.",
+    "repository.title": "Scientific repository",
+    "repository.description": "Browse academic records registered in the prototype and filter the results by type or year.",
 
     "machines.title": "Equipment collection",
     "machines.description": "Check the registered equipment and request a usage time in the prototype.",
@@ -214,6 +216,7 @@ const TRANSLATIONS = {
     "machines.uvvis": "UV-Vis spectrometer",
     "machines.probe": "Linear four-point probe",
     "machines.rf": "13.56 MHz radio-frequency source",
+    "machines.photo": "Image of",
 
     "machines.lab": "LIFS Laboratory",
     "machines.labManufactured": "Laboratory-built",
@@ -229,6 +232,7 @@ const TRANSLATIONS = {
     "members.list": "Members list",
     "members.photo": "Photo of",
     "members.empty": "No members registered.",
+    "members.emptyCategory": "No members registered in this category.",
     "members.academicInfo": "Academic and professional information about the laboratory member.",
     "members.lattes": "Lattes",
     "members.orcid": "ORCID",
@@ -306,6 +310,17 @@ function applyTranslations() {
     if (TRANSLATIONS[language]?.[key]) {
       element.setAttribute(
         "aria-label",
+        TRANSLATIONS[language][key]
+      );
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-title]").forEach((element) => {
+    const key = element.dataset.i18nTitle;
+
+    if (TRANSLATIONS[language]?.[key]) {
+      element.setAttribute(
+        "title",
         TRANSLATIONS[language][key]
       );
     }

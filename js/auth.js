@@ -44,9 +44,12 @@ function atualizarHeaderAuth() {
     return;
   }
 
-  btnLogin.textContent = "Sair";
+  btnLogin.textContent = t("nav.logout");
   btnLogin.setAttribute("href", "#");
-  btnLogin.setAttribute("aria-label", `Sair da conta de ${sessao.nome}`);
+  btnLogin.setAttribute(
+    "aria-label",
+    `${t("nav.logout")} ${sessao.nome}`
+  );
 
   btnLogin.addEventListener("click", (event) => {
     event.preventDefault();

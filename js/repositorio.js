@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     if (filtrados.length === 0) {
-      container.innerHTML = '<p class="empty-state">Nenhum trabalho corresponde aos filtros selecionados.</p>';
+      container.innerHTML = `<p class="empty-state">${t('repository.empty')}</p>`;
       return;
     }
 //aqui foi usada IA para funcionar.
@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
       <article class="card">
         <span class="badge">${escapeHtml(trabalho.tipo)}</span>
         <h2>${escapeHtml(trabalho.titulo)}</h2>
-        <p><strong>Autores:</strong> ${escapeHtml(trabalho.autores)}</p>
+        <p><strong>${t('repository.authors')}</strong> ${escapeHtml(trabalho.autores)}</p>
         <p><strong>Ano:</strong> ${escapeHtml(String(trabalho.ano))}</p>
-        <p class="help-text">Registro disponível no acervo local do protótipo.</p>
+        <p class="help-text">${t('repository.record')}</p>
       </article>
     `).join('');
   }
@@ -47,4 +47,5 @@ document.addEventListener('DOMContentLoaded', () => {
   filtroTipo?.addEventListener('change', render);
   filtroAno?.addEventListener('change', render);
   render();
+  document.addEventListener('languagechange', render);
 });

@@ -1,6 +1,18 @@
 function getMembros() {
   return JSON.parse(localStorage.getItem("membros")) || [];
 }
+function getMemberType(tipo) {
+  const translations = {
+    "Docente chefe do grupo": "members.professor",
+    "Aluno de iniciação científica": "members.undergraduate",
+    "Aluno de doutorado": "members.phd",
+    "Aluno de pós-doutorado": "members.postdoc",
+    "Aluna de intercâmbio": "members.exchange",
+    "Aluno de intercâmbio": "members.exchange"
+  };
+
+  return translations[tipo] ? t(translations[tipo]) : tipo;
+}
 
 function renderMembros(situacao) {
   const container = document.getElementById("lista-membros");
@@ -9,7 +21,7 @@ function renderMembros(situacao) {
   const membros = getMembros().filter(m => m.situacao === situacao);
 
   if (membros.length === 0) {
-    container.innerHTML = `<p class="empty-state">Nenhum membro cadastrado nesta categoria.</p>`;
+    container.innerHTML = `<p class="empty-state">${t('members.emptyCategory')}</p>`;
     return;
   }
 
@@ -20,13 +32,13 @@ function renderMembros(situacao) {
         <img
           class="imagem-membro"
           src="${m.imagem}"
-          alt="Foto de ${m.nome}"
+          alt="${t('members.photo')} ${m.nome}"
         >
 
         <div class="membro-info">
           <h3>${m.nome}</h3>
 
-          <p class="text-muted">${m.tipo}</p>
+          <p class="text-muted">${getMemberType(m.tipo)}</p>
 
           <ul class="links-membro">
             ${m.lattes !== "-" ? `
@@ -70,5 +82,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("lista-membros")) {
     initTabsMembros();
     renderMembros("atual");
+  }
+});
+
+document.addEventListener("languagechange", () => {
+  const tab = document.querySelector(".membros-tabs button[aria-selected='true']");
+
+  if (tab) {
+    renderMembros(tab.dataset.situacao);
   }
 });
