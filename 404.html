@@ -16,17 +16,17 @@
 <body>
   <main class="container page-container">
     <section class="form-card" aria-labelledby="title">
-      <span class="badge">Erro 404</span>
-      <h1 id="title">Página não encontrada</h1>
-      <p>O endereço solicitado não existe neste projeto.</p>
-      <a href="index.html" class="btn btn-primary">Voltar à página inicial</a>
+      <span class="badge" data-i18n="error.404">Erro 404</span>
+      <h1 id="title" data-i18n="error.title">Página não encontrada</h1>
+      <p data-i18n="error.description">O endereço solicitado não existe neste projeto.</p>
+      <a href="index.html" class="btn btn-primary" data-i18n="error.back">Voltar à página inicial</a>
     </section>
   </main>
 
   <footer class="site-footer">
     <p>&copy; <span data-current-year>2026</span> Lab LIFS.</p>
   </footer>
-
+  <script src="js/i18n.js" defer></script>
   <script src="js/ui.js" defer></script>
 </body>
 </html>
