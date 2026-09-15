@@ -1421,3 +1421,253 @@ html[data-theme="dark"] .language-toggle:hover {
   align-items: center;
   gap: var(--space-xs);
 }
+
+/* Área do laboratório */
+
+.home-lab-section {
+padding: var(--space-lg);
+margin-top: var(--space-lg);
+background: var(--color-surface);
+border: 2px solid var(--color-border);
+border-radius: var(--radius-lg);
+box-shadow: var(--shadow-md);
+}
+
+.home-lab-section > h2 {
+margin-bottom: var(--space-md);
+}
+
+/* Bloco superior: pesquisa + vídeo */
+
+.home-lab-feature {
+display: grid;
+grid-template-columns: minmax(0, 1fr) minmax(240px, 300px);
+gap: var(--space-lg);
+align-items: center;
+padding: var(--space-md);
+background: var(--color-bg);
+border: 2px solid var(--color-border);
+border-radius: var(--radius-md);
+}
+
+/* Mini caixa das áreas de pesquisa */
+
+.home-research-card {
+padding: var(--space-md);
+background: var(--color-surface);
+border: 2px solid var(--color-accent);
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-sm);
+}
+
+.home-research-card h3 {
+margin-bottom: var(--space-sm);
+padding-bottom: var(--space-xs);
+border-bottom: 2px solid var(--color-accent);
+}
+
+.home-research-card p {
+margin-bottom: var(--space-sm);
+}
+
+.home-research-card ul {
+margin: 0;
+padding-left: 1.25rem;
+}
+
+.home-research-card li {
+margin-bottom: 0.35rem;
+}
+
+/* Vídeo */
+
+.home-video-section {
+min-width: 0;
+text-align: center;
+}
+
+.home-video-section h3 {
+margin-bottom: var(--space-sm);
+}
+
+.home-video {
+position: relative;
+width: min(100%, 280px);
+aspect-ratio: 9 / 16;
+margin-inline: auto;
+overflow: hidden;
+background: #000;
+border: 2px solid var(--color-border);
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-md);
+}
+
+.home-video video {
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+/* Controles sobre o vídeo */
+
+.video-controls {
+position: absolute;
+right: 0;
+bottom: 0.6rem;
+left: 0;
+z-index: 2;
+
+display: flex;
+justify-content: center;
+gap: 0.4rem;
+padding-inline: 0.4rem;
+}
+
+.video-controls button {
+padding: 0.35rem 0.55rem;
+color: #fff;
+font: inherit;
+font-size: 0.72rem;
+font-weight: 700;
+background: rgb(0 0 0 / 0.55);
+border: 1px solid rgb(255 255 255 / 0.45);
+border-radius: var(--radius-sm);
+cursor: pointer;
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.video-controls button:hover {
+background: rgb(0 0 0 / 0.78);
+transform: translateY(-1px);
+}
+
+/* Localização */
+
+.home-location {
+display: grid;
+grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+gap: var(--space-lg);
+margin-top: var(--space-lg);
+padding: var(--space-md);
+background: var(--color-bg);
+border: 2px solid var(--color-border);
+border-radius: var(--radius-md);
+}
+
+/* Mapa */
+
+.home-location-map {
+min-width: 0;
+}
+
+.lab-map {
+width: 100%;
+min-height: 360px;
+overflow: hidden;
+background: #ddd;
+border: 2px solid var(--color-border);
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-sm);
+}
+
+.lab-map iframe {
+display: block;
+width: 100%;
+height: 360px;
+border: 0;
+}
+
+/* Informações ao lado do mapa */
+
+.home-location-info {
+padding: var(--space-md);
+background: var(--color-surface);
+border: 2px solid var(--color-accent);
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-sm);
+}
+
+.home-location-info h3 {
+margin-bottom: var(--space-sm);
+padding-bottom: var(--space-xs);
+border-bottom: 2px solid var(--color-accent);
+}
+
+.home-location-info p:last-child {
+margin-bottom: 0;
+}
+
+/* Destaque das caixas no tema escuro */
+
+html[data-theme="dark"] .home-lab-section {
+background: #17251f;
+border-color: #496458;
+box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 0.30);
+}
+
+html[data-theme="dark"] .home-lab-feature,
+html[data-theme="dark"] .home-location {
+background: #101a16;
+border-color: #496458;
+}
+
+html[data-theme="dark"] .home-research-card,
+html[data-theme="dark"] .home-location-info {
+background: #1d2d26;
+border-color: #e6a15a;
+box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.25);
+}
+
+html[data-theme="dark"] .home-research-card h3,
+html[data-theme="dark"] .home-location-info h3 {
+border-bottom-color: #e6a15a;
+}
+
+html[data-theme="dark"] .home-video {
+border-color: #496458;
+}
+
+/* Responsividade */
+
+@media (max-width: 900px) {
+.home-lab-feature {
+grid-template-columns: 1fr;
+}
+
+.home-video-section {
+order: -1;
+}
+
+.home-video {
+width: min(100%, 280px);
+}
+
+.home-location {
+grid-template-columns: 1fr;
+}
+
+.lab-map,
+.lab-map iframe {
+min-height: 320px;
+height: 320px;
+}
+}
+
+@media (max-width: 520px) {
+.home-lab-section {
+padding: var(--space-sm);
+}
+
+.home-lab-feature,
+.home-location {
+padding: var(--space-sm);
+}
+
+.video-controls button {
+font-size: 0.65rem;
+padding: 0.3rem 0.45rem;
+}
+}

@@ -1,24 +1,28 @@
 /*Trecho das variables in css, eu tinha um modelo, para melhor se aproximar do resultaedo que eu queria, usei o GEMINI PRO para um approach.*/
 /*Agora eu mudei um pouco para add tema*/
 :root {
-  --color-bg: #f7f7f5;
-  --color-surface: #ffffff;
-  --color-primary: #1b4332;
-  --color-primary-dark: #123125;
-  --color-primary-light: #2d6a4f;
-  --color-text: #1a1a1a;
-  --color-text-muted: #5a5a5a;
-  --color-border: #e0e0e0;
+  --color-bg: #F4F5F1;
+  --color-surface: #FFFFFF;
 
-  --color-accent: #d97706;
-  --color-accent-soft: #e6a15a;
+  --color-primary: #2D6A4F;
+  --color-primary-dark: #163A2B;
+  --color-primary-light: #4F8A6D;
 
-  --dark-bg: #101a16;
-  --dark-surface: #17251f;
-  --dark-surface-alt: #1d2d26;
-  --dark-text: #ede8d0;
-  --dark-text-muted: #c9c5b2;
-  --dark-border: #34483e;
+  --color-text: #1C2822;
+  --color-text-muted: #5A665F;
+  --color-border: #C9D5CE;
+
+  --color-accent: #D97706;
+  --color-accent-soft: #E6A15A;
+
+  --dark-bg: #0D1512;
+  --dark-surface: #1B3027;
+  --dark-surface-alt: #22382E;
+  --dark-text: #F0F2ED;
+  --dark-text-muted: #C9D0CA;
+  --dark-border: #3A5548;
+
+  /* resto do seu código continua igual */
 
   --font-display: "Fraunces", serif;
   --font-body: "Inter", sans-serif;
