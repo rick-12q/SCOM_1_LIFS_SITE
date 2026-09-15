@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="css/components.css">
 </head>
 <body class="login-page">
-  <a class="skip-link" href="#main">Ir para o conteúdo principal</a>
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Ir para o conteúdo principal</a>
 <!--Modificado para aceitar a traducao pro ing.-->
 <header class="site-header">
   <div class="logo">
@@ -35,7 +35,7 @@
     </a>
   </div>
 
-  <nav class="main-nav" aria-label="Navegação principal">
+  <nav class="main-nav" aria-label="Navegação principal" data-i18n-aria-label="nav.mainNavigation">
     <ul>
       <li>
         <a href="index.html" data-i18n="nav.home">Início</a>
@@ -88,20 +88,20 @@
   </div>
 
   <section class="form-card login-card" aria-labelledby="login-title">
-    <h1 id="login-title">Login de membro</h1>
+    <h1 id="login-title" data-i18n="login.title">Login de membro</h1>
 
-    <p>
+    <p data-i18n="login.description">
       Entre para acessar o cadastro de trabalhos.
       Esta autenticação é apenas demonstrativa e funciona localmente no navegador.
     </p>
 
     <div class="notice">
-      <strong>Conta de demonstração:</strong> membro@lab.edu / 123456
+      <strong data-i18n="login.demo">Conta de demonstração:</strong> membro@lab.edu / 123456
     </div>
 
     <form id="login-form" novalidate>
       <div class="form-field">
-        <label for="email">E-mail institucional</label>
+        <label for="email" data-i18n="login.email">E-mail institucional</label>
         <input
           type="email"
           id="email"
@@ -113,7 +113,7 @@
       </div>
 
       <div class="form-field">
-        <label for="senha">Senha</label>
+        <label for="senha" data-i18n="login.password">Senha</label>
         <input
           type="password"
           id="senha"
@@ -123,11 +123,11 @@
         >
       </div>
 
-      <p id="login-erro" class="form-error" role="alert" hidden>
+      <p id="login-erro" class="form-error" role="alert" hidden data-i18n="login.invalid">
         E-mail ou senha inválidos.
       </p>
 
-      <button type="submit" class="btn btn-primary">Entrar</button>
+      <button type="submit" class="btn btn-primary" data-i18n="login.enter">Entrar</button>
     </form>
   </section>
 
