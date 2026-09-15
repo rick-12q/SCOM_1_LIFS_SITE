@@ -106,3 +106,25 @@ html[data-theme="dark"] .help-text,
 html[data-theme="dark"] .form-field small {
   color: var(--dark-text-muted);
 }
+
+html {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+body,
+.site-header,
+.sidebar,
+.card,
+.news-card,
+.form-card,
+.home-lab-section,
+.home-lab-feature,
+.home-research-card,
+.home-location,
+.home-location-info {
+  transition:
+    background-color 0.5s ease,
+    color 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}

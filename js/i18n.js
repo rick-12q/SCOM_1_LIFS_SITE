@@ -393,14 +393,30 @@ function setLanguage(language) {
     return;
   }
 
-  localStorage.setItem("language", language);
-  applyTranslations();
-
-  document.dispatchEvent(
-    new CustomEvent("languagechange", {
-      detail: { language }
-    })
+  const elements = document.querySelectorAll(
+    "[data-i18n], [data-i18n-placeholder], [data-i18n-aria-label], [data-i18n-title]"
   );
+
+  elements.forEach((element) => {
+    element.classList.add("language-fade");
+  });
+
+  setTimeout(() => {
+    localStorage.setItem("language", language);
+    applyTranslations();
+
+    requestAnimationFrame(() => {
+      elements.forEach((element) => {
+        element.classList.remove("language-fade");
+      });
+    });
+
+    document.dispatchEvent(
+      new CustomEvent("languagechange", {
+        detail: { language }
+      })
+    );
+  }, 250);
 }
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -14,15 +14,29 @@
 }
 
 .logo {
-  flex: 0 0 auto;
+  display: block;
 }
 
 .logo a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
   color: var(--color-primary-dark);
   font-weight: 800;
   letter-spacing: 0.02em;
   text-decoration: none;
   transition: color 0.2s ease;
+}
+
+.logo img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+.logo span {
+  display: inline-block;
 }
 
 .main-nav {

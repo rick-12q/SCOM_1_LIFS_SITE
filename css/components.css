@@ -1671,3 +1671,14 @@ font-size: 0.65rem;
 padding: 0.3rem 0.45rem;
 }
 }
+/* Efeito de fade para tradução de idioma, basicamente invencao de moda. */
+[data-i18n],
+[data-i18n-placeholder],
+[data-i18n-aria-label],
+[data-i18n-title] {
+  transition: opacity 0.25s ease;
+}
+
+.language-fade {
+  opacity: 0.35;
+}
