@@ -21,17 +21,22 @@
   <link rel="stylesheet" href="css/components.css">
 </head>
 <body data-protected="true">
-  <a class="skip-link" href="#main">Ir para o conteúdo principal</a>
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Ir para o conteúdo principal</a>
 
   <header class="site-header">
     <div class="logo"><a href="index.html" aria-label="Lab LIFS — página inicial">Lab LIFS</a></div>
     <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
-    <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
+    <nav
+      class="main-nav"
+      id="main-navigation"
+      aria-label="Navegação principal"
+      data-i18n-aria-label="nav.mainNavigation"
+    >
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="repositorio.html" aria-current="page">Repositório</a></li>
-        <li><a href="maquinas.html">Máquinas</a></li>
-        <li><a href="membros.html">Membros</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+        <li><a href="repositorio.html" aria-current="page" data-i18n="nav.repository">Repositório</a></li>
+        <li><a href="maquinas.html" data-i18n="nav.machines">Máquinas</a></li>
+        <li><a href="membros.html" data-i18n="nav.members">Membros</a></li>
       </ul>
     </nav>
     <div class="header-actions">
@@ -40,9 +45,11 @@
     type="button"
     aria-label="Ativar tema escuro"
     title="Ativar tema escuro"
+    data-i18n-aria-label="nav.darkTheme"
+    data-i18n-title="nav.darkTheme"
   >
     <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
-    <span class="theme-toggle-text">Tema</span>
+    <span class="theme-toggle-text" data-i18n="nav.theme">Tema</span>
   </button>
 
   <div class="header-actions">
@@ -65,32 +72,32 @@
 </div>
 </div>
   </header>
-<!-- Esse trecho ai foi 100% gerado por IA, usei o Gemini PRO -->
+<!-- Esse trecho ai foi 100% gerado por IA, usei o Gemini PRO, mas eu fiz a mao a parte de traduzir essa patrte pro ingles-->
   <main class="container page-container" id="main">
     <section class="form-card" aria-labelledby="title">
-      <h1 id="title">Adicionar trabalho</h1>
-      <p>Cadastre um novo registro no repositório local do protótipo.</p>
+      <h1 id="title" data-i18n="work.title">Adicionar trabalho</h1>
+      <p data-i18n="work.description">Cadastre um novo registro no repositório local do protótipo.</p>
 
       <p id="mensagem-trabalho" class="form-success" role="status" hidden></p>
 
       <form id="form-trabalho" novalidate>
         <div class="form-field">
-          <label for="titulo">Título do trabalho</label>
+          <label for="titulo" data-i18n="work.titleField">Título do trabalho</label>
           <input type="text" id="titulo" name="titulo" required maxlength="180">
         </div>
 
         <div class="form-field">
-          <label for="autores">Autores</label>
+          <label for="autores" data-i18n="work.authors">Autores</label>
           <input type="text" id="autores" name="autores" required maxlength="240" placeholder="Sobrenome, N.; Sobrenome, N.">
         </div>
 
         <div class="form-field">
-          <label for="ano">Ano</label>
+          <label for="ano" data-i18n="work.year">Ano</label>
           <input type="number" id="ano" name="ano" min="2000" max="2026" required inputmode="numeric">
         </div>
 
         <div class="form-field">
-          <label for="tipo">Tipo</label>
+          <label for="tipo" data-i18n="work.type">Tipo</label>
           <select id="tipo" name="tipo" required>
             <option value="Artigo">Artigo</option>
             <option value="Anais">Anais</option>
@@ -100,14 +107,14 @@
         </div>
 
         <div class="form-field">
-          <label for="pdf">Arquivo PDF (opcional)</label>
+          <label for="pdf" data-i18n="work.pdf">Arquivo PDF (opcional)</label>
           <input type="file" id="pdf" name="pdf" accept="application/pdf">
-          <small>Em um site puramente estático, o protótipo armazena apenas o nome do arquivo selecionado.</small>
+          <small data-i18n="work.pdfHelp">Em um site puramente estático, o protótipo armazena apenas o nome do arquivo selecionado.</small>
         </div>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Salvar trabalho</button>
-          <a href="repositorio.html" class="btn btn-secondary">Voltar ao repositório</a>
+          <button type="submit" class="btn btn-primary" data-i18n="work.save">Salvar trabalho</button>
+          <a href="repositorio.html" class="btn btn-secondary" data-i18n="work.back">Voltar ao repositório</a>
         </div>
       </form>
     </section>
