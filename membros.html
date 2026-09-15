@@ -21,17 +21,30 @@
   <link rel="stylesheet" href="css/components.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Ir para o conteúdo principal</a>
+  <a class="skip-link" href="#main" data-i18n="nav.skip">Ir para o conteúdo principal</a>
 
   <header class="site-header">
     <div class="logo"><a href="index.html" aria-label="Lab LIFS — página inicial">Lab LIFS</a></div>
-    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
-    <nav class="main-nav" id="main-navigation" aria-label="Navegação principal">
+      <button
+        class="mobile-nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+        data-i18n="nav.menu"
+      >
+        Menu
+      </button>
+    <nav
+      class="main-nav"
+      id="main-navigation"
+      aria-label="Navegação principal"
+      data-i18n-aria-label="nav.mainNavigation"
+    >
       <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="repositorio.html">Repositório</a></li>
-        <li><a href="maquinas.html">Máquinas</a></li>
-        <li><a href="membros.html" aria-current="page">Membros</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Início</a></li>
+        <li><a href="repositorio.html" data-i18n="nav.repository">Repositório</a></li>
+        <li><a href="maquinas.html" data-i18n="nav.machines">Máquinas</a></li>
+        <li><a href="membros.html" aria-current="page" data-i18n="nav.members">Membros</a></li>
       </ul>
     </nav>
     <div class="header-actions">
@@ -40,9 +53,11 @@
     type="button"
     aria-label="Ativar tema escuro"
     title="Ativar tema escuro"
+    data-i18n-aria-label="nav.darkTheme"
+    data-i18n-title="nav.darkTheme"
   >
     <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
-    <span class="theme-toggle-text">Tema</span>
+    <span class="theme-toggle-text" data-i18n="nav.theme">Tema</span>
   </button>
 
   <div class="header-actions">
@@ -68,21 +83,27 @@
 
   <div class="page-wrapper">
     <aside class="sidebar" aria-labelledby="quick-title">
-      <h2 id="quick-title">Acesso rápido</h2>
+      <h2 id="quick-title" data-i18n="sidebar.title">Acesso rápido</h2>
       <ul>
-        <li><a href="index.html">Página inicial</a></li>
-        <li><a href="repositorio.html">Produção científica</a></li>
-        <li><a href="maquinas.html">Equipamentos</a></li>
+        <li><a href="index.html" data-i18n="sidebar.home">Página inicial</a></li>
+        <li><a href="repositorio.html" data-i18n="sidebar.repository">Produção científica</a></li>
+        <li><a href="maquinas.html" data-i18n="sidebar.machines">Equipamentos</a></li>
       </ul>
     </aside>
 
     <main class="site-main" id="main">
       <header class="page-intro">
-        <h1>Membros do laboratório</h1>
-        <p>Conheça os integrantes cadastrados no nosso laboratório e acesse seus perfis acadêmicos.</p>
+        <h1 data-i18n="members.title">Membros do laboratório</h1>
+        <p data-i18n="members.description">Conheça os integrantes cadastrados no nosso laboratório e acesse seus perfis acadêmicos.</p>
       </header>
 
-      <section id="lista-membros" class="card-grid" aria-live="polite" aria-label="Lista de membros"></section>
+      <section
+        id="lista-membros"
+        class="card-grid"
+        aria-live="polite"
+        aria-label="Lista de membros"
+        data-i18n-aria-label="members.list"
+      ></section>
     </main>
   </div>
 
