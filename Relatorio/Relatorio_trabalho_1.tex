@@ -1,0 +1,315 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                  TEMPLATE DE TRABALHO
+%                  UNESP - SOROCABA
+%
+%  DADOS DO DOCUMENTO:
+%  Altere somente a seção abaixo para reutilizar o modelo.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,12pt]{article}
+
+
+% ==========================================================
+%                    DADOS DO DOCUMENTO
+% ==========================================================
+
+\newcommand{\Instituicao}{UNESP}
+\newcommand{\Campus}{Campus de Sorocaba}
+\newcommand{\Instituto}{ICTS -- Instituto de Ciências e Tecnologia}
+\newcommand{\Curso}{Engenharia de Controle e Automação}
+
+\newcommand{\Disciplina}{Sistemas Computacionais}
+\newcommand{\Titulo}{Desenvolvimento de um \textit{FrontEnd} web para o laboratório LIFS}
+\newcommand{\TipoTrabalho}{Trabalho individual 1}
+
+\newcommand{\Autor}{Luiz Henrique Corrêa Monteiro}
+\newcommand{\Orientador}{Prof. Dr. Leopoldo A. D. L. Filho}
+
+\newcommand{\EmailAutor}{lh.monteiro@unesp.br}
+%\newcommand{\EmailAutorDois}{paulo.ramalho@unesp.br}
+
+\newcommand{\Local}{Sorocaba -- SP}
+\newcommand{\Ano}{2026}
+
+\newcommand{\LogoCapa}{2-imagens/image.png}
+\newcommand{\ArquivoBibliografia}{referencia.bib}
+
+
+% ==========================================================
+%                    PACOTES
+% ==========================================================
+
+% Codificação e idioma
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+
+% Fonte
+\usepackage{times}
+
+% Margens
+\usepackage[
+a4paper,
+left=3cm,
+right=2cm,
+top=3cm,
+bottom=2cm
+]{geometry}
+
+% Imagens
+\usepackage{graphicx}
+\graphicspath{{2-imagens/}}
+
+% Matemática
+\usepackage{
+	amsmath,
+	amssymb,
+	amsfonts,
+	amsthm,
+	amscd,
+	latexsym
+}
+
+% Formatação
+\usepackage{titlesec}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+
+% Outros
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{nameref}
+\usepackage{etoolbox}
+\usepackage{pdflscape}
+\usepackage{cancel}
+\usepackage{verbatim}
+\usepackage{csquotes}
+\usepackage{algorithm2e}
+
+% Código
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{colortbl}
+
+
+% ==========================================================
+%                    BIBLIOGRAFIA
+% ==========================================================
+
+\usepackage[
+backend=biber,
+style=abnt
+]{biblatex}
+
+\addbibresource{\ArquivoBibliografia}
+
+
+% ==========================================================
+%                    ESPAÇAMENTO
+% ==========================================================
+
+\titlespacing*{\section}
+{0pt}
+{-5pt}
+{5pt}
+
+\titlespacing*{\subsection}
+{0pt}
+{-5pt}
+{5pt}
+
+
+% ==========================================================
+%                    CORES DOS CÓDIGOS
+% ==========================================================
+
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{bluekeyword}{rgb}{0.13,0.13,1}
+\definecolor{typecolor}{rgb}{0.17,0.57,0.68}
+\definecolor{macrocolor}{rgb}{0.5,0.0,0.0}
+
+
+% ==========================================================
+%                    CONFIGURAÇÃO DO LISTINGS
+% ==========================================================
+
+\lstset{
+	language=C++,
+	backgroundcolor=\color{backcolour},
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{bluekeyword}\bfseries,
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\scriptsize,
+	breakatwhitespace=false,
+	breaklines=true,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=4,
+	captionpos=b
+}
+
+% Palavras adicionais
+\lstset{
+	morekeywords={
+		uint8_t,
+		size_t,
+		esp_err_t,
+		ESP_RETURN_ON_FALSE,
+		i2c_master_transmit_receive,
+		i2c_master_transmit,
+		static_cast
+	}
+}
+
+
+% ==========================================================
+%                    HYPERLINKS
+% ==========================================================
+
+\hypersetup{
+	hidelinks
+}
+
+
+% ==========================================================
+%                    INÍCIO DO DOCUMENTO
+% ==========================================================
+
+\begin{document}
+	
+	\pagenumbering{arabic}
+	
+	
+	% ==========================================================
+	%                         CAPA
+	% ==========================================================
+	
+	\begin{titlepage}
+		
+		\begin{center}
+			
+			\includegraphics[
+			width=0.8\linewidth
+			]{\LogoCapa}
+			
+			\vspace*{1cm}
+			
+			\textbf{\Large \Campus}\\
+			\textbf{\Large \Instituto}\\[3cm]
+			
+			\large{\TipoTrabalho}\\[2cm]
+			
+			{\large\textbf{\Disciplina}}\\[4cm]
+			
+			\vfill
+			
+			\Large\textbf{Discente: \Autor}\\
+			\textbf{Orientador: \Orientador}\\[3cm]
+			
+			\Local\\
+			\Ano
+			
+		\end{center}
+		
+	\end{titlepage}
+	
+	
+	% ==========================================================
+	%                     FOLHA DE ROSTO
+	% ==========================================================
+	
+	\begin{titlepage}
+		
+		\begin{center}
+			
+			\vspace*{1cm}
+			
+			\textbf{\Autor}\\[2cm]
+			
+			\large\textbf{\Titulo}\\[3cm]
+			
+			Trabalho apresentado ao \Instituto\ da \Instituicao,
+			como parte dos requisitos para a conclusão da disciplina
+			de \Disciplina.\\[2cm]
+			
+			Orientador: \Orientador\\[3cm]
+			
+			\textit{E-mail do aluno autore:}\\
+			
+			\texttt{\EmailAutor}\\
+			%\texttt{\EmailAutorDois}\\[3cm]
+			\vfill
+			\Local\\
+			\Ano
+			
+		\end{center}
+		
+	\end{titlepage}
+	
+	
+	% ==========================================================
+	%                         SUMÁRIO
+	% ==========================================================
+	
+	\tableofcontents
+	
+	\newpage
+	
+	
+	% ==========================================================
+	%                        CONTEÚDO
+	% ==========================================================
+	
+	\input{1-textos/1-introdução}
+	
+	\input{1-textos/2-publico}
+	
+	\input{1-textos/3-requisitos}
+	
+	\input{1-textos/4-processo}
+	
+	\input{1-textos/5-tecnologia}
+	
+	\input{1-textos/6-resultados}
+	
+	\input{1-textos/7-IA}
+	
+	\input{1-textos/8-conclusão}
+	
+	
+	% ==========================================================
+	%                       REFERÊNCIAS
+	% ==========================================================
+	
+	\nocite{*}
+	
+	\printbibliography
+	
+	
+	% ==========================================================
+	%                        APÊNDICES
+	% ==========================================================
+	
+	% \input{1-textos/7-apêndices}
+	
+	
+\end{document}

@@ -1,0 +1,144 @@
+%%======%%======%0%======%%=======%%
+\vspace{5mm}
+\section{Processo de projeto}
+%\addcontentsline{toc}{chapter}{Resultados e discussões}
+
+%%======%%======%0%======%%=======%%
+
+Para satisfazer as necessidades presentes na Seção \ref{sec:Publico} e \ref{sec:Requisitos}, foi necessário dividir o projeto em 5  grandes etapas, as quais foram realizadas, em boa parte do tempo, sequencialmente.
+\vspace{5mm}
+\subsection{Levantamento inicial}
+Em primeiro passo, foi realizado o levantamento inicial de estruturas, modelos e estilos que satisfizessem as questões previamente discutidas na Seção \ref{sec:Requisitos}. Para tal, foi feito um levantamento em diversos \textit{websites}, desde instituições de ensino nacionais e internacionais, até empresas de usinagem pesada. Os modelos que mais se aproximaram das ideias discutidas previamente foram os seguintes sites:\\
+\href{https://www.telecom-sudparis.eu/en/}{\textcolor{red}{site 1}}, que pertence a universidade Francesa Telecom sudParis;\\
+\href{https://nupem.com.br/especialidades/medicina-estetica-2/}{\textcolor{blue}{site 2}}, que pertence a uma médica. 
+
+\vspace{5mm}
+\subsection{Definição das páginas}
+Foram definidas então as páginas presentes no trabalho, de modo a atender as solicitações, gerar um visual simples e harmônico. Para tal, a Tabela \ref{tab:paginas}, explicita as páginas criadas e seu respectivo conteúdo. 
+\begin{table}[H]
+	\centering
+	\caption{Páginas desenvolvidas para o sistema e seus respectivos conteúdos.}
+	\label{tab:paginas}
+	\renewcommand{\arraystretch}{1.4}
+	\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.22\textwidth} X}
+		\hline
+		\textbf{Página} & \textbf{Conteúdo} \\
+		\hline
+		Inicio & Apresentação do laboratório, notícias recentes e panorama geral das atividades desenvolvidas pelo grupo. \\[2pt]
+		
+		Repositório & Exposição dos trabalhos, artigos, anais de congressos e demais produções acadêmicas do grupo. \\[2pt]
+		
+		Máquinas & Exposição dos equipamentos disponíveis no laboratório, bem como possibilidade de consulta à disponibilidade e realização de agendamentos. \\[2pt]
+		
+		Membros & Exposição dos membros do laboratório, suas respectivas funções e opções de contato. \\[2pt]
+		
+		Entrar & Tela destinada à autenticação dos usuários no sistema. \\[2pt]
+		
+		Adicionar\_trabalho & Funcionalidade disponível após a realização do login, permitindo a inserção de novos trabalhos no repositório. \\
+		\hline
+	\end{tabularx}
+\end{table}
+
+\vspace{5mm}
+\subsection{Evolução}
+Após as definições de requisitos, estilos e funcionalidades, a parte do código começou a ser estruturada. Para tal, foi utilizado o ambiente do \textit{Visual Studio Code} (VScode), além do editor padrão, foram usadas como auxílio, as extensões:
+\begin{itemize}
+	\item Prettier;
+	\item Material Icon Theme;
+	\item Auto Rename Tag;
+	\item Live Server.
+\end{itemize}
+
+A evolução estrutural do código foi realizada de maneira que, as evoluções convergissem para o modelo de interface esperada. Toda a evolução do código, pode ser observada no repositório criado no \href{https://github.com/rick-12q/SCOM_1_LIFS_SITE}{\textit{\textcolor{blue}{Git}\textcolor{purple}{Hub}}}. O projeto seguiu a seguinte sequência lógica:
+	%--Tentar fazer essa bomba
+\begin{figure}[H]
+	\centering
+	
+	\begin{tikzpicture}[
+		box/.style={
+			rectangle,
+			rounded corners=3pt,
+			draw,
+			text width=3.2cm,
+			minimum height=1.25cm,
+			align=center,
+			font=\small,
+			inner sep=6pt
+		},
+		arrow/.style={
+			-{Stealth[length=2.2mm]},
+			thick
+		}
+		]
+		
+		% frst line
+		\node[box] (estrutura) at (0,0) {
+			\textbf{Estruturação}\\[2pt]
+			Criação das pastas e arquivos essenciais
+		};
+		
+		\node[box] (html) at (4.2,0) {
+			\textbf{Estrutura HTML}\\[2pt]
+			Definição da estrutura básica das páginas
+		};
+		
+		\node[box] (css) at (8.4,0) {
+			\textbf{Identidade visual}\\[2pt]
+			Desenvolvimento dos estilos e padrões visuais
+		};
+		
+		\node[box] (desenvolvimento) at (12.6,0) {
+			\textbf{Desenvolvimento}\\[2pt]
+			Criação dos arquivos HTML, CSS e JS por página
+		};
+		
+		% sgnd line
+		\node[box] (refinamento) at (12.6,-3.0) {
+			\textbf{Refinamento}\\[2pt]
+			Revisão e aprimoramento do código com auxílio de IA
+		};
+		
+		\node[box] (melhorias) at (8.4,-3.0) {
+			\textbf{Melhorias}\\[2pt]
+			Novas funcionalidades e ajustes pontuais com IA
+		};
+		
+		\node[box] (correcoes) at (4.2,-3.0) {
+			\textbf{Correções}\\[2pt]
+			Identificação e correção de erros (\textit{bugs}) com ajuda de IA
+		};
+		%--
+		\draw[arrow] (estrutura) -- (html);
+		\draw[arrow] (html) -- (css);
+		\draw[arrow] (css) -- (desenvolvimento);
+		%--
+		\draw[arrow] (desenvolvimento) -- (refinamento);
+		%--
+		\draw[arrow] (refinamento) -- (melhorias);
+		\draw[arrow] (melhorias) -- (correcoes);
+		
+
+		
+	\end{tikzpicture}
+
+	\caption{Fluxo das etapas empregadas no desenvolvimento do sistema web.\\ \centering Fonte: O autor, 2026}
+	\label{fig:fluxo_desenvolvimento}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
