@@ -1,3 +1,21 @@
 .DS_Store
 Thumbs.db
 node_modules/
+# LaTeX - arquivos auxiliares
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex
+*.bcf
+*.run.xml
+*.blg
+*.bbl
+*.nav
+*.snm
+*.vrb
