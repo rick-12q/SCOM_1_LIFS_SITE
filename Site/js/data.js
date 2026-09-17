@@ -112,18 +112,14 @@ const SEED_MEMBROS = [
     nome: "Anna Florkowska",
     tipo: "Aluna de intercâmbio",
     situacao: "atual",
-    imagem: "img/membros/ania.JPG",
-    lattes: "-",
-    orcid: "-"
+    imagem: "img/membros/ania.JPG"
   },
   {
     id: 6,
     nome: "Maja Poleczka",
     tipo: "Aluna de intercâmbio",
     situacao: "atual",
-    imagem: "img/membros/none.jpg",
-    lattes: "-",
-    orcid: "-"
+    imagem: "img/membros/none.jpg"
   }
 ];
 

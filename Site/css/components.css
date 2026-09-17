@@ -427,22 +427,32 @@ margin-bottom: var(--space-2xs);
 }
 
 .links-membro {
-display: flex;
-flex-wrap: wrap;
-gap: var(--space-sm);
-padding: 0;
-margin-top: var(--space-sm);
-list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: 0;
+  margin-top: var(--space-sm);
+  list-style: none;
 }
 
 .links-membro a {
-color: var(--color-accent);
-font-size: 0.9rem;
-font-weight: 600;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
 
 .links-membro a:hover {
-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.links-membro .email-membro {
+  margin-left: auto;
+}
+
+.links-membro .email-membro a {
+  font-size: 0.75rem;
+  padding: 3px 7px;
 }
 
 /* Abas dos membros */
@@ -464,6 +474,19 @@ border-bottom: 2px solid transparent;
 .membros-tabs button[aria-selected="true"] {
 color: var(--color-primary);
 border-bottom-color: var(--color-accent);
+}
+
+.link-academico {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link-academico img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
 }
 
 /* Modal <dialog> e fundo escurecido (backdrop) */
@@ -564,6 +587,14 @@ font-size: 1.05rem;
 
 .links-membro {
 gap: 10px;
+}
+.email-membro {
+  margin-left: auto;
+}
+
+.email-membro a {
+  font-size: 0.8rem;
+  padding: 4px 8px;
 }
 
 .maquina-conteudo {

@@ -41,24 +41,26 @@ function renderMembros(situacao) {
           <p class="text-muted">${getMemberType(m.tipo)}</p>
 
           <ul class="links-membro">
-            ${m.lattes !== "-" ? `
+            ${m.lattes ? `
               <li>
-                <a href="${m.lattes}" target="_blank" rel="noopener noreferrer">
-                  Lattes
+                <a href="${m.lattes}" target="_blank" rel="noopener noreferrer" class="link-academico">
+                  <img src="img/logos/LOGO_LATTES.png" alt="Lattes">
+                  <span>${t('members.lattes')}</span>
                 </a>
               </li>
             ` : ''}
-
-            ${m.orcid !== "-" ? `
+            
+            ${m.orcid ? `
               <li>
-                <a href="https://orcid.org/${m.orcid}" target="_blank" rel="noopener noreferrer">
-                  ORCID
+                <a href="${m.orcid}" target="_blank" rel="noopener noreferrer" class="link-academico">
+                  <img src="img/logos/LOGO_ORCID.png" alt="ORCID">
+                  <span>${t('members.orcid')}</span>
                 </a>
               </li>
             ` : ''}
 
             ${EMAIL_MEMBROS[m.nome] ? `
-              <li>
+              <li class="email-membro">
                 <a href="mailto:${EMAIL_MEMBROS[m.nome]}">
                   ${t('members.email')}
                 </a>
