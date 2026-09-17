@@ -102,6 +102,24 @@ bottom=2cm
 \usepackage{xcolor}
 \usepackage{colortbl}
 
+\lstdefinelanguage{CSS}{
+	morekeywords={
+		display, position, top, left, right, bottom,
+		width, height, max-width, min-width,
+		margin, padding, gap,
+		grid-template-columns, grid-template-rows,
+		flex-direction, align-items, justify-content,
+		font-size, font-family, font-weight,
+		color, background, border,
+		box-sizing, z-index,
+		overflow, transition, animation,
+		outline, outline-offset,
+		order, scroll-behavior
+	},
+	sensitive=true,
+	morecomment=[s]{/*}{*/},
+	morestring=[b]"
+}
 
 % ==========================================================
 %                    BIBLIOGRAFIA
@@ -287,9 +305,9 @@ style=abnt
 	
 	\input{1-textos/4-processo}
 	
-	\input{1-textos/5-tecnologia}
+	\input{1-textos/5-UIUX}
 	
-	\input{1-textos/6-resultados}
+	\input{1-textos/6-Tecnologias utilizadas}
 	
 	\input{1-textos/7-IA}
 	
