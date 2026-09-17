@@ -90,12 +90,15 @@ modalImagem?.addEventListener('click', () => {
     const agendamentos =
       JSON.parse(localStorage.getItem('agendamentos')) || [];
 
-    agendamentos.push({
-      id: Date.now(),
-      maquinaId: inputMaquinaId.value,
-      data: document.getElementById('data-agendamento').value,
-      hora: document.getElementById('hora-agendamento').value
-    });
+      agendamentos.push({
+        id: Date.now(),
+        maquinaId: inputMaquinaId.value,
+        nome: document.getElementById('nome-agendamento').value,
+        instituicao: document.getElementById('instituicao-agendamento').value,
+        resumo: document.getElementById('resumo-agendamento').value,
+        data: document.getElementById('data-agendamento').value,
+        hora: document.getElementById('hora-agendamento').value
+      });
 
     localStorage.setItem(
       'agendamentos',

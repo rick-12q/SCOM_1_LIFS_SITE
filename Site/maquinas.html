@@ -117,15 +117,48 @@
           <h2 id="modal-title" data-i18n="machines.scheduleTitle">Agendar equipamento</h2>
           <input type="hidden" id="maquina-id">
 
-          <div class="form-field">
-            <label for="data-agendamento" data-i18n="machines.date">Data do agendamento</label>
-            <input type="date" id="data-agendamento" required>
-          </div>
+            <div class="form-field">
+              <label for="nome-agendamento" data-i18n="machines.name">Nome</label>
+              <input
+                type="text"
+                id="nome-agendamento"
+                data-i18n-placeholder="machines.namePlaceholder"
+                placeholder="Nome completo"
+                required
+              >
+            </div>
 
-          <div class="form-field">
-            <label for="hora-agendamento" data-i18n="machines.time">Horário</label>
-            <input type="time" id="hora-agendamento" required>
-          </div>
+            <div class="form-field">
+              <label for="instituicao-agendamento" data-i18n="machines.institution">Instituição</label>
+              <input
+                type="text"
+                id="instituicao-agendamento"
+                data-i18n-placeholder="machines.institutionPlaceholder"
+                placeholder="Instituição de origem"
+                required
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="resumo-agendamento" data-i18n="machines.reason">Resumo / motivo do agendamento</label>
+              <textarea
+                id="resumo-agendamento"
+                rows="4"
+                data-i18n-placeholder="machines.reasonPlaceholder"
+                placeholder="Descreva brevemente o motivo pelo qual deseja utilizar o equipamento."
+                required
+              ></textarea>
+            </div>
+
+            <div class="form-field">
+              <label for="data-agendamento" data-i18n="machines.date">Data do agendamento</label>
+              <input type="date" id="data-agendamento" required>
+            </div>
+
+            <div class="form-field">
+              <label for="hora-agendamento" data-i18n="machines.time">Horário</label>
+              <input type="time" id="hora-agendamento" required>
+            </div>
 
           <div class="modal-actions">
             <button type="submit" class="btn btn-primary" data-i18n="machines.confirm">Confirmar agendamento</button>
