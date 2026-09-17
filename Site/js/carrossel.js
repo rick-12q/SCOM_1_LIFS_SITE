@@ -5,7 +5,19 @@ const nextBtn = document.querySelector('.carousel-btn.next');
 let index = 0;
 
 //AJUDA DE IA, no caso nesse trecho usei o GPT no modo PENSAR.
+function loadSlide(i) {
+  if (i < 0 || i >= slides.length) return;
+  const img = slides[i].querySelector('img');
+  if (img && img.dataset.src) {
+    img.src = img.dataset.src;
+    delete img.dataset.src;
+  }
+}
+
 function update() {
+  loadSlide(index);
+  loadSlide((index + 1) % slides.length); // pré-carrega o próximo, pra não ter flash em branco na troca
+
   slides.forEach((slide, i) => {
     if (i === index) {
       slide.classList.add('active');
