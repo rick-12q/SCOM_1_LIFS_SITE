@@ -1,6 +1,263 @@
-\textbf{}%%======%%======%0%======%%=======%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{5mm}
-\section{Agradecimentos}
+\section{Estratégias de responsividade e acessibilidade}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+O desenvolvimento da interface foi realizado considerando diferentes dimensões de tela e diferentes formas de interação com o conteúdo. Dessa forma, a responsividade é uma característica estrutural da interface, relacionada à organização do conteúdo, à navegação, à legibilidade e à acessibilidade dos elementos interativos.
 
+Uma das primeiras medidas adotadas está presente na declaração da janela de HTML, permitindo que a largura utilizada pelo navegador corresponda à largura física do dispositivo. Essa configuração é fundamental para que as regras de dimensionamento definidas em CSS sejam aplicadas de maneira consistente em celulares, tablets e computadores com telas diferentes.
 
-%%======%%======%0%======%%=======%%
+\begin{lstlisting}[language=HTML, caption={Configuração da janela de visualização do portal.}, label={lst:viewport}]
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+\end{lstlisting}
+
+Além disso, a organização do CSS foi dividida em diferentes arquivos, responsáveis por funções específicas da interface. O arquivo \texttt{reset.css} estabelece uma base comum para os elementos HTML, enquanto \texttt{base.css}, \texttt{layout.css} e \texttt{components.css} concentram, respectivamente, regras gerais de apresentação, estrutura da página e componentes visuais. Essa separação reduz a dependência de regras específicas de cada página e facilita a manutenção do comportamento responsivo.
+
+No arquivo de redefinição dos estilos, por exemplo, foi utilizada a propriedade \texttt{box-sizing: border-box} para os elementos e seus pseudo-elementos:
+
+\begin{lstlisting}[language=CSS, caption={Padronização do modelo de dimensionamento dos elementos.}, label={lst:boxsizing}]
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+\end{lstlisting}
+
+Essa configuração evita que \texttt{padding} e \texttt{border} sejam adicionados de maneira inesperada às dimensões declaradas dos elementos. Na prática, isso contribui para um controle mais previsível das larguras dos componentes, especialmente quando estes são utilizados em estruturas flexíveis ou em grades que precisam se adaptar à largura disponível.
+\vspace{5mm}
+\subsection{Adaptação estrutural da interface}
+
+A estrutura principal das páginas utiliza recursos de CSS Grid e dimensões relativas. Um exemplo pode ser observado no contêiner responsável pela organização das páginas internas:
+
+\begin{lstlisting}[language=CSS, caption={Estrutura responsiva da área principal das páginas internas.}, label={lst:pagewrapper}]
+	.page-wrapper {
+		display: grid;
+		grid-template-columns:
+		var(--sidebar-width) minmax(0, 1fr);
+		gap: var(--space-lg);
+		width: min(100% - 2rem, var(--max-width));
+		margin-inline: auto;
+		padding: var(--space-xl) 0;
+	}
+\end{lstlisting}
+
+A utilização de \texttt{minmax(0, 1fr)} permite que a coluna destinada ao conteúdo principal ocupe somente o espaço efetivamente disponível, evitando que elementos internos provoquem expansão horizontal indesejada.
+
+Quando a largura da janela diminui, a estrutura de duas colunas é substituída por uma única coluna. Essa alteração ocorre por meio de uma consulta de mídia.
+
+Nesse caso, a barra lateral deixa de permanecer fixa durante a rolagem e passa a integrar o fluxo normal do documento. A mudança é relevante principalmente em dispositivos móveis, nos quais manter uma coluna lateral fixa poderia reduzir significativamente a área disponível para o conteúdo principal.
+
+A navegação superior também possui comportamento específico para telas menores. Até determinada largura, os links são apresentados horizontalmente; posteriormente, o menu principal é ocultado e substituído por um botão de acionamento.
+
+\textcolor{red}{COLOCAR PRINT DO CELULAR}
+
+Essa abordagem evita simplesmente reduzir o tamanho dos elementos da navegação para fazê-los caber em uma tela estreita. Em vez disso, a própria organização da interface é modificada de acordo com o espaço disponível. Em telas ainda menores, o projeto também reduz as dimensões dos contêineres e ajusta o espaçamento lateral:
+
+\begin{lstlisting}[language=CSS, caption={Redução dos espaçamentos em telas muito estreitas.}, label={lst:responsive520}]
+	@media (max-width: 520px) {
+		.page-wrapper,
+		.container {
+			width: min(100% - 1rem, var(--max-width));
+		}
+		
+		.site-header {
+			padding-inline: 0.75rem;
+		}
+	}
+\end{lstlisting}
+
+O mesmo princípio é aplicado aos componentes das páginas de membros e equipamentos. Em telas menores, elementos inicialmente organizados lado a lado passam a utilizar uma disposição vertical, enquanto imagens e títulos têm suas dimensões reduzidas. Essa estratégia preserva a hierarquia visual sem exigir que o usuário realize rolagem horizontal.
+
+\vspace{5mm}
+\subsection{Tipografia e legibilidade}
+
+A responsividade também foi aplicada à apresentação do texto. Os títulos utilizam a função CSS \texttt{clamp()}, permitindo que seu tamanho varie de acordo com a largura da janela dentro de limites previamente estabelecidos:
+
+\begin{lstlisting}[language=CSS, caption={Dimensionamento adaptativo dos títulos.}, label={lst:clamp}]
+	h1 {
+		max-width: 22ch;
+		margin-bottom: var(--space-md);
+		font-size: clamp(2rem, 4vw, 3rem);
+	}
+	
+	h2 {
+		margin-bottom: var(--space-sm);
+		font-size: clamp(1.5rem, 3vw, 2rem);
+	}
+\end{lstlisting}
+
+O emprego de \texttt{clamp()} evita a necessidade de definir diversos tamanhos de fonte exclusivamente para cada resolução. Assim, o texto pode crescer em telas maiores e diminuir proporcionalmente em telas menores, sem ultrapassar os limites definidos pelo projeto.
+
+Também foi estabelecida uma largura máxima para os parágrafos.
+
+\vspace{5mm}
+\subsection{Recursos de acessibilidade na estrutura HTML}
+
+A acessibilidade foi considerada também na própria estrutura semântica do documento. Um exemplo é a utilização de uma ligação de acesso rápido ao conteúdo principal:
+
+\begin{lstlisting}[language=HTML, caption={Mecanismo de acesso direto ao conteúdo principal.}, label={lst:skiplink}]
+	<a class="skip-link" href="#main">
+	Ir para o conteúdo principal
+	</a>
+\end{lstlisting}
+
+Esse mecanismo permite que usuários que navegam principalmente pelo teclado possam ignorar os elementos repetitivos do cabeçalho e acessar diretamente o conteúdo da página. O comportamento visual desse recurso é controlado por CSS, mantendo o elemento fora da área visual durante a navegação convencional e tornando-o visível quando recebe foco.
+
+Outro recurso diretamente relacionado à navegação por teclado é o tratamento explícito do estado de foco. O projeto utiliza o seletor \texttt{:focus-visible}, fornecendo uma indicação visual destacada para o elemento atualmente selecionado pelo teclado:
+
+\begin{lstlisting}[language=CSS, caption={Indicação visual do elemento em foco.}, label={lst:focus}]
+	:focus-visible {
+		outline: 3px solid var(--color-accent);
+		outline-offset: 3px;
+	}
+\end{lstlisting}
+
+Essa característica é particularmente importante para botões, links e controles da interface, pois permite identificar visualmente a posição atual da navegação sem depender exclusivamente do mouse.
+
+\vspace{5mm}
+\subsection{Semântica e identificação dos elementos interativos}
+
+No HTML, os controles da interface também foram associados a atributos destinados a tecnologias assistivas. O menu móvel, por exemplo, utiliza \texttt{aria-expanded} para indicar seu estado e \texttt{aria-controls} para estabelecer a relação entre o botão e a região de navegação controlada:
+
+\begin{lstlisting}[language=HTML, caption={Identificação do controle da navegação móvel.}, label={lst:mobilearia}]
+	<button
+	class="mobile-nav-toggle"
+	type="button"
+	aria-expanded="false"
+	aria-controls="main-navigation">
+	Menu
+	</button>
+	
+	<nav
+	class="main-nav"
+	id="main-navigation"
+	aria-label="Navegação principal">
+\end{lstlisting}
+
+A navegação também utiliza \texttt{aria-current="page"} para identificar a página atualmente selecionada:
+
+\begin{lstlisting}[language=HTML, caption={Identificação da página atual na navegação.}, label={lst:ariacurrent}]
+	<a href="index.html" aria-current="page">
+	Início
+	</a>
+\end{lstlisting}
+
+Esse recurso fornece uma informação adicional para tecnologias assistivas, permitindo distinguir o item correspondente à página atual dos demais links de navegação.
+
+Os controles do carrossel da página inicial seguem o mesmo princípio. Embora visualmente sejam representados apenas por setas, possuem descrições textuais por meio de \texttt{aria-label}:
+
+\begin{lstlisting}[language=HTML, caption={Controles acessíveis do carrossel.}, label={lst:carouselaria}]
+	<button
+	class="carousel-btn prev"
+	type="button"
+	aria-label="Slide anterior">
+	‹
+	</button>
+	
+	<button
+	class="carousel-btn next"
+	type="button"
+	aria-label="Próximo slide">
+	›
+	</button>
+\end{lstlisting}
+
+Dessa maneira, a função dos controles não depende exclusivamente da representação gráfica das setas.
+
+\vspace{5mm}
+\subsection{Tratamento de imagens e desempenho}
+
+Além das questões de acessibilidade, o carregamento dos recursos visuais foi considerado na construção da página inicial. O primeiro elemento do carrossel utiliza carregamento imediato, enquanto os demais elementos utilizam \texttt{loading="lazy"}:
+
+\begin{lstlisting}[language=HTML, caption={Estratégia de carregamento das imagens do carrossel.}, label={lst:lazy}]
+	<img src="img/carrossel/operadores_reator.JPG"
+	alt=""
+	loading="eager"
+	width="3840"
+	height="2160">
+	
+	<img src="img/carrossel/reator_operando2.jpg"
+	alt=""
+	loading="lazy"
+	width="3840"
+	height="2160">
+\end{lstlisting}
+
+Essa diferença considera que a primeira imagem participa imediatamente da composição visual da página, enquanto as demais podem ser carregadas sob demanda. A definição explícita de \texttt{width} e \texttt{height} também fornece ao navegador informações sobre as dimensões dos recursos antes de seu carregamento completo, contribuindo para uma composição mais previsível da página.
+
+O mapa incorporado na página inicial segue estratégia semelhante, utilizando carregamento tardio:
+
+\begin{lstlisting}[language=HTML, caption={Carregamento tardio do mapa incorporado.}, label={lst:maplazy}]
+	<iframe
+	src="https://www.google.com/maps?q=UNESP+Instituto+de+Ci%C3%AAncia+e+Tecnologia+Sorocaba..."
+	title="Localização da UNESP Instituto de Ciência e Tecnologia em Sorocaba"
+	loading="lazy"
+	allowfullscreen>
+	</iframe>
+\end{lstlisting}
+
+\vspace{5mm}
+\subsection{Internacionalização da interface}
+
+Além da adaptação visual, foi implementada a possibilidade de utilização do portal em português e inglês. A inclusão do segundo idioma foi realizada para que o conteúdo do laboratório possa ser consultado também por usuários que não possuem o português como idioma principal, o que é particularmente relevante em um ambiente acadêmico no qual existe circulação de pesquisadores, estudantes e possíveis colaboradores de diferentes países.
+
+A alteração do idioma não modifica a estrutura das páginas. O conteúdo textual correspondente é alterado pela própria lógica da interface, mantendo os mesmos componentes, elementos de navegação e organização visual.
+
+\begin{lstlisting}[language=HTML, caption={Controle para alteração do idioma da interface.}, label={lst:language}]
+	<button
+	class="language-toggle"
+	type="button"
+	aria-label="Alterar idioma">
+	EN
+	</button>
+\end{lstlisting}
+
+A utilização de um controle próprio para essa finalidade permite que a troca de idioma seja realizada diretamente pelo usuário, sem necessidade de acessar outra versão do site. Além disso, a identificação do controle por meio de \texttt{aria-label} mantém sua função identificável para tecnologias assistivas.
+
+A tradução também foi aplicada aos elementos de navegação e aos textos apresentados nas páginas. Dessa maneira, a internacionalização não fica restrita aos títulos, mas acompanha os elementos que fazem parte da interação com o sistema.
+
+\vspace{5mm}
+\subsection{Temas claro e escuro}
+
+Outra característica incorporada à interface foi a possibilidade de alternância entre os temas claro e escuro. Essa funcionalidade permite modificar a apresentação visual do portal sem alterar sua estrutura ou conteúdo, oferecendo ao usuário uma alternativa de visualização de acordo com sua preferência e com as condições de iluminação do ambiente.
+
+A implementação utiliza variáveis de CSS para concentrar as cores empregadas pela interface. Com isso, a alteração do tema pode ser realizada modificando os valores dessas variáveis, sem a necessidade de criar uma folha de estilos completamente diferente para cada modo.
+
+\begin{lstlisting}[language=CSS, caption={Utilização de variáveis para os temas da interface.}, label={lst:themes}]
+	:root {
+		--color-background: #ffffff;
+		--color-surface: #f5f5f5;
+		--color-text: #202020;
+	}
+	
+	[data-theme="dark"] {
+		--color-background: #121212;
+		--color-surface: #1e1e1e;
+		--color-text: #f5f5f5;
+	}
+\end{lstlisting}
+
+A interface utiliza essas variáveis nos componentes, permitindo que a alteração do atributo de tema provoque a mudança das cores utilizadas pelos elementos da página. Assim, o mesmo conjunto de componentes pode ser utilizado nos dois modos.
+
+\begin{lstlisting}[language=CSS, caption={Aplicação das variáveis de tema aos elementos da interface.}, label={lst:themeuse}]
+	body {
+		background-color: var(--color-background);
+		color: var(--color-text);
+	}
+	
+	.card {
+		background-color: var(--color-surface);
+	}
+\end{lstlisting}
+
+A escolha entre os temas é realizada por meio de um controle disponível na interface. Dessa maneira, o usuário não precisa alterar configurações externas ao site para modificar sua apresentação visual.
+
+\begin{lstlisting}[language=HTML, caption={Controle de alternância entre os temas.}, label={lst:themetoggle}]
+	<button
+	class="theme-toggle"
+	type="button"
+	aria-label="Alterar tema">
+	Tema
+	</button>
+\end{lstlisting}
+
+Além de representar uma possibilidade de personalização, a existência dos dois modos contribui para diferentes condições de utilização. O tema claro mantém uma apresentação convencional para ambientes bem iluminados, enquanto o tema escuro reduz a quantidade de áreas claras na interface, podendo ser mais adequado para utilização em ambientes com pouca iluminação.
