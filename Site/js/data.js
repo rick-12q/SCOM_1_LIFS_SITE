@@ -50,7 +50,7 @@ const SEED_MAQUINAS = [
     nome: "Quatro Pontas Elétricas Linear",
     fabricante: "Fabricação própria do laboratório",
     modelo: "Special 4P",
-    imagem: "img/maquinas/solartron.jpeg",
+    imagem: "img/maquinas/quatro_pontas.jpg",
     local: "Lab LIFS",
     disponivel: true
   },
