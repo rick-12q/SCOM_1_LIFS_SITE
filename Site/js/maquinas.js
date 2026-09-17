@@ -29,12 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
           <div class="maquina-info">
             <h3>${getMachineName(m)}</h3>
-
+                
             <p class="text-muted">${m.local}</p>
-
+                
             <p class="text-muted">
               ${getMachineManufacturer(m)}
               ${m.modelo && m.modelo !== '--' ? ' — ' + m.modelo : ''}
+            </p>
+                
+            <p class="maquina-descricao">
+              ${getMachineDescription(m)}
             </p>
 
             <span class="status ${m.disponivel ? 'disponivel' : 'indisponivel'}">
@@ -122,7 +126,19 @@ modalImagem?.addEventListener('click', () => {
   
     return t(keys[machine.id]) || machine.nome;
   }
+  function getMachineDescription(machine) {
+    const keys = {
+      1: 'machines.r1Description',
+      2: 'machines.r2Description',
+      3: 'machines.afmDescription',
+      4: 'machines.uvvisDescription',
+      5: 'machines.probeDescription',
+      6: 'machines.rfDescription'
+    };
   
+    return t(keys[machine.id]) || machine.descricao || '';
+  }
+
   function getMachineManufacturer(machine) {
     if (!machine.fabricante) {
       return '';
