@@ -69,12 +69,13 @@ const SEED_MAQUINAS = [
 const SEED_MEMBROS = [
   {
     id: 1,
-    nome: "Prof. Dr. José Roberto Ribeiro Bortoleto",
+    nome: "José Roberto Ribeiro Bortoleto",
     tipo: "Docente chefe do grupo",
     situacao: "atual",
     imagem: "img/membros/bortoleto.JPG",
     lattes: "http://lattes.cnpq.br/0104980613925349",
-    orcid: "0000-0003-4129-7819"
+    orcid: "0000-0003-4129-7819",
+    email: "jose.rr.bortoleto@unesp.br"
   },
   {
     id: 2,
@@ -83,7 +84,8 @@ const SEED_MEMBROS = [
     situacao: "atual",
     imagem: "img/membros/rick.jpeg",
     lattes: "http://lattes.cnpq.br/0250660115526685",
-    orcid: "0009-0005-1095-3221"
+    orcid: "0009-0005-1095-3221",
+    email: "lh.monteiro@unesp.br"
   },
   {
     id: 3,
@@ -92,7 +94,8 @@ const SEED_MEMBROS = [
     situacao: "atual",
     imagem: "img/membros/paulo.jpg",
     lattes: "http://lattes.cnpq.br/8312977684358988",
-    orcid: "0000-0001-8367-8287"
+    orcid: "0000-0001-8367-8287",
+    email: "paulo.silas@unesp.br"
   },
   {
     id: 4,
@@ -101,7 +104,8 @@ const SEED_MEMBROS = [
     situacao: "atual",
     imagem: "img/membros/raul.jpg",
     lattes: "http://lattes.cnpq.br/4183764742951944",
-    orcid: "0000-0002-6949-485X"
+    orcid: "0000-0002-6949-485X",
+    email: "raul.ramos@unesp.br"
   },
   {
     id: 5,
@@ -138,3 +142,10 @@ function initData() {
   }
 }
 initData();
+
+const EMAIL_MEMBROS = {
+  "José Roberto Ribeiro Bortoleto": "jose.rr.bortoleto@unesp.br",
+  "Paulo Silas Oliveira": "paulo.silas@unesp.br",
+  "Luiz Henrique Corrêa Monteiro": "lh.monteiro@unesp.br",
+  "Raul Ramos": "raul.ramos@unesp.br"
+};

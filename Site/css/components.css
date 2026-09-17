@@ -1689,3 +1689,124 @@ padding: 0.3rem 0.45rem;
 .language-fade {
   opacity: 0.35;
 }
+
+/*Adicao do foter bonitinho */
+.site-footer {
+  margin-top: var(--space-xl);
+  padding: var(--space-md) var(--space-lg) 0;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.footer-content {
+  max-width: 1200px;
+  min-height: 105px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-left {
+  justify-content: flex-start;
+}
+
+.footer-logo-right {
+  justify-content: flex-end;
+}
+
+.footer-logo img {
+  display: block;
+  width: auto;
+  height: 42px;
+  max-width: 130px;
+  object-fit: contain;
+}
+
+.footer-contact {
+  text-align: center;
+}
+
+.footer-contact h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.footer-contact p {
+  margin: 0.15rem 0;
+  color: var(--color-text-muted);
+  line-height: 1.35;
+  font-size: 0.9rem;
+}
+
+.footer-contact strong {
+  color: var(--color-text);
+}
+
+.footer-contact a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-contact a:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: var(--space-md) auto 0;
+  padding: var(--space-sm) 0;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 700px) {
+  .site-footer {
+    padding: var(--space-md) var(--space-md) 0;
+  }
+
+  .footer-content {
+    min-height: auto;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .footer-contact {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    text-align: center;
+  }
+
+  .footer-logo-left {
+    grid-column: 1;
+    grid-row: 2;
+    justify-content: flex-start;
+  }
+
+  .footer-logo-right {
+    grid-column: 2;
+    grid-row: 2;
+    justify-content: flex-end;
+  }
+
+  .footer-logo img {
+    height: 36px;
+    max-width: 110px;
+  }
+}

@@ -27,6 +27,9 @@ const TRANSLATIONS = {
     "footer.portal": "Portal acadêmico do LIFS.",
     "footer.demo": "Portal acadêmico demonstrativo.",
     "footer.copyright": "Lab LIFS. Portal do grupo de pesquisa.",
+    "footer.contactTitle": "Contato",
+    "footer.emailLabel": "E-mail:",
+    "footer.phoneLabel": "Telefone:",
 
     "home.title": "Laboratório de Investigação de Filmes Semicondutores",
     "home.description": "Portal institucional para organizar a produção científica, os equipamentos e os integrantes do LIFS em uma interface acessível, responsiva e fácil de consultar.",
@@ -126,6 +129,7 @@ const TRANSLATIONS = {
     "members.academicInfo": "Informações acadêmicas e profissionais do integrante do laboratório.",
     "members.lattes": "Lattes",
     "members.orcid": "ORCID",
+    "members.email": "E-mail",
 
     "login.title": "Login de membro",
     "login.description": "Entre para acessar o cadastro de trabalhos. Esta autenticação é apenas demonstrativa e funciona localmente no navegador.",
@@ -181,6 +185,9 @@ const TRANSLATIONS = {
     "footer.portal": "LIFS academic portal.",
     "footer.demo": "Academic demonstration portal.",
     "footer.copyright": "Lab LIFS. Research group portal.",
+    "footer.contactTitle": "Contact",
+    "footer.emailLabel": "Email:",
+    "footer.phoneLabel": "Phone:",
 
     "home.title": "Semiconductor Thin Films Research Laboratory",
     "home.description": "Institutional portal for organizing the scientific production, equipment and members of LIFS in an accessible, responsive and easy-to-use interface.",
@@ -280,6 +287,7 @@ const TRANSLATIONS = {
     "members.academicInfo": "Academic and professional information about the laboratory member.",
     "members.lattes": "Lattes",
     "members.orcid": "ORCID",
+    "members.email": "Email",
 
     "login.title": "Member sign in",
     "login.description": "Sign in to access the work registration page. This authentication is demonstrative and works locally in the browser.",

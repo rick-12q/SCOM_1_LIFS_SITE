@@ -56,6 +56,14 @@ function renderMembros(situacao) {
                 </a>
               </li>
             ` : ''}
+
+            ${EMAIL_MEMBROS[m.nome] ? `
+              <li>
+                <a href="mailto:${EMAIL_MEMBROS[m.nome]}">
+                  ${t('members.email')}
+                </a>
+              </li>
+            ` : ''}
           </ul>
         </div>
 
