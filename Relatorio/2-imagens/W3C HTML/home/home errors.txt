@@ -1,0 +1,143 @@
+Error: Element img is missing one or more of the following attributes: src, srcset.
+
+From line 120, column 15; to line 120, column 99
+
+          <img data-src="img/carrossel/reator_operando2.jpg" alt="" width="4080" height="3072">↩     
+
+Attributes for element img:
+Global attributes
+alt — Replacement text for use when images are not available
+src — Address of the resource
+srcset — Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
+sizes — Image sizes for different page layouts
+crossorigin — How the element handles crossorigin requests
+usemap — Name of image map to use
+ismap — Whether the image is a server-side image map
+controls — Show user agent controls
+width — Horizontal dimension
+height — Vertical dimension
+referrerpolicy — Referrer policy for fetches initiated by the element
+decoding — Decoding hint to use when processing this image for presentation
+loading — Used when determining loading deferral
+fetchpriority — Sets the priority for fetches initiated by the element
+Error: Element img is missing one or more of the following attributes: src, srcset.
+
+From line 124, column 15; to line 124, column 95
+
+          <img data-src="img/carrossel/globo_plasma.jpg" alt="" width="2804" height="3339">↩     
+
+Attributes for element img:
+Global attributes
+alt — Replacement text for use when images are not available
+src — Address of the resource
+srcset — Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
+sizes — Image sizes for different page layouts
+crossorigin — How the element handles crossorigin requests
+usemap — Name of image map to use
+ismap — Whether the image is a server-side image map
+controls — Show user agent controls
+width — Horizontal dimension
+height — Vertical dimension
+referrerpolicy — Referrer policy for fetches initiated by the element
+decoding — Decoding hint to use when processing this image for presentation
+loading — Used when determining loading deferral
+fetchpriority — Sets the priority for fetches initiated by the element
+Error: Element img is missing one or more of the following attributes: src, srcset.
+
+From line 128, column 15; to line 128, column 99
+
+          <img data-src="img/carrossel/plasma_main (1).jpg" alt="" width="12000" height="6423">↩     
+
+Attributes for element img:
+Global attributes
+alt — Replacement text for use when images are not available
+src — Address of the resource
+srcset — Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
+sizes — Image sizes for different page layouts
+crossorigin — How the element handles crossorigin requests
+usemap — Name of image map to use
+ismap — Whether the image is a server-side image map
+controls — Show user agent controls
+width — Horizontal dimension
+height — Vertical dimension
+referrerpolicy — Referrer policy for fetches initiated by the element
+decoding — Decoding hint to use when processing this image for presentation
+loading — Used when determining loading deferral
+fetchpriority — Sets the priority for fetches initiated by the element
+Error: Element img is missing one or more of the following attributes: src, srcset.
+
+From line 132, column 15; to line 132, column 93
+
+          <img data-src="img/carrossel/experimento.jpg" alt="" width="1200" height="812">↩     
+
+Attributes for element img:
+Global attributes
+alt — Replacement text for use when images are not available
+src — Address of the resource
+srcset — Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
+sizes — Image sizes for different page layouts
+crossorigin — How the element handles crossorigin requests
+usemap — Name of image map to use
+ismap — Whether the image is a server-side image map
+controls — Show user agent controls
+width — Horizontal dimension
+height — Vertical dimension
+referrerpolicy — Referrer policy for fetches initiated by the element
+decoding — Decoding hint to use when processing this image for presentation
+loading — Used when determining loading deferral
+fetchpriority — Sets the priority for fetches initiated by the element
+Error: Element img is missing one or more of the following attributes: src, srcset.
+
+From line 136, column 15; to line 136, column 96
+
+          <img data-src="img/carrossel/reator_laptec.jpg" alt="" width="1536" height="1536">↩     
+
+Attributes for element img:
+Global attributes
+alt — Replacement text for use when images are not available
+src — Address of the resource
+srcset — Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
+sizes — Image sizes for different page layouts
+crossorigin — How the element handles crossorigin requests
+usemap — Name of image map to use
+ismap — Whether the image is a server-side image map
+controls — Show user agent controls
+width — Horizontal dimension
+height — Vertical dimension
+referrerpolicy — Referrer policy for fetches initiated by the element
+decoding — Decoding hint to use when processing this image for presentation
+loading — Used when determining loading deferral
+fetchpriority — Sets the priority for fetches initiated by the element
+Error: Element img is missing one or more of the following attributes: src, srcset.
+
+From line 140, column 15; to line 140, column 100
+
+          <img data-src="img/carrossel/reator_com_plasma.jpg" alt="" width="3000" height="2088">↩     
+
+Attributes for element img:
+Global attributes
+alt — Replacement text for use when images are not available
+src — Address of the resource
+srcset — Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
+sizes — Image sizes for different page layouts
+crossorigin — How the element handles crossorigin requests
+usemap — Name of image map to use
+ismap — Whether the image is a server-side image map
+controls — Show user agent controls
+width — Horizontal dimension
+height — Vertical dimension
+referrerpolicy — Referrer policy for fetches initiated by the element
+decoding — Decoding hint to use when processing this image for presentation
+loading — Used when determining loading deferral
+fetchpriority — Sets the priority for fetches initiated by the element
+Error: Bad value img/video/video lab.mp4 for attribute src on element source: Illegal character in path segment. Space is not allowed.
+
+From line 314, column 19; to line 314, column 73
+
+          <source src="img/video/video lab.mp4" type="video/mp4">↩     
+
+Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections, or else use a div element instead for any cases where no heading is needed.
+
+From line 199, column 5; to line 199, column 34
+
+ion>↩↩    <section class="home-content">↩↩    

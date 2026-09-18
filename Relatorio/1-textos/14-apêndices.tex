@@ -1,0 +1,198 @@
+%%======%%======%0%======%%=======%%
+\newpage
+\section{Apêndices}
+\label{sec:apendice}
+%\addcontentsline{toc}{chapter}{Conclusão}
+
+%%======%%======%0%======%%=======%%
+\subsection{Uso de IA}
+\begin{longtable}{>{\RaggedRight\arraybackslash}p{0.25\textwidth} >{\RaggedRight\arraybackslash}p{0.24\textwidth} >{\RaggedRight\arraybackslash}p{0.43\textwidth}} \caption{Participação da inteligência artificial generativa no desenvolvimento dos arquivos do site.} \label{tab:uso-ia-arquivos}\\ \hline \textbf{Arquivo do código} & \textbf{Função da IA} & \textbf{Análise geral crítica} \\ \hline \endfirsthead \hline \textbf{Arquivo do código} & \textbf{Função da IA} & \textbf{Análise geral crítica} \\ \hline \endhead \texttt{index.html} & \cellcolor{iaRefinamento}\textbf{Refinamento} & Revisão estrutural e semântica. A IA contribuiu para a organização da página inicial, acessibilidade e estrutura do \textit{landing page}, mas a composição final permaneceu sujeita a ajustes manuais. \\ \hline \texttt{login.html} & \cellcolor{iaRefinamento}\textbf{Refinamento} & Código explicitamente revisado e refinado com IA. A contribuição concentrou-se na estrutura da página, organização dos elementos e integração com os demais recursos do site. \\ \hline \texttt{maquinas.html} & \cellcolor{iaAcessibilidade}\textbf{Acessibilidade} & Uso de elementos semânticos, atributos ARIA e estrutura para diálogos. A IA auxiliou na implementação, mas a adequação ao funcionamento real exigiu integração com JavaScript e CSS. \\ \hline \texttt{membros.html} & \cellcolor{iaAcessibilidade}\textbf{Acessibilidade} & A estrutura emprega recursos de acessibilidade e organização semântica. Não há atribuição explícita de geração no arquivo, portanto a participação específica da IA não é quantificada. \\ \hline \texttt{repositorio.html} & \cellcolor{iaGeracao}\textbf{Geração} & Os filtros de pesquisa possuem auxílio explicitamente atribuído ao ChatGPT. A estrutura foi posteriormente integrada ao restante do sistema e às funções de persistência local. \\ \hline \texttt{adicionar-trabalho.html} & \cellcolor{iaGeracao}\textbf{Geração} & Trecho explicitamente declarado como gerado integralmente por IA. A tradução para o inglês e a adaptação ao funcionamento do projeto foram realizadas manualmente. \\ \hline \texttt{404.html} & \cellcolor{iaSemEvidencia}\textbf{Sem atribuição a IA} & Arquivo simples e predominantemente estrutural. O código disponível foi gerado integralmente por mãos humanas. \\ \hline \texttt{variables.css} & \cellcolor{iaRefinamento}\textbf{Refinamento} & O arquivo registra explicitamente o uso do Gemini Pro para definição e refinamento da abordagem visual, especialmente na organização das variáveis e implementação dos temas. \\ \hline \texttt{reset.css} & \cellcolor{iaSemEvidencia}\textbf{Sem atribuição} & Folha de estilo curta e estrutural. Sua função é normalizar o comportamento dos elementos antes da aplicação dos demais estilos. \\ \hline \texttt{base.css} & \cellcolor{iaCorrecao}\textbf{Correção} & O modo escuro foi explicitamente ajustado com auxílio do ChatGPT após problemas de implementação. A IA atuou principalmente na correção do comportamento visual. \\ \hline \texttt{layout.css} & \cellcolor{iaRefinamento}\textbf{Refinamento} & Responsável pela estrutura global, navegação, cabeçalho, rodapé e comportamento responsivo. O arquivo mostra forte integração com decisões de layout realizadas durante o desenvolvimento. \\ \hline \texttt{components.css} & \cellcolor{iaReestruturacao}\textbf{Reestruturação} & É o arquivo com maior participação de IA. GPT e Claude foram utilizados na elaboração e aprimoramento de grandes trechos, enquanto partes das máquinas e membros foram desenvolvidas manualmente. O próprio código registra dependência significativa da IA. \\ \hline \texttt{adicionar-trabalho.js} & \cellcolor{iaCorrecao}\textbf{Correção} & O código partiu de uma tentativa própria que não funcionava adequadamente e foi posteriormente adaptado com auxílio do GPT. A IA atuou principalmente na correção e adequação da lógica de cadastro. \\ \hline \texttt{auth.js} & \cellcolor{iaReestruturacao}\textbf{Reestruturação} & A lógica de autenticação e persistência da sessão foi reestruturada com auxílio do GPT. O uso de \texttt{localStorage} resolveu problemas de perda de sessão durante navegação e atualização das páginas. \\ \hline \texttt{carrossel.js} & \cellcolor{iaAcessibilidade}\textbf{Acessibilidade} & O GPT auxiliou na lógica de carregamento e navegação do carrossel, enquanto o Gemini Pro foi utilizado no tratamento relacionado à acessibilidade e preferência por redução de movimento. \\ \hline \texttt{data.js} & \cellcolor{iaSemEvidencia}\textbf{Sem atribuição significativa} & Arquivo predominantemente voltado ao armazenamento dos dados iniciais do protótipo. A participação específica da IA na sua elaboração não é relevante, usada apenas para validação. \\ \hline \texttt{i18n.js} & \cellcolor{iaAcessibilidade}\textbf{Internacionalização} & As estruturas de tradução foram geradas com auxílio do GPT, enquanto a lógica de seleção de idioma foi posteriormente reestruturada. Representa uma das maiores contribuições da IA para a expansão funcional do projeto. \\ \hline \texttt{login-carrossel.js} & \cellcolor{iaRefinamento}\textbf{Refinamento} & Responsável pelo comportamento visual do carrossel da página de login. O arquivo apresenta lógica simples e integrada ao CSS, com tratamento da preferência por redução de movimento. \\ \hline \texttt{maquinas.js} & \cellcolor{iaReestruturacao}\textbf{Reestruturação} & O código registra explicitamente o uso de IA para reestruturar a apresentação das imagens dos equipamentos e reduzir redundâncias. A contribuição ocorreu sobre uma lógica já em desenvolvimento. \\ \hline \texttt{membros.js} & \cellcolor{iaRefinamento}\textbf{Refinamento} & Implementa renderização dinâmica, categorias, links acadêmicos e abas. A estrutura é fortemente integrada ao sistema de tradução e aos dados locais, embora não haja atribuição significativa de autoria da IA. \\ \hline \texttt{repositorio.js} & \cellcolor{iaCorrecao}\textbf{Correção} & A IA foi utilizada para fazer o mecanismo de exibição e filtragem funcionar. O código também incorpora \texttt{escapeHtml}, demonstrando preocupação com tratamento seguro do conteúdo inserido no DOM. \\ \hline \texttt{tema.js} & \cellcolor{iaRefinamento}\textbf{Refinamento} & Implementa a alternância entre temas e sua persistência no navegador. A lógica é compacta e integrada às variáveis CSS, permitindo separar a aparência da lógica de controle. \\ \hline \texttt{ui.js} & \cellcolor{iaRefinamento}\textbf{Refinamento} & Controla menu responsivo, estado de expansão e atualização do ano do rodapé. O código demonstra integração entre comportamento visual, navegação e tradução. \\ \hline \texttt{video.js} & \cellcolor{iaRefinamento}\textbf{Refinamento} & Controla reprodução, volume, pausa, reinício e reprodução condicionada à visibilidade do vídeo. A lógica utiliza recursos nativos do navegador e permanece relativamente independente. \\ \hline \end{longtable} \vspace{3mm} \noindent \textbf{Legenda da classificação:} \quad \cellcolor{iaGeracao}\textbf{Geração} \quad \cellcolor{iaCorrecao}\textbf{Correção} \quad \cellcolor{iaRefinamento}\textbf{Refinamento} \quad \cellcolor{iaAcessibilidade}\textbf{Acessibilidade/Internacionalização} \quad \cellcolor{iaReestruturacao}\textbf{Reestruturação} \quad \cellcolor{iaSemEvidencia}\textbf{Sem atribuição}
+
+\subsection{metricas}
+\subsubsection{W3C CSS}
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"../2-imagens/W3C CSS/base"}
+		\caption{Base}
+		\label{fig:w3c-base}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"../2-imagens/W3C CSS/components"}
+		\caption{Components}
+		\label{fig:w3c-components}
+	\end{subfigure}
+	
+	\vspace{5mm}
+	
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"../2-imagens/W3C CSS/layout"}
+		\caption{Layout}
+		\label{fig:w3c-layout}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"../2-imagens/W3C CSS/reset"}
+		\caption{Reset}
+		\label{fig:w3c-reset}
+	\end{subfigure}
+	
+	\vspace{5mm}
+	
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"../2-imagens/W3C CSS/variables"}
+		\caption{Variables}
+		\label{fig:w3c-variables}
+	\end{subfigure}
+	
+	\caption{Resultados da validação dos arquivos CSS utilizando o validador W3C.}
+	\label{fig:w3c-css}
+\end{figure}
+
+\subsubsection{W3C HTML}
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/W3C HTML/login/login"}
+		\caption{Login}
+		\label{fig:w3c-html-login}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/W3C HTML/maq/maquinas errors"}
+		\caption{Máquinas}
+		\label{fig:w3c-html-maquinas}
+	\end{subfigure}
+	
+	\vspace{5mm}
+	
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/W3C HTML/memb/membros .png"}
+		\caption{Membros}
+		\label{fig:w3c-html-membros}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/W3C HTML/reposit/repositorio"}
+		\caption{Repositório}
+		\label{fig:w3c-html-repositorio}
+	\end{subfigure}
+	
+	\caption{Resultados da validação dos arquivos HTML utilizando o validador W3C.}
+	\label{fig:w3c-html}
+\end{figure}
+
+\subsubsection{webAIM}
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/webAIM/TEMA CLARO/cards"}
+		\caption{Cards}
+		\label{fig:webaim-claro-cards}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/webAIM/TEMA CLARO/texto principal"}
+		\caption{Texto principal}
+		\label{fig:webaim-claro-principal}
+	\end{subfigure}
+	
+	\vspace{5mm}
+	
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/webAIM/TEMA CLARO/texto secundario"}
+		\caption{Texto secundário}
+		\label{fig:webaim-claro-secundario}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/webAIM/TEMA ESCURO/texto principal"}
+		\caption{Texto principal}
+		\label{fig:webaim-escuro-principal}
+	\end{subfigure}
+	
+	\vspace{5mm}
+	
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/webAIM/TEMA ESCURO/texto secundario"}
+		\caption{Texto secundário}
+		\label{fig:webaim-escuro-secundario}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/webAIM/header selecionado"}
+		\caption{Cabeçalho}
+		\label{fig:webaim-header}
+	\end{subfigure}
+	
+	\caption{Testes de contraste visual realizados com a ferramenta WebAIM para os diferentes elementos e temas da interface.}
+	\label{fig:webaim}
+\end{figure}
+
+\subsubsection{LightHouse}
+
+\begin{figure}[H]
+	\centering
+	
+	\begin{subfigure}[b]{0.31\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/home lighthouse"}
+		\caption{Página inicial.}
+		\label{fig:home-lighthouse}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.31\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/login lighthouse"}
+		\caption{Login.}
+		\label{fig:login-lighthouse}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.31\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/maq lighthouse"}
+		\caption{Máquinas.}
+		\label{fig:maq-lighthouse}
+	\end{subfigure}
+	
+	\vspace{5mm}
+	
+	\begin{subfigure}[b]{0.31\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/membros lighthouse"}
+		\caption{Membros.}
+		\label{fig:membros-lighthouse}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[b]{0.31\textwidth}
+		\centering
+		\includegraphics[width=\linewidth]{"2-imagens/repositorio lighthouse"}
+		\caption{Repositório.}
+		\label{fig:repositorio-lighthouse}
+	\end{subfigure}
+	
+	\caption{Resultados das análises realizadas pelo Lighthouse nas páginas do sistema.}
+	\label{fig:lighthouse-resultados}
+\end{figure}

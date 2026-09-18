@@ -1,6 +1,228 @@
 %%======%%======%0%======%%=======%%
 \vspace{5mm}
 \section{Resultados dos testes}
-
-
 %%======%%======%0%======%%=======%%
+
+Para a validação do \textit{website} desenvolvido, foram realizados testes que retornavam métricas de desempenho, performance, acessibilidade, legibilidade, etc. Os testes realizados são colocados a seguir. 
+\vspace{5mm}
+\subsection{Lighthouse}
+
+O Lighthouse foi utilizado para avaliar quatro grupos principais de métricas: desempenho, acessibilidade, boas práticas e otimização para mecanismos de busca. Foram realizadas análises individuais das páginas inicial, de login, de máquinas, de membros e de repositório.
+
+Os resultados obtidos são apresentados na Tabela~\ref{tab:lighthouse-resultados}.
+
+\begin{table}[H]
+	\centering
+	\caption{Resultados obtidos nas análises do Lighthouse.}
+	\label{tab:lighthouse-resultados}
+	\renewcommand{\arraystretch}{1.4}
+	\setlength{\tabcolsep}{14pt}
+	\begin{tabular}{lcccc}
+		\hline
+		\textbf{Página} & \textbf{Performance} & \textbf{Acessibilidade} & \textbf{Boas práticas} & \textbf{SEO} \\
+		\hline
+		Página inicial & 94 & 96 & 100 & 100 \\
+		Login          & 90 & 95 & 100 & 100 \\
+		Máquinas       & 99 & 94 & 100 & 100 \\
+		Membros        & 94 & 94 & 100 & 100 \\
+		Repositório    & 100 & 96 & 100 & 100 \\
+		\hline
+		\textbf{Média} & \textbf{95,4} & \textbf{95,0} & \textbf{100,0} & \textbf{100,0} \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+Observa-se que todas as páginas analisadas atingiram 100 pontos em boas práticas e SEO. As pontuações de desempenho também permaneceram acima de 90 pontos em todas as páginas analisadas. A menor pontuação de desempenho foi obtida pela página de login, com 90 pontos, enquanto a maior foi obtida pela página de repositório, com 100 pontos.
+
+Na dimensão de acessibilidade, os resultados permaneceram entre 94 e 96 pontos. Apesar dos resultados elevados, a análise identificou alguns elementos específicos que não atenderam completamente aos critérios avaliados pelo Lighthouse. Esses pontos foram analisados separadamente para evitar que a pontuação geral fosse interpretada como uma validação absoluta da acessibilidade da interface.
+
+\subsubsection{Desempenho}
+
+As métricas de desempenho apresentaram resultados satisfatórios em todas as páginas analisadas. LCP apresentou valores entre aproximadamente 1,2~s e 3,6~s.
+
+A página de repositório apresentou LCP de aproximadamente 1,2~s, enquanto a página de máquinas apresentou valor semelhante. Na página de membros, o LCP foi de aproximadamente 1,5~s. A página inicial apresentou LCP de aproximadamente 3,1~s e a página de login apresentou o maior valor, de aproximadamente 3,6~s.
+
+\begin{table}[H]
+	\centering
+	\caption{Principais métricas de desempenho obtidas no Lighthouse.}
+	\label{tab:lighthouse-performance}
+	\begin{tabular}{lcccc}
+		\hline
+		\textbf{Página} & \textbf{FCP} & \textbf{LCP} & \textbf{TBT} & \textbf{CLS} \\
+		\hline
+		Página inicial & 1,0~s & 3,1~s & 60~ms & 0,000 \\
+		Login & 1,0~s & 3,6~s & 0~ms & 0,000 \\
+		Máquinas & 0,9~s & 1,2~s & 120~ms & 0,000 \\
+		Membros & 0,9~s & 1,5~s & 80~ms & 0,149 \\
+		Repositório & 0,9~s & 1,2~s & 30~ms & 0,000 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+O FCP permaneceu próximo de um segundo em todas as páginas, indicando que o primeiro conteúdo visual foi apresentado rapidamente durante os testes. O TBT também apresentou valores reduzidos, variando de 0~ms na página de login a 120~ms na página de máquinas.
+
+O CLS foi igual a zero nas páginas inicial, login, máquinas e repositório. Entretanto, a página de membros apresentou o valor igual de 0,149. indicando a ocorrência de movimentação de elementos durante o carregamento da página, constituido um ponto específico de melhoria de estabilidade visual.
+
+A análise também identificou oportunidades relacionadas ao carregamento das imagens. Em diferentes páginas, o Lighthouse apontou que algumas imagens são maiores do que o necessário para as dimensões em que são apresentadas. Essa situação ocorre principalmente nas imagens do carrossel.
+
+\subsubsection{Acessibilidade}
+
+As pontuações de acessibilidade obtidas foram 96 pontos na página inicial, 95 pontos na página de login, 94 pontos na página de máquinas, 94 pontos na página de membros e 96 pontos na página de repositório.
+
+Apesar das pontuações elevadas, o Lighthouse identificou problemas relacionados principalmente ao contraste de determinados elementos e à correspondência entre rótulos visíveis e nomes acessíveis.
+
+Um dos problemas encontrados está relacionado aos links de contato presentes no rodapé. Mas a escolha de uma fonte omissa foi parte do projeto. 
+
+Também foi identificado um problema no controle de alteração de idioma. O botão apresenta visualmente o texto ``EN'', enquanto seu nome acessível é definido por meio do atributo \texttt{aria-label}. O Lighthouse classificou essa situação como uma incompatibilidade entre o texto visível e o nome acessível.
+
+Na página de máquinas e na página de membros também foi identificado um problema relacionado à ordem hierárquica dos títulos. O Lighthouse detectou elementos \texttt{h3} sem a sequência hierárquica esperada em relação aos títulos anteriores da página.
+
+
+\subsubsection{Boas práticas}
+
+Todas as cinco páginas analisadas obtiveram 100 pontos na categoria de boas práticas do Lighthouse.
+
+Esse resultado indica que, dentro dos critérios avaliados pela ferramenta na execução realizada, não foram identificadas falhas classificadas nessa categoria. Dessa maneira, a estrutura geral da implementação apresentou conformidade com os critérios de boas práticas considerados pelo Lighthouse durante os testes.
+
+\subsubsection{SEO}
+
+Todas as páginas analisadas também obtiveram 100 pontos na categoria de SEO.
+
+Esse resultado está relacionado à presença e à estrutura dos elementos avaliados pela ferramenta, incluindo aspectos básicos necessários para que as páginas possam ser interpretadas adequadamente por mecanismos de busca.
+\vspace{5mm}
+\subsection{Validação do código HTML}
+
+A validação do código HTML foi realizada utilizando o validador do W3C. Foram analisadas as páginas inicial, de login, de máquinas, de membros e de repositório.
+
+Os resultados obtidos foram diferentes entre as páginas. As páginas de login, membros e repositório apresentaram a mensagem de conclusão da verificação sem erros ou avisos. A página de máquinas, entretanto, apresentou um erro relacionado ao atributo \texttt{src} de uma imagem utilizada pelo sistema de ampliação das fotografias.
+
+Na página de máquinas, o elemento identificado pelo validador foi:
+
+\begin{lstlisting}[language=HTML] <img id="imagem-ampliada" src="" alt="">
+\end{lstlisting}
+
+O problema ocorre porque o atributo \texttt{src} possui inicialmente uma string vazia. Embora o JavaScript posteriormente possa definir o endereço da imagem quando o usuário seleciona um equipamento, o documento HTML analisado pelo validador já contém um valor inválido para essa finalidade.
+
+A página inicial apresentou uma outra situação ainda, aas imagens utilizadas pelo mecanismo de carregamento do carrossel possuem inicialmente o endereço armazenado em \texttt{data-src}, enquanto o atributo \texttt{src} não está presente.
+
+Além disso, foi identificado um caminho de arquivo contendo espaço no nome do vídeo que aparece na rolagem da tela.
+
+O validador também identificou uma seção sem um título hierárquico associado.
+
+Os resultados mostram que a maior parte da estrutura HTML apresenta comportamento adequado, mas existem elementos dinâmicos que precisam ser avaliados considerando simultaneamente a validade do HTML inicial e a manipulação realizada posteriormente pelo JavaScript.
+
+\begin{table}[H]
+	\centering
+	\caption{Resumo da validação HTML realizada pelo W3C.}
+	\label{tab:w3c-html}
+	\begin{tabular}{lcc}
+		\hline
+		\textbf{Página} & \textbf{Resultado} & \textbf{Observação} \\
+		\hline
+		Página inicial & Com ocorrências & Imagens dinâmicas, vídeo e seção \\
+		Login & Sem erros & Validação concluída \\
+		Máquinas & Com ocorrência & \texttt{src} vazio em imagem dinâmica \\
+		Membros & Sem erros & Validação concluída \\
+		Repositório & Sem erros & Validação concluída \\
+		\hline
+	\end{tabular}
+\end{table}
+\vspace{5mm}
+\subsection{Validação das folhas de estilo CSS}
+
+As cinco folhas de estilo utilizadas pelo projeto foram submetidas individualmente ao validador CSS do W3C, são elas: \texttt{variables.css}, \texttt{reset.css}, \texttt{base.css}, \texttt{layout.css} e \texttt{components.css}.
+
+Todas as cinco folhas foram consideradas válidas pelo validador. Dessa maneira, não foram identificados erros de sintaxe CSS nos arquivos analisados.
+
+\begin{table}[H]
+	\centering
+	\caption{Resultados da validação CSS pelo W3C.}
+	\label{tab:w3c-css}
+	\begin{tabular}{lcc}
+		\hline
+		\textbf{Arquivo} & \textbf{Erros} & \textbf{Resultado} \\
+		\hline
+		\texttt{variables.css} & 0 & Válido \\
+		\texttt{reset.css} & 0 & Válido \\
+		\texttt{base.css} & 0 & Válido \\
+		\texttt{layout.css} & 0 & Válido \\
+		\texttt{components.css} & 0 & Válido \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\vspace{5mm}
+\subsection{Avaliação de contraste visual}
+
+A análise de contraste foi realizada utilizando o WebAIM Contrast Checker. Foram avaliadas combinações principais da interface nos temas claro e escuro, incluindo texto principal, texto secundário, cartões e elementos do cabeçalho.
+
+Os resultados obtidos foram:
+
+\begin{table}[H]
+	\centering
+	\caption{Relações de contraste avaliadas pelo WebAIM.}
+	\label{tab:webaim}
+	\renewcommand{\arraystretch}{1.4}
+	\setlength{\tabcolsep}{16pt}
+	\begin{tabular}{lc}
+		\hline
+		\textbf{Elemento avaliado} & \textbf{Relação de contraste} \\
+		\hline
+		Cabeçalho selecionado & 6,90:1 \\
+		Texto secundário -- tema claro & 5,99:1 \\
+		Texto principal -- tema claro & 13,93:1 \\
+		Cards -- tema claro & 15,26:1 \\
+		Texto secundário -- tema escuro & 8,91:1 \\
+		Texto principal -- tema escuro & 16,44:1 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+As combinações avaliadas apresentaram relações de contraste superiores ao mínimo de 4,5:1 utilizado para texto normal nas verificações apresentadas pela ferramenta. Alguns dos resultados também atenderam aos critérios mais rigorosos de contraste para determinados tamanhos de texto.
+
+\vspace{5mm}
+\subsection{Testes de responsividade}
+
+Os testes de responsividade foram planejados para verificar o comportamento da interface em diferentes dimensões de tela. Durante essa etapa devem ser observados especialmente o comportamento do menu de navegação, a disposição dos cartões, a utilização do carrossel, os formulários, os modais e a presença de rolagem horizontal. Para tal teste, utilizou-se o Dev-tool do google.
+
+\begin{figure}[H]
+	\centering
+		\begin{subfigure}[t]{0.47\textwidth}
+		\centering
+		\includegraphics[width=\linewidth,height=0.30\textheight,keepaspectratio]{2-imagens/390x844}
+		\caption{$390 \times 844$ pixels}
+		\label{fig:390x844}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.47\textwidth}
+		\centering
+		\includegraphics[width=\linewidth,height=0.30\textheight,keepaspectratio]{2-imagens/768x1024}
+		\caption{$768 \times 1024$ pixels}
+		\label{fig:768x1024}
+	\end{subfigure}
+	
+	\vspace{8mm}
+	
+	\begin{subfigure}[t]{0.47\textwidth}
+		\centering
+		\includegraphics[width=\linewidth,height=0.30\textheight,keepaspectratio]{2-imagens/1366x768}
+		\caption{$1366 \times 768$ pixels}
+		\label{fig:1366x768}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}[t]{0.47\textwidth}
+		\centering
+		\includegraphics[width=\linewidth,height=0.30\textheight,keepaspectratio]{2-imagens/1920x1080}
+		\caption{$1920 \times 1080$ pixels}
+		\label{fig:1920x1080}
+	\end{subfigure}
+	
+	\caption{Testes de responsividade realizados em diferentes resoluções de tela. \\ \centering Fonte: O autor, 2026.}
+	\label{fig:testes-responsividade}
+\end{figure}
+
+Vale destacar que nestes testes todas as funcionalidades, comportamento do menu de navegação, a disposição dos cartões, o carrossel, os
+formulários, os modais e a presença de rolagem horizontal não foram afetados, e funcionaram normalmente.
+

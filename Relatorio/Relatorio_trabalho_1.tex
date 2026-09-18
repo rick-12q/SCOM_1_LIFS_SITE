@@ -85,6 +85,8 @@ bottom=2cm
 \usepackage{tabularx}
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+\usepackage{array}
+\usepackage{ragged2e}
 
 % Outros
 \usepackage{fancyhdr}
@@ -96,11 +98,15 @@ bottom=2cm
 \usepackage{verbatim}
 \usepackage{csquotes}
 \usepackage{algorithm2e}
+\usepackage{longtable}
 
 % Código
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{colortbl}
+
+
+\definecolor{iaGeracao}{RGB}{218,235,247} \definecolor{iaCorrecao}{RGB}{252,229,205} \definecolor{iaRefinamento}{RGB}{220,240,220} \definecolor{iaAcessibilidade}{RGB}{231,222,245} \definecolor{iaReestruturacao}{RGB}{255,242,190} \definecolor{iaSemEvidencia}{RGB}{235,235,235}
 
 \lstdefinelanguage{CSS}{
 	morekeywords={
@@ -271,7 +277,7 @@ style=abnt
 			
 			Orientador: \Orientador\\[3cm]
 			
-			\textit{E-mail do aluno autore:}\\
+			\textit{E-mail do aluno autor:}\\
 			
 			\texttt{\EmailAutor}\\
 			%\texttt{\EmailAutorDois}\\[3cm]
@@ -337,7 +343,7 @@ style=abnt
 	%                        APÊNDICES
 	% ==========================================================
 	
-	% \input{1-textos/7-apêndices}
+	\input{1-textos/14-apêndices}
 	
 	
 \end{document}

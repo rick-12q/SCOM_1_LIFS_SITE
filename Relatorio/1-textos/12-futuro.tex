@@ -1,0 +1,20 @@
+\vspace{5mm}
+\section{Trabalhos futuros}
+
+A evolução mais direta do projeto consiste em transformar a estrutura atual, que funciona principalmente como um protótipo de interface, em uma aplicação com persistência e gerenciamento centralizado dos dados. Para isso, uma das primeiras etapas seria substituir o uso do \textit{LocalStorage} por um banco de dados. Dessa maneira, informações de membros, equipamentos, trabalhos e agendamentos poderiam ser mantidas independentemente do navegador utilizado.
+
+A partir dessa estrutura seria possível implementar um sistema de autenticação propriamente dito. Os usuários poderiam possuir diferentes níveis de acesso, por exemplo, visitantes, membros do laboratório e responsáveis pelo gerenciamento do conteúdo. O visitante continuaria tendo acesso às informações públicas, enquanto usuários autenticados poderiam realizar tarefas como cadastrar trabalhos, alterar informações de equipamentos ou administrar determinados conteúdos.
+
+O sistema de repositório também poderia ser ampliado. Atualmente, a estrutura já considera informações como título, autores, ano, tipo de produção e documentos relacionados. Em uma versão posterior, esses dados poderiam ser armazenados em banco de dados e apresentados por meio de filtros e mecanismos de busca. Também seria possível utilizar links para DOI, páginas de periódicos, anais de congressos ou outros endereços oficiais quando o PDF completo não puder ser disponibilizado.
+
+Outro desenvolvimento importante seria a implementação completa do sistema de agendamento das máquinas. O fluxo previsto para essa funcionalidade é relativamente simples: o usuário selecionaria um equipamento, consultaria sua disponibilidade, escolheria uma data e um horário e então enviaria a solicitação. O sistema poderia verificar automaticamente conflitos de horário e apresentar os períodos já ocupados. A confirmação ou recusa das solicitações também poderia ficar disponível para um usuário responsável pelo laboratório.
+
+Essa funcionalidade poderia ser especialmente útil considerando que a página de máquinas já foi estruturada para apresentar informações dos equipamentos, incluindo descrição, fabricante, modelo, finalidade e características. Assim, o próximo passo não seria criar uma página completamente diferente, mas aproveitar a estrutura existente e acrescentar a parte de controle que ainda não existe.
+
+Outra possibilidade seria melhorar o gerenciamento do conteúdo institucional. Notícias, informações dos membros e registros de equipamentos poderiam deixar de ser definidos diretamente nos arquivos JavaScript e HTML e passar a ser administrados por uma interface própria. Isso reduziria a necessidade de modificar o código sempre que uma informação do laboratório precisasse ser atualizada.
+
+Também seria interessante ampliar os recursos de acessibilidade e realizar novos ciclos de avaliação com o Lighthouse, principalmente após a inclusão de novas funcionalidades. A intenção seria não tratar a acessibilidade como uma etapa encerrada na primeira versão, mas como uma característica que acompanha as alterações do sistema. O mesmo vale para desempenho, especialmente caso o número de imagens, vídeos e registros armazenados aumente.
+
+Em uma etapa posterior, o projeto poderia ainda ser integrado a outros serviços utilizados no ambiente acadêmico, como páginas institucionais, ORCID e Currículo Lattes. A página de membros já apresenta a necessidade de reunir informações acadêmicas e links externos, então uma integração mais estruturada poderia facilitar a atualização desses dados.
+
+Por fim, existe a possibilidade de utilizar o projeto como uma base para uma versão efetivamente utilizada pelo LIFS. Nesse cenário, a interface desenvolvida nesta primeira etapa continuaria sendo aproveitada, mas passaria a funcionar como a camada visual de um sistema com servidor, banco de dados, autenticação e controle de permissões. Dessa forma, o trabalho deixaria de ser somente um site institucional e poderia evoluir para uma ferramenta de apoio às atividades do laboratório.
