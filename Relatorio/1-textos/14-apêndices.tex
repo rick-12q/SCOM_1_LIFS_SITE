@@ -196,3 +196,156 @@
 	\caption{Resultados das análises realizadas pelo Lighthouse nas páginas do sistema.}
 	\label{fig:lighthouse-resultados}
 \end{figure}
+
+\subsection{Check list Boas práticas}
+
+\begin{longtable}{p{3.2cm} p{7.2cm} p{3.0cm}}
+	
+	\caption{Boas práticas utilizadas no desenvolvimento do site.}
+	\label{tab:boas-praticas}
+	\\
+	
+	\toprule
+	\textbf{Prática} &
+	\textbf{Implementação} &
+	\textbf{Arquivo} \\
+	\midrule
+	\endfirsthead
+	
+	\toprule
+	\textbf{Prática} &
+	\textbf{Implementação} &
+	\textbf{Arquivo} \\
+	\midrule
+	\endhead
+	
+	\midrule
+	\multicolumn{3}{r}{Continua na próxima página} \\
+	\endfoot
+	
+	\bottomrule
+	\endlastfoot
+	
+	DOCTYPE HTML5 &
+	Utilização da declaração \texttt{doctype} correspondente ao HTML5. &
+	\texttt{index.html}, linha 2 \\
+	
+	Atributo \texttt{lang} &
+	Definição do idioma principal da página como português do Brasil por meio do atributo \texttt{lang}. &
+	\texttt{index.html}, linha 3 \\
+	
+	Meta viewport &
+	Configuração da área de visualização para adaptação do conteúdo às diferentes dimensões de tela. &
+	\texttt{index.html}, linha 6 \\
+	
+	CSS externo &
+	Separação dos estilos em arquivos específicos para reset, variáveis, estilos básicos, layout e componentes. &
+	\texttt{index.html}, linhas 21--25 \\
+	
+	Unidades relativas &
+	Utilização de unidades e funções relativas, como \texttt{rem}, porcentagem, \texttt{vw}, \texttt{ch}, \texttt{min()} e \texttt{clamp()}. &
+	\texttt{css/}, diversos arquivos \\
+	
+	Imagens com \texttt{alt} &
+	As imagens utilizadas no site possuem o atributo alternativo \texttt{alt}. &
+	\texttt{index.html} \\
+	
+	Dimensões explícitas de imagens &
+	As imagens do carrossel possuem dimensões definidas por meio dos atributos \texttt{width} e \texttt{height}. &
+	\texttt{index.html}, linhas 116--140 \\
+	
+	Flexbox e Grid &
+	Utilização de Flexbox e CSS Grid para organização dos elementos e estrutura das páginas. &
+	\texttt{css/layout.css} \\
+	
+	Ausência de estilos inline &
+	Os estilos são mantidos nos arquivos CSS externos, sem utilização de atributos \texttt{style} diretamente nos elementos HTML. &
+	Arquivos HTML e CSS \\
+	
+	IDs não duplicados &
+	Os identificadores utilizados nos elementos das páginas são definidos individualmente. &
+	Arquivos HTML \\
+	
+	Links internos &
+	Utilização de links para navegação entre as diferentes páginas que compõem o site. &
+	Arquivos HTML \\
+	
+	Foco visível &
+	Utilização de \texttt{:focus-visible} para apresentar uma indicação visual durante a navegação por teclado. &
+	\texttt{css/base.css}, linhas 48--52 \\
+	
+	Contraste &
+	Utilização de cores centralizadas nas variáveis CSS para padronização da interface nos diferentes temas. &
+	\texttt{css/variables.css} \\
+	
+	Labels associados aos campos &
+	Os campos dos formulários possuem elementos \texttt{label} associados aos respectivos campos por meio dos atributos \texttt{for} e \texttt{id}. &
+	\texttt{login.html} e formulários \\
+	
+	Navegação por teclado &
+	Implementação de elementos navegáveis por teclado, incluindo botão de menu, link de salto e indicação visual de foco. &
+	\texttt{index.html} e \texttt{css/base.css} \\
+	
+	Estrutura semântica &
+	Utilização de elementos semânticos do HTML, como \texttt{header}, \texttt{nav}, \texttt{main}, \texttt{section} e \texttt{footer}. &
+	Arquivos HTML \\
+	
+	Variáveis CSS &
+	Definição de valores reutilizáveis dentro de \texttt{:root}, permitindo centralizar cores e demais propriedades da interface. &
+	\texttt{css/variables.css} \\
+	
+\end{longtable}
+
+\subsection{Histórico git}
+
+\begin{lstlisting}[style=gitstyle,
+	caption={Histórico de commits do desenvolvimento do projeto.},
+	label={lst:historico-git}]
+	* fa5c243 (HEAD -> main, origin/main, origin/HEAD) docs: escrita do relatorio
+	* 8872e58 perf: compressao de outras fotos
+	* 07e8647 perf: compressao de videos e imagens para aumentar lighthouse
+	* fa3e505 Remove métricas do repositório
+	* bb9de45 docs: atualiza e adiciona um README V2
+	* 1f99cb4 fix: correcao de imagem do quatro pontas
+	* dcc5abc style: adicao de um favIcon
+	* 9f48717 style: ajustes e melhorias nos botoes clicavies de contato com os membros
+	* 64f1b3d feat: adicao de mailto nos membros e alteracao do footer
+	* 9cbc549 feat: adiciona comentario sobre as maquinas
+	* 04ae87d feat: adiciona campo de nome, inst. e motivacao para agendamentos
+	* fd01438 perf: Melhora de perfomance adicionando o load lazy
+	* 6d99d60 perf: compressao de fotos e videos - melhorar a performance do lighthouse
+	* dd0986d Configura GitHub Pages
+	* 5b75d3f ajeitando pjt nas pasta Site E Relatorio
+	* 3cee70b mexendo no gitignore p arquivos latex
+	* 726c986 update
+	* 1e32958 style: Adicao de transicao entre idiomas e temas (claro e escuro) e adicao do logo LIFS
+	* 5737548 feat: adicao de video institucional e mapa de localizaçao do lab
+	* 72a30da fix:Correçao do auth.js que perdia o status de login + Ajuste de membros nao atualizar o idioma
+	* 2dd885d feat: Traduçao das paginas de membros e maquinas V2
+	* 460383b feat: Traduçao da pagina de erro 404
+	* a23b6a9 feat: Traduçao da pagina de adicionar trabalho
+	* e4253ed feat: Traduçao da pagina de login
+	* 70481d7 feat: Traduçao da pagina de membros
+	* e1e16aa feat: Traduçao das paginas de maquinas e repositorio
+	* 678f665 feat: adiçao da traduçao em ingles da pagina HOME/INICIO, para acessibilidade de internacionalizandos.
+	* f7c428a chore: cria a pasta js/i18n.js para tradução do site em ingles
+	* 353e71b feat: adicao do tema ESCURO e CLARO no site
+	* 894860b style: Adicao do carrossel na landingpage no inicio.
+	* c2d018a style:adicao de um carrossel de fundo na tela de login. alteracoes em java css e html basicas.
+	* 368b76b style: Mudanças relevantes no estilo de membros e maquinas, bem como nas fontes principais
+	* b934165 chore: cria a pasta para add trabalho .js
+	* 5b86a34 style: correcao de ortografia nas legendas
+	* dae911f style:ajuste para imagens serem clicaveis
+	* 8d2253d style:imagem das maquinas estilizada
+	* 9f99d0a style:Adicao das imagens de membros e maquinas
+	* c36fff7 refactor: Codigos HTML refinados por IA e maquinas.js adicionadas
+	* 7b10636 feat: ajuste das partes faltantes
+	* b3cae9b feat: adiciona pagina e logica de autenticacao de usuarios
+	* 93a8197 Feature: Adicao do carrosel de imagens
+	* 4561067 STYLE: Adicao de trechos do CSS para layout
+	* 5ed7317 STYLE: Adicao de trechos do CSS
+	* 097b0d6 feat: estrutura inicial do index.html
+	* 8e1a315 docs: add de um pseudo readme
+	* daad2b1 chore: cria estrutura de pastas, arquivos vazios e gitignore
+	* d111ce8 chore: estrutura inicial do projeto
+\end{lstlisting}

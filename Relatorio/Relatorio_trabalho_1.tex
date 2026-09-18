@@ -72,6 +72,7 @@ bottom=2cm
 
 % Formatação
 \usepackage{titlesec}
+\usepackage{fontawesome5}
 \usepackage{indentfirst}
 \usepackage{setspace}
 \usepackage{enumitem}
@@ -87,6 +88,8 @@ bottom=2cm
 \usetikzlibrary{arrows.meta, positioning, shapes.geometric}
 \usepackage{array}
 \usepackage{ragged2e}
+\usepackage{booktabs}
+\usepackage{longtable}
 
 % Outros
 \usepackage{fancyhdr}
@@ -107,6 +110,58 @@ bottom=2cm
 
 
 \definecolor{iaGeracao}{RGB}{218,235,247} \definecolor{iaCorrecao}{RGB}{252,229,205} \definecolor{iaRefinamento}{RGB}{220,240,220} \definecolor{iaAcessibilidade}{RGB}{231,222,245} \definecolor{iaReestruturacao}{RGB}{255,242,190} \definecolor{iaSemEvidencia}{RGB}{235,235,235}
+% Cores
+\definecolor{githubcolor}{HTML}{24292F}
+\definecolor{metricscolor}{HTML}{7B2CBF}
+\definecolor{websitecolor}{HTML}{2D6A4F}
+% Cores do histórico Git
+\definecolor{terminalbg}{RGB}{24,26,27}
+\definecolor{terminaltext}{RGB}{220,220,220}
+\definecolor{gitgreen}{RGB}{80,200,120}
+\definecolor{gitred}{RGB}{255,100,100}
+\definecolor{gitpurple}{RGB}{190,130,255}
+\definecolor{gitorange}{RGB}{255,170,70}
+\definecolor{gitblue}{RGB}{100,170,255}
+\definecolor{gitcyan}{RGB}{80,210,210}
+\definecolor{gitgray}{RGB}{150,160,165}
+\definecolor{gitbranch}{RGB}{255,210,80}
+
+\lstdefinelanguage{GitHistory}{
+	morekeywords={
+		feat,
+		fix,
+		style,
+		perf,
+		docs,
+		chore,
+		refactor,
+		Feature,
+		STYLE
+	},
+	sensitive=true,
+}
+
+\lstdefinestyle{gitstyle}{
+	language=GitHistory,
+	backgroundcolor=\color{terminalbg},
+	basicstyle=\ttfamily\small\color{terminaltext},
+	keywordstyle=\color{gitgreen}\bfseries,
+	commentstyle=\color{gitgray},
+	stringstyle=\color{gitblue},
+	columns=fullflexible,
+	keepspaces=true,
+	showstringspaces=false,
+	breaklines=true,
+	breakatwhitespace=false,
+	frame=single,
+	framerule=0.6pt,
+	rulecolor=\color{black!50},
+	xleftmargin=0.3cm,
+	xrightmargin=0.3cm,
+	aboveskip=10pt,
+	belowskip=10pt,
+	tabsize=4
+}
 
 \lstdefinelanguage{CSS}{
 	morekeywords={
