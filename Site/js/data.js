@@ -74,7 +74,7 @@ const SEED_MEMBROS = [
     situacao: "atual",
     imagem: "img/membros/bortoleto.JPG",
     lattes: "http://lattes.cnpq.br/0104980613925349",
-    orcid: "0000-0003-4129-7819",
+    orcid: "https://orcid.org/0000-0003-4129-7819",
     email: "jose.rr.bortoleto@unesp.br"
   },
   {
@@ -84,7 +84,7 @@ const SEED_MEMBROS = [
     situacao: "atual",
     imagem: "img/membros/rick.jpeg",
     lattes: "http://lattes.cnpq.br/0250660115526685",
-    orcid: "0009-0005-1095-3221",
+    orcid: "https://orcid.org/0009-0005-1095-3221",
     email: "lh.monteiro@unesp.br"
   },
   {
@@ -94,7 +94,7 @@ const SEED_MEMBROS = [
     situacao: "atual",
     imagem: "img/membros/paulo.jpg",
     lattes: "http://lattes.cnpq.br/8312977684358988",
-    orcid: "0000-0001-8367-8287",
+    orcid: "https://orcid.org/0000-0001-8367-8287",
     email: "paulo.silas@unesp.br"
   },
   {
@@ -104,7 +104,7 @@ const SEED_MEMBROS = [
     situacao: "atual",
     imagem: "img/membros/raul.jpg",
     lattes: "http://lattes.cnpq.br/4183764742951944",
-    orcid: "0000-0002-6949-485X",
+    orcid: "https://orcid.org/0000-0002-6949-485X",
     email: "raul.ramos@unesp.br"
   },
   {
