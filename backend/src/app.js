@@ -3,6 +3,7 @@ const cors = require("cors");
 const helmet = require("helmet");
 
 const pool = require("./config/database");
+const authRoutes = require("./routes/authRoutes");
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
+app.use("/api/auth", authRoutes);
 // Verifica se a API e o banco de dados estão funcionando
 app.get("/api/health", async (req, res) => {
     try {
