@@ -1,41 +1,77 @@
-//Código foi revisado e adaptado de uma versão que eu tentei escreve, mas n funcinou,. dai usei o GPT para aplicar as melhorias. Isso implicou em mudanças no repositório.js tbm.
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.querySelector('form');
+  const form = document.querySelector('form');
 
-    if (!form) return;
+  if (!form) {
+    return;
+  }
 
-    form.addEventListener('submit', (event) => {
-        event.preventDefault();
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-        const titulo = document.querySelector('#titulo')?.value.trim();
-        const autores = document.querySelector('#autores')?.value.trim();
-        const ano = document.querySelector('#ano')?.value.trim();
-        const tipo = document.querySelector('#tipo')?.value.trim();
-        const arquivo = document.querySelector('#arquivo')?.files[0];
+    const titulo = document.querySelector('#titulo')?.value.trim();
+    const autores = document.querySelector('#autores')?.value.trim();
+    const ano = document.querySelector('#ano')?.value.trim();
+    const tipo = document.querySelector('#tipo')?.value.trim();
+    const arquivo = document.querySelector('#arquivo')?.files[0];
 
-        if (!titulo || !autores || !ano || !tipo) {
-            alert(t('work.required'));
-            return;
-        }
+    if (!titulo || !autores || !ano || !tipo) {
+      alert(t('work.required'));
+      return;
+    }
 
-        const trabalhos = JSON.parse(localStorage.getItem('trabalhos')) || [];
+    const token = obterToken();
 
-        const novoTrabalho = {
-            id: Date.now(),
-            titulo: titulo,
-            autores: autores,
-            ano: ano,
+    if (!token) {
+      window.location.href =
+        'login.html?redirect=adicionar-trabalho.html';
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        'http://localhost:3000/api/trabalhos',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            titulo,
+            autores,
+            ano: Number(ano),
             tipo: tipo.toLowerCase(),
             arquivo: arquivo ? arquivo.name : ''
-        };
+          })
+        }
+      );
 
-        trabalhos.push(novoTrabalho);
+      const result = await response.json();
 
-        localStorage.setItem('trabalhos', JSON.stringify(trabalhos));
+      if (response.status === 401) {
+        logout();
 
-        alert(t('work.success'));
+        window.location.href =
+          'login.html?redirect=adicionar-trabalho.html';
 
-        form.reset();
-    });
+        return;
+      }
+
+      if (!response.ok || !result.success) {
+        const mensagem =
+          result?.error?.message ||
+          'Não foi possível cadastrar o trabalho.';
+
+        alert(mensagem);
+        return;
+      }
+
+      alert(t('work.success'));
+      form.reset();
+    } catch (error) {
+      console.error('Erro ao cadastrar trabalho:', error);
+
+      alert('Não foi possível conectar com o servidor.');
+    }
+  });
 });
-
