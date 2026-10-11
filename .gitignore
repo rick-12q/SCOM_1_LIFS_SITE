@@ -19,3 +19,27 @@ node_modules/
 *.nav
 *.snm
 *.vrb
+# ============================================================
+# Trabalho Individual II - Backend
+# ============================================================
+
+# Variaveis de ambiente / credenciais
+.env
+.env.*
+!.env.example
+
+# Node.js
+node_modules/
+
+# Logs
+backend/logs/*.log
+
+# Testes
+coverage/
+
+# Arquivos temporarios
+*.tmp
+
+# Windows
+desktop.ini
+Thumbs.db
