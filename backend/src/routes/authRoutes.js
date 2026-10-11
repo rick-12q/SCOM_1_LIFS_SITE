@@ -1,6 +1,7 @@
 const express = require("express");
 const { loginValidation } = require("../validators/authValidator");
 const { validateRequest } = require("../middleware/validationMiddleware");
+const { loginLimiter } = require("../middleware/rateLimitMiddleware");
 const authController = require("../controllers/authController");
 const {
     authenticate,
@@ -11,6 +12,7 @@ const router = express.Router();
 
 router.post(
     "/login",
+    loginLimiter,
     loginValidation,
     validateRequest,
     authController.login
