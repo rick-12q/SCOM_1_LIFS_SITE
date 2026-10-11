@@ -1,5 +1,6 @@
 const express = require("express");
-
+const { loginValidation } = require("../validators/authValidator");
+const { validateRequest } = require("../middleware/validationMiddleware");
 const authController = require("../controllers/authController");
 const {
     authenticate,
@@ -8,7 +9,12 @@ const {
 
 const router = express.Router();
 
-router.post("/login", authController.login);
+router.post(
+    "/login",
+    loginValidation,
+    validateRequest,
+    authController.login
+);
 
 router.get("/me", authenticate, authController.me);
 
