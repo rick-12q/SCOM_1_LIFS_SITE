@@ -1,8 +1,3 @@
-// Dados iniciais (seed). Na primeira execucao copiamos para o localStorage (da p ver no nav.)
-const SEED_TRABALHOS = [
-  { id: 1, titulo: "Annealing térmico em filmes de Nb2O5", autores: "Monteiro, L. H.; Oliveira, P. S.; Bortoleto, J. R.", ano: 2026, tipo: "congresso", arquivo: "congresso-2026-CBrAVIC.pdf" },
-  { id: 2, titulo: "Sistema hipims aplicado a plasma", autores: "Monteiro, L. H.; Oliveira, P. S.; Bortoleto, J. R.", ano: 2025, tipo: "congresso", arquivo: "congresso-2025-CIC.pdf" }
-];
 //Aqui tem umas maquinas do lab, obviamente dps preciso adicionar todas. Mas e so p ter uma ideia
 const SEED_MAQUINAS = [
   {
@@ -124,9 +119,6 @@ const SEED_MEMBROS = [
 ];
 
 function initData() {
-  if (!localStorage.getItem('trabalhos')) {
-    localStorage.setItem('trabalhos', JSON.stringify(SEED_TRABALHOS));
-  }
   if (!localStorage.getItem('maquinas')) {
     localStorage.setItem('maquinas', JSON.stringify(SEED_MAQUINAS));
   }

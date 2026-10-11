@@ -25,7 +25,7 @@ const TRANSLATIONS = {
     "sidebar.worksAwards": "Trabalhos e prêmios",
 
     "footer.portal": "Portal acadêmico do LIFS.",
-    "footer.demo": "Portal acadêmico demonstrativo.",
+    "footer.demo": "Portal acadêmico do LIFS.",
     "footer.copyright": "Lab LIFS. Portal do grupo de pesquisa.",
     "footer.contactTitle": "Contato",
     "footer.emailLabel": "E-mail:",
@@ -77,7 +77,7 @@ const TRANSLATIONS = {
     "repository.description": "Consulte os registros acadêmicos cadastrados e filtre os resultados por tipo ou ano.",
 
     "machines.title": "Acervo de máquinas e equipamentos",
-    "machines.description": "Confira os equipamentos cadastrados e solicite um horário de uso no protótipo.",
+    "machines.description": "Confira os equipamentos cadastrados e solicite um horário de uso.",
     "machines.list": "Lista de máquinas",
     "machines.location": "Local:",
     "machines.available": "Disponível",
@@ -133,7 +133,7 @@ const TRANSLATIONS = {
 
     "login.title": "Login de membro",
     "login.description": "Entre com sua conta para acessar as funcionalidades restritas aos membros do LIFS.",
-    "login.demo": "Conta de demonstração:",
+    "login.demo": "Acesso ao sistema:",
     "login.email": "E-mail institucional",
     "login.password": "Senha",
     "login.invalid": "E-mail ou senha inválidos.",
@@ -183,7 +183,7 @@ const TRANSLATIONS = {
     "sidebar.worksAwards": "Works and awards",
 
     "footer.portal": "LIFS academic portal.",
-    "footer.demo": "Academic demonstration portal.",
+    "footer.demo": "LIFS academic portal.",
     "footer.copyright": "Lab LIFS. Research group portal.",
     "footer.contactTitle": "Contact",
     "footer.emailLabel": "Email:",
@@ -235,7 +235,7 @@ const TRANSLATIONS = {
     "repository.description": "Browse registered academic records and filter the results by type or year.",
 
     "machines.title": "Equipment collection",
-    "machines.description": "Check the registered equipment and request a usage time in the prototype.",
+    "machines.description": "Check the registered equipment and request a usage time.",
     "machines.list": "Equipment list",
     "machines.location": "Location:",
     "machines.available": "Available",
@@ -291,7 +291,7 @@ const TRANSLATIONS = {
 
     "login.title": "Member sign in",
     "login.description": "Sign in with your account to access features restricted to LIFS members.",
-    "login.demo": "Demo account:",
+    "login.demo": "System access:",
     "login.email": "Institutional e-mail",
     "login.password": "Password",
     "login.invalid": "Invalid e-mail or password.",
