@@ -1,43 +1,66 @@
-const USUARIOS_VALIDOS = [
-  {
-    email: "membro@lab.edu",
-    senha: "123456",
-    nome: "Membro Teste"
-  }
-];
+const API_BASE_URL = "http://localhost:3000/api";
 
-function login(email, senha) {
-  const usuario = USUARIOS_VALIDOS.find(
-    (item) => item.email === email.trim().toLowerCase() && item.senha === senha
-  );
+async function login(email, senha) {
+  try {
+    const response = await fetch(`${API_BASE_URL}/auth/login`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        email: email.trim().toLowerCase(),
+        password: senha
+      })
+    });
 
-  if (!usuario) {
+    const result = await response.json();
+
+    if (!response.ok || !result.success) {
+      return false;
+    }
+
+    localStorage.setItem("token", result.data.token);
+
+    localStorage.setItem(
+      "sessao",
+      JSON.stringify({
+        id: result.data.user.id,
+        nome: result.data.user.nome,
+        email: result.data.user.email,
+        perfil: result.data.user.perfil,
+        logado: true
+      })
+    );
+
+    return true;
+  } catch (error) {
+    console.error("Erro ao conectar com a API:", error);
     return false;
   }
-//EU estava tendo mto problema com a estrutura anterior, principalmente ao navegar, atualizar pag. etc, ele perdia a sessão, dai resolvi usar o localStorage para manter a sessão do usuario logado, e agora esta funcionando corretamente. Usei o GPT para me ajudar a reestruturar o codigo. Depois de longo tempo brigando com o GPT chegamos nessa versão final.
-  localStorage.setItem(
-    "sessao",
-    JSON.stringify({
-      nome: usuario.nome,
-      email: usuario.email,
-      logado: true
-    })
-  );
-
-  return true;
 }
 
 function logout() {
+  localStorage.removeItem("token");
   localStorage.removeItem("sessao");
 }
 
 function usuarioLogado() {
   try {
+    const token = localStorage.getItem("token");
     const sessao = JSON.parse(localStorage.getItem("sessao"));
-    return sessao?.logado ? sessao : null;
+
+    if (!token || !sessao?.logado) {
+      return null;
+    }
+
+    return sessao;
   } catch {
     return null;
   }
+}
+
+function obterToken() {
+  return localStorage.getItem("token");
 }
 
 function atualizarHeaderAuth() {
@@ -60,7 +83,7 @@ function atualizarHeaderAuth() {
     btnLogin.onclick = (event) => {
       event.preventDefault();
       logout();
-      window.location.reload();
+      window.location.href = "index.html";
     };
 
     return;
@@ -80,14 +103,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("login-form");
   const erro = document.getElementById("login-erro");
 
-  form?.addEventListener("submit", (event) => {
+  form?.addEventListener("submit", async (event) => {
     event.preventDefault();
+
+    if (erro) {
+      erro.hidden = true;
+    }
 
     const email = document.getElementById("email")?.value ?? "";
     const senha = document.getElementById("senha")?.value ?? "";
 
-    if (login(email, senha)) {
-      window.location.href = "index.html";
+    const sucesso = await login(email, senha);
+
+    if (sucesso) {
+      const params = new URLSearchParams(window.location.search);
+      const redirect = params.get("redirect");
+
+      window.location.href = redirect || "index.html";
       return;
     }
 
@@ -99,7 +131,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const protectedPage = document.body.dataset.protected === "true";
 
   if (protectedPage && !usuarioLogado()) {
-    window.location.replace("login.html?redirect=adicionar-trabalho.html");
+    window.location.replace(
+      "login.html?redirect=adicionar-trabalho.html"
+    );
     return;
   }
 
