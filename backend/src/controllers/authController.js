@@ -1,5 +1,6 @@
 const authService = require("../services/authService");
 const userRepository = require("../repositories/userRepository");
+const logger = require("../utils/logger");
 
 async function login(req, res) {
     try {
@@ -16,8 +17,12 @@ async function login(req, res) {
         }
 
         const result = await authService.login(email, password);
-
         if (!result) {
+            logger.warn("LOGIN_FAILED", {
+                email,
+                ip: req.ip
+            });
+
             return res.status(401).json({
                 success: false,
                 error: {
@@ -27,12 +32,22 @@ async function login(req, res) {
             });
         }
 
+        logger.info("LOGIN_SUCCESS", {
+            userId: result.user.id,
+            email: result.user.email,
+            perfil: result.user.perfil,
+            ip: req.ip
+        });
+
         return res.status(200).json({
             success: true,
             data: result
         });
     } catch (error) {
-        console.error("Erro no login:", error.message);
+        logger.error("LOGIN_INTERNAL_ERROR", {
+            message: error.message,
+            stack: error.stack
+        });
 
         return res.status(500).json({
             success: false,

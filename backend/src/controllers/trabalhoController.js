@@ -1,4 +1,5 @@
 const trabalhoRepository = require("../repositories/trabalhoRepository");
+const logger = require("../utils/logger");
 
 async function list(req, res) {
     try {
@@ -113,13 +114,22 @@ async function create(req, res) {
             arquivo,
             createdBy: req.user.id
         });
-
+        logger.info("TRABALHO_CREATED", {
+            trabalhoId: trabalho.id,
+            userId: req.user.id,
+            perfil: req.user.perfil,
+            ip: req.ip
+        });
         return res.status(201).json({
             success: true,
             data: trabalho
         });
     } catch (error) {
-        console.error("Erro ao criar trabalho:", error.message);
+        logger.error("TRABALHO_CREATE_ERROR", {
+        userId: req.user?.id,
+        message: error.message,
+        stack: error.stack
+        });
 
         return res.status(500).json({
             success: false,
