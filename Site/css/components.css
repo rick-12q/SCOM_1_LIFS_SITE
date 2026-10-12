@@ -2334,3 +2334,10 @@ html[data-theme="dark"] #modal-admin-maquina .btn-secondary:hover {
 .agendamento-status {
   font-weight: 700;
 }
+
+/* Mensagens de sucesso no tema escuro */
+html[data-theme="dark"] .form-success {
+  color: #d8f3dc;
+  background-color: #1f3a2d;
+  border-color: #3f6b50;
+}
