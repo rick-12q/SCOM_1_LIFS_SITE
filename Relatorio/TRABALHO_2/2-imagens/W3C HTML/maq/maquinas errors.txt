@@ -1,0 +1,5 @@
+Error: Bad value for attribute src on element img: Must be non-empty.
+
+From line 172, column 9; to line 172, column 48
+
+>↩        <img id="imagem-ampliada" src="" alt="">↩    

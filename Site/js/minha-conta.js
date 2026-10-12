@@ -661,3 +661,13 @@ async function iniciarPainelNotificacoes() {
     }
   });
 }
+
+document.addEventListener("languagechange", () => {
+  const sucesso =
+    document.getElementById("notificacao-sucesso");
+
+  if (sucesso && !sucesso.hidden) {
+    sucesso.textContent =
+      t("notifications.success");
+  }
+});

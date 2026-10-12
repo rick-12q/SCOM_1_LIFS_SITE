@@ -228,6 +228,12 @@ background: #e6f2e9;
 border: 1px solid #b8d7bf;
 }
 
+html[data-theme="dark"] .form-success {
+  color: #D8F3DC;
+  background: #1F3A2D;
+  border-color: #3F6B50;
+}
+
 .notice {
 background: rgb(27 67 50 / 0.07);
 border: 1px solid rgb(27 67 50 / 0.16);
