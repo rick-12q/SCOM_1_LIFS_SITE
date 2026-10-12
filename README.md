@@ -1,8 +1,26 @@
-﻿# Site LIFS — Laboratório de Investigação de Filmes Semicondutores
+# Site LIFS — Trabalho Individual II
 
-Sistema web desenvolvido para o **Laboratório de Investigação de Filmes Semicondutores (LIFS)** da **UNESP — Instituto de Ciência e Tecnologia de Sorocaba**.
+<p align="center">
+  <img src="https://img.shields.io/badge/UNESP-Sorocaba-1F4E79?style=for-the-badge&logo=academia&logoColor=white">
+  <img src="https://img.shields.io/badge/SCOMP-Trabalho%20II-6C63FF?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white">
+  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white">
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white">
+  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white">
+</p>
 
-Projeto acadêmico desenvolvido na disciplina **SCOMP — Sistemas Computacionais**, evoluindo o site estático desenvolvido no Trabalho Individual I para uma aplicação com backend, banco de dados, autenticação, autorização e API REST.
+<p align="center">
+  Evolução full-stack do sistema web do <strong>Laboratório de Investigação de Filmes Semicondutores — LIFS</strong>,
+  da <strong>UNESP — Instituto de Ciência e Tecnologia de Sorocaba</strong>.
+</p>
+
+---
+
+## Sobre esta versão
+
+O **Trabalho Individual II** evolui o frontend desenvolvido no Trabalho I para uma aplicação com **backend, banco de dados, autenticação, autorização e API REST**.
+
+A primeira entrega permanece preservada na branch `main` e na tag `v1.0-trabalho1`. Esta branch, `trabalho-2`, concentra a evolução full-stack.
 
 ---
 
@@ -10,58 +28,41 @@ Projeto acadêmico desenvolvido na disciplina **SCOMP — Sistemas Computacionai
 
 ### Área pública
 
-- Página inicial do laboratório;
-- Visualização de membros;
-- Visualização de máquinas e equipamentos;
-- Consulta ao repositório de trabalhos;
-- Filtros de trabalhos por tipo e ano;
-- Interface em português e inglês;
-- Tema claro e escuro.
+- página inicial do laboratório;
+- visualização de membros;
+- visualização de máquinas e equipamentos;
+- consulta ao repositório de trabalhos;
+- filtros por tipo e ano;
+- interface em português e inglês;
+- tema claro e escuro.
 
 ### Área autenticada
 
-- Login utilizando e-mail e senha;
-- Autenticação baseada em JWT;
-- Cadastro de trabalhos;
-- Edição de trabalhos;
-- Exclusão de trabalhos;
-- Controle de acesso baseado em perfil.
+- login com e-mail e senha;
+- autenticação baseada em JWT;
+- cadastro, edição e exclusão de trabalhos;
+- página de conta do usuário;
+- controle de acesso baseado em perfil;
+- recursos de agendamento e notificações.
 
-Existem dois perfis de usuário:
+### Perfis de acesso
 
-- `MEMBRO`: pode cadastrar trabalhos e alterar/excluir os próprios registros;
-- `ADMIN`: pode administrar todos os trabalhos.
+| Perfil | Permissões |
+|---|---|
+| `MEMBRO` | Pode cadastrar trabalhos e alterar/excluir os próprios registros |
+| `ADMIN` | Pode administrar todos os trabalhos e acessar operações administrativas |
 
-A autorização é validada pelo backend, independentemente dos controles exibidos pela interface.
+A autorização é validada pelo backend, independentemente dos controles exibidos na interface.
 
 ---
 
 ## Tecnologias
 
-### Frontend
+**Frontend:** HTML5 · CSS3 · JavaScript
 
-- HTML5
-- CSS3
-- JavaScript
+**Backend:** Node.js · Express · PostgreSQL · `pg` · JWT · `bcrypt` · `express-validator` · `helmet` · `cors` · `express-rate-limit` · `winston`
 
-### Backend
-
-- Node.js
-- Express
-- PostgreSQL
-- `pg`
-- JWT (`jsonwebtoken`)
-- `bcrypt`
-- `express-validator`
-- `helmet`
-- `cors`
-- `express-rate-limit`
-- `winston`
-
-### Testes
-
-- Jest
-- Supertest
+**Testes:** Jest · Supertest
 
 ---
 
@@ -69,14 +70,17 @@ A autorização é validada pelo backend, independentemente dos controles exibid
 
 ```text
 SCOM_1_LIFS_SITE/
-│
 ├── Site/
-│   └── site/
-│       ├── css/
-│       ├── js/
-│       ├── imagens/
-│       └── páginas HTML
-│
+│   ├── css/
+│   ├── img/
+│   ├── js/
+│   ├── index.html
+│   ├── login.html
+│   ├── minha-conta.html
+│   ├── membros.html
+│   ├── maquinas.html
+│   ├── repositorio.html
+│   └── demais páginas HTML
 ├── backend/
 │   ├── docs/
 │   │   └── API.md
@@ -94,21 +98,20 @@ SCOM_1_LIFS_SITE/
 │   ├── .env.example
 │   ├── package.json
 │   └── server.js
-│
 ├── database/
 │   ├── schema.sql
 │   └── seed.sql
-│
 ├── Relatorio/
+├── .github/
 ├── .gitignore
 └── README.md
 ```
 
+> O frontend fica diretamente em `Site/`. A antiga duplicação `Site/site/` foi removida.
+
 ---
 
-# Arquitetura
-
-O Trabalho Individual II utiliza uma arquitetura em camadas.
+## Arquitetura
 
 ```text
 Frontend
@@ -133,21 +136,19 @@ Services / Repositories
 PostgreSQL
 ```
 
-As responsabilidades são separadas entre interface, aplicação e acesso aos dados.
+As responsabilidades são separadas entre interface, aplicação, regras de acesso e persistência dos dados.
 
 ---
 
-# Banco de dados
+## Banco de dados
 
-O sistema utiliza **PostgreSQL**.
-
-Banco utilizado:
+O sistema utiliza **PostgreSQL**, com o banco:
 
 ```text
 lifs_db
 ```
 
-As principais tabelas são:
+Principais tabelas:
 
 - `usuarios`
 - `membros`
@@ -155,25 +156,25 @@ As principais tabelas são:
 - `trabalhos`
 - `agendamentos`
 
-O arquivo responsável pela criação da estrutura é:
+Estrutura:
 
 ```text
 database/schema.sql
 ```
 
-Os dados iniciais estão em:
+Dados iniciais:
 
 ```text
 database/seed.sql
 ```
 
-As consultas realizadas pelo backend utilizam parâmetros (`$1`, `$2`, etc.), evitando concatenação direta de valores nas consultas SQL.
+As consultas do backend utilizam parâmetros (`$1`, `$2`, etc.), evitando concatenação direta de valores em SQL.
 
 ---
 
-# Configuração do projeto
+## Configuração
 
-## 1. Clonar o repositório
+### 1. Clonar e acessar a branch
 
 ```bash
 git clone https://github.com/rick-12q/SCOM_1_LIFS_SITE.git
@@ -181,47 +182,31 @@ cd SCOM_1_LIFS_SITE
 git checkout trabalho-2
 ```
 
----
+### 2. Criar o PostgreSQL
 
-## 2. Criar o banco PostgreSQL
-
-Crie um banco chamado:
+Crie o banco:
 
 ```text
 lifs_db
 ```
 
-Depois execute:
+Execute, nesta ordem:
 
 ```text
 database/schema.sql
-```
-
-e, em seguida:
-
-```text
 database/seed.sql
 ```
 
 Os scripts também podem ser executados pelo pgAdmin.
 
----
-
-## 3. Configurar o backend
-
-Entre na pasta:
+### 3. Configurar o backend
 
 ```bash
 cd backend
-```
-
-Instale as dependências:
-
-```bash
 npm install
 ```
 
-Crie o arquivo `.env` a partir do exemplo:
+No Windows PowerShell:
 
 ```powershell
 Copy-Item .env.example .env
@@ -233,7 +218,7 @@ No Linux/macOS:
 cp .env.example .env
 ```
 
-Configure o arquivo `.env`:
+Configure o `.env`:
 
 ```dotenv
 PORT=3000
@@ -257,84 +242,57 @@ SEED_MEMBER_PASSWORD=defina_uma_senha_forte
 
 O arquivo `.env` real não deve ser enviado ao Git.
 
----
-
-## 4. Criar os usuários de autenticação
-
-Depois de configurar o `.env`, execute:
+### 4. Criar usuários de autenticação
 
 ```bash
 node scripts/seed-users.js
 ```
 
-Esse script cria os usuários utilizados pelos perfis:
+As senhas são definidas pelo `.env` e armazenadas utilizando hash com `bcrypt`.
 
-```text
-ADMIN
-MEMBRO
-```
-
-As senhas são definidas exclusivamente pelo arquivo `.env` e armazenadas no banco utilizando hash seguro com `bcrypt`.
-
----
-
-## 5. Iniciar o backend
-
-Dentro de `backend`:
+### 5. Iniciar o backend
 
 ```bash
 npm start
 ```
 
-Para desenvolvimento com reinicialização automática:
+Para desenvolvimento:
 
 ```bash
 npm run dev
 ```
 
-Por padrão, a API ficará disponível em:
+API padrão:
 
 ```text
 http://localhost:3000
 ```
 
-Teste:
+Teste de saúde:
 
 ```text
 GET http://localhost:3000/api/health
 ```
 
----
+### 6. Executar o frontend
 
-## 6. Executar o frontend
-
-O frontend está localizado em:
+O frontend está em:
 
 ```text
-Site/site/
+Site/
 ```
 
-Ele pode ser aberto utilizando um servidor HTTP local, por exemplo a extensão **Live Server** do VS Code.
-
-Abra:
-
-```text
-Site/site/index.html
-```
-
-O backend deve permanecer executando na porta `3000`.
+Abra `Site/index.html` utilizando um servidor HTTP local, como a extensão **Live Server** do VS Code. O backend deve permanecer em execução na porta `3000`.
 
 ---
 
-# API REST
+## API REST
 
-A API utiliza o prefixo:
+Prefixo:
 
 ```text
 /api
 ```
-
-Principais endpoints:
 
 | Método | Endpoint | Acesso |
 |---|---|---|
@@ -349,7 +307,7 @@ Principais endpoints:
 | PUT | `/api/trabalhos/:id` | Autor ou ADMIN |
 | DELETE | `/api/trabalhos/:id` | Autor ou ADMIN |
 
-A documentação detalhada está disponível em:
+Documentação detalhada:
 
 ```text
 backend/docs/API.md
@@ -357,210 +315,90 @@ backend/docs/API.md
 
 ---
 
-# Autenticação e autorização
+## Autenticação e segurança
 
-O login é realizado utilizando e-mail e senha.
-
-Após autenticação bem-sucedida, a API fornece um **JWT**.
-
-As rotas protegidas utilizam:
+O login utiliza e-mail e senha e retorna um **JWT**. Rotas protegidas recebem:
 
 ```http
 Authorization: Bearer TOKEN
 ```
 
-As senhas não são armazenadas em texto puro. O sistema utiliza `bcrypt` para geração e comparação dos hashes.
+O projeto também utiliza:
 
-A autorização diferencia os perfis:
-
-```text
-ADMIN
-MEMBRO
-```
-
-O backend verifica as permissões antes de permitir operações protegidas.
-
----
-
-# Segurança
-
-O projeto implementa mecanismos para reduzir vulnerabilidades comuns em aplicações web.
-
-### SQL Injection
-
-As consultas PostgreSQL utilizam queries parametrizadas.
-
-Exemplo:
-
-```sql
-WHERE id = $1
-```
-
-Os valores fornecidos pelo usuário não são concatenados diretamente à consulta SQL.
-
-### XSS
-
-Os dados recebidos pela API passam por validação.
-
-Campos do cadastro de trabalhos rejeitam tags HTML indevidas, e o frontend realiza escape dos valores exibidos dinamicamente.
-
-### Controle de acesso
-
-Rotas protegidas exigem JWT válido.
-
-Operações administrativas exigem perfil `ADMIN`.
-
-Usuários `MEMBRO` não podem editar ou excluir trabalhos pertencentes a outros usuários.
-
-### Rate limiting
-
-O endpoint de login possui limitação de tentativas para reduzir ataques automatizados de força bruta.
-
-### Headers de segurança
-
-O backend utiliza `helmet` para configurar headers HTTP relacionados à segurança.
-
-### CSRF
-
-A autenticação utiliza JWT enviado explicitamente pelo cliente no header `Authorization`, e não cookies de autenticação enviados automaticamente pelo navegador.
-
-Por esse motivo, o cenário clássico de CSRF baseado em cookie não se aplica ao mecanismo de autenticação implementado.
+- hash de senhas com `bcrypt`;
+- queries PostgreSQL parametrizadas;
+- validação de entrada;
+- proteção contra XSS;
+- autorização por perfil e autoria;
+- rate limiting no login;
+- headers de segurança com `helmet`;
+- JWT no header `Authorization`, evitando dependência de cookies de autenticação.
 
 ---
 
-# Logs
+## Logs e testes
 
-O backend utiliza `winston`.
+O backend utiliza `winston` para registrar eventos importantes. Arquivos locais de log ficam em `backend/logs/` e não são versionados.
 
-São registrados eventos importantes, incluindo:
-
-- login bem-sucedido;
-- tentativa de login inválida;
-- criação de trabalho;
-- erros internos.
-
-Os arquivos de log são armazenados localmente na pasta:
-
-```text
-backend/logs/
-```
-
-Arquivos `.log` não são versionados pelo Git.
-
----
-
-# Testes automatizados
-
-Os testes utilizam **Jest** e **Supertest**.
-
-Para executar:
+Para executar os testes:
 
 ```bash
 cd backend
 npm test
 ```
 
-A suíte verifica casos válidos e inválidos da API, incluindo:
-
-- funcionamento da API e conexão com o banco;
-- rota inexistente;
-- validação de login;
-- acesso sem autenticação;
-- validação de identificador de trabalho.
+A suíte utiliza **Jest** e **Supertest** para validar API, autenticação, acesso sem credenciais, identificadores inválidos e outros cenários.
 
 ---
 
-# Variáveis de ambiente
+## Evolução: Trabalho I → Trabalho II
 
-O projeto utiliza `.env` para informações sensíveis e configurações específicas da máquina.
+| Trabalho I | Trabalho II |
+|---|---|
+| Frontend estático | Aplicação full-stack |
+| LocalStorage | PostgreSQL |
+| Login/protótipo local | Autenticação JWT |
+| Dados no navegador | API REST |
+| Interface e navegação | Backend em camadas |
+| Protótipo de cadastro | CRUD persistente |
+| — | Perfis ADMIN e MEMBRO |
+| — | Segurança, logs e testes |
 
-O arquivo real:
+---
+
+## Git
 
 ```text
-backend/.env
+main              → Trabalho Individual I
+trabalho-2        → Trabalho Individual II
+v1.0-trabalho1    → marco da primeira entrega
 ```
 
-é ignorado pelo Git.
-
-Um modelo seguro é fornecido em:
-
-```text
-backend/.env.example
-```
-
-Senhas reais, credenciais do PostgreSQL e o segredo JWT não devem ser enviados ao repositório.
+Essa estrutura mantém a separação das entregas sem perder o histórico do projeto.
 
 ---
 
-# Evolução do Trabalho Individual I para o II
+## Uso de Inteligência Artificial
 
-O Trabalho Individual I implementava principalmente a interface frontend e utilizava `localStorage` para prototipação.
-
-No Trabalho Individual II foram adicionados:
-
-- backend Node.js/Express;
-- API REST;
-- PostgreSQL;
-- persistência de trabalhos;
-- autenticação real;
-- hash de senhas com bcrypt;
-- JWT;
-- perfis `ADMIN` e `MEMBRO`;
-- autorização;
-- CRUD de trabalhos;
-- validação de entrada;
-- proteção contra XSS;
-- queries parametrizadas;
-- rate limiting;
-- logs;
-- testes automatizados;
-- documentação da API;
-- integração do frontend com o backend.
-
-Algumas funcionalidades auxiliares originadas no Trabalho I ainda podem utilizar armazenamento local no navegador enquanto não fazem parte do fluxo persistente principal implementado nesta etapa.
+Ferramentas de Inteligência Artificial foram utilizadas como apoio em análise de código, estruturação do backend, depuração, documentação e revisão. As decisões, testes, integração e validação do sistema foram realizados durante o desenvolvimento do projeto.
 
 ---
 
-# Git
+## Autoria
 
-O desenvolvimento do Trabalho Individual II está concentrado na branch:
-
-```text
-trabalho-2
-```
-
-A versão correspondente ao Trabalho Individual I foi preservada através da tag:
-
-```text
-v1.0-trabalho1
-```
-
-Isso permite identificar claramente a evolução entre as duas etapas do projeto.
-
----
-
-# Uso de Inteligência Artificial
-
-Ferramentas de Inteligência Artificial foram utilizadas como apoio durante o desenvolvimento, incluindo auxílio na análise de código, estruturação do backend, depuração, documentação e revisão de implementação.
-
-As decisões, testes, integração e validação do funcionamento do sistema foram realizados durante o desenvolvimento do projeto.
-
----
-
-# Autoria
-
-**Luiz Henrique Corrêa Monteiro**
-
+**Luiz Henrique Corrêa Monteiro**  
 Engenharia de Controle e Automação  
 Instituto de Ciência e Tecnologia de Sorocaba — UNESP
 
 Projeto desenvolvido para a disciplina **SCOMP — Sistemas Computacionais**.
 
----
-
-# LIFS
+## LIFS
 
 **Laboratório de Investigação de Filmes Semicondutores — LIFS**  
 **UNESP — Sorocaba**
 
-Projeto desenvolvido para fins acadêmicos e institucionais.
+<p align="center">
+  <strong>LIFS • UNESP Sorocaba</strong><br>
+  <em>Pesquisa, tecnologia e desenvolvimento.</em><br><br>
+  Projeto desenvolvido em 2026
+</p>
