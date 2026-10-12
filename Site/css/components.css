@@ -2335,9 +2335,22 @@ html[data-theme="dark"] #modal-admin-maquina .btn-secondary:hover {
   font-weight: 700;
 }
 
-/* Mensagens de sucesso no tema escuro */
+/* Mensagens de formulário no tema escuro */
+
 html[data-theme="dark"] .form-success {
-  color: #d8f3dc;
-  background-color: #1f3a2d;
-  border-color: #3f6b50;
+  color: #d8f3dc !important;
+  background: #1f3a2d !important;
+  border-color: #3f6b50 !important;
+}
+
+html[data-theme="dark"] .form-error {
+  color: #f3caca !important;
+  background: #3a2222 !important;
+  border-color: #714646 !important;
+}
+
+html[data-theme="dark"] .notice {
+  color: #ede8d0 !important;
+  background: #202f28 !important;
+  border-color: #3e554a !important;
 }
