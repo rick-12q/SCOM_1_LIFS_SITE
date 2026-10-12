@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       const response = await fetch(
-        'http://localhost:3000/api/trabalhos',
+        `${API_BASE_URL}/trabalhos`,
         {
           method: 'POST',
           headers: {

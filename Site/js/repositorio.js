@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   async function carregarTrabalhos() {
     try {
-      const response = await fetch('http://localhost:3000/api/trabalhos');
+      const response = await fetch(`${API_BASE_URL}/trabalhos`);
       const result = await response.json();
 
       if (!response.ok || !result.success) {
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/trabalhos/${id}`,
+        `${API_BASE_URL}/trabalhos/${id}`,
         {
           method: 'PUT',
           headers: {
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
       const response = await fetch(
-        `http://localhost:3000/api/trabalhos/${id}`,
+        `${API_BASE_URL}/trabalhos/${id}`,
         {
           method: 'DELETE',
           headers: {
