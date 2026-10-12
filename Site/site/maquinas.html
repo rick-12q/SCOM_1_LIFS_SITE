@@ -106,12 +106,179 @@
       <p id="mensagem-agendamento" class="form-success" role="status" hidden></p>
 
       <section
+        id="painel-admin-maquinas"
+        class="painel-admin-maquinas"
+        hidden
+      >
+        <div class="painel-admin-maquinas-texto">
+          <h2 data-i18n="machines.adminTitle">
+            Administração de equipamentos
+          </h2>
+
+          <p data-i18n="machines.adminDescription">
+            Cadastre, edite ou exclua os equipamentos disponíveis no laboratório.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="adicionar-maquina"
+          data-i18n="machines.add"
+        >
+          Adicionar equipamento
+        </button>
+      </section>
+
+      <section
         id="lista-maquinas"
         class="card-grid"
         aria-live="polite"
         aria-label="Lista de máquinas"
         data-i18n-aria-label="machines.list"
       ></section>
+
+      <dialog id="modal-admin-maquina" class="modal">
+        <form id="form-admin-maquina">
+        
+          <h2
+            id="titulo-modal-admin-maquina"
+            data-i18n="machines.adminAddTitle"
+          >
+            Adicionar equipamento
+          </h2>
+        
+          <input type="hidden" id="admin-maquina-id">
+        
+          <div class="form-field">
+            <label
+              for="admin-maquina-nome"
+              data-i18n="machines.adminName"
+            >
+              Nome
+            </label>
+          
+            <input
+              type="text"
+              id="admin-maquina-nome"
+              required
+            >
+          </div>
+        
+          <div class="form-field">
+            <label
+              for="admin-maquina-fabricante"
+              data-i18n="machines.adminManufacturer"
+            >
+              Fabricante
+            </label>
+          
+            <input
+              type="text"
+              id="admin-maquina-fabricante"
+            >
+          </div>
+        
+          <div class="form-field">
+            <label
+              for="admin-maquina-modelo"
+              data-i18n="machines.adminModel"
+            >
+              Modelo
+            </label>
+          
+            <input
+              type="text"
+              id="admin-maquina-modelo"
+            >
+          </div>
+        
+          <div class="form-field">
+            <label
+              for="admin-maquina-imagem"
+              data-i18n="machines.adminPhoto"
+            >
+              Foto — caminho ou URL
+            </label>
+          
+            <input
+              type="text"
+              id="admin-maquina-imagem"
+              placeholder="img/maquinas/equipamento.jpg"
+            >
+          </div>
+        
+          <div class="form-field">
+            <label
+              for="admin-maquina-local"
+              data-i18n="machines.adminLocation"
+            >
+              Local
+            </label>
+          
+            <input
+              type="text"
+              id="admin-maquina-local"
+              placeholder="Lab LIFS"
+            >
+          </div>
+        
+          <div class="form-field">
+            <label
+              for="admin-maquina-descricao"
+              data-i18n="machines.adminEquipmentDescription"
+            >
+              Descrição
+            </label>
+          
+            <textarea
+              id="admin-maquina-descricao"
+              rows="4"
+            ></textarea>
+          </div>
+        
+          <div class="form-field">
+            <label class="admin-checkbox">
+              <input
+                type="checkbox"
+                id="admin-maquina-disponivel"
+                checked
+              >
+            
+              <span data-i18n="machines.adminAvailable">
+                Equipamento disponível
+              </span>
+            </label>
+          </div>
+        
+          <p
+            id="erro-admin-maquina"
+            class="form-error"
+            role="alert"
+            hidden
+          ></p>
+        
+          <div class="modal-actions">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              data-i18n="machines.adminSave"
+            >
+              Salvar
+            </button>
+          
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="cancelar-admin-maquina"
+              data-i18n="machines.cancel"
+            >
+              Cancelar
+            </button>
+          </div>
+        
+        </form>
+      </dialog>
 
       <dialog id="modal-agendamento" class="modal" aria-labelledby="modal-title">
         <form id="form-agendamento">
