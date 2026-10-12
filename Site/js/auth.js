@@ -15,7 +15,19 @@ async function login(email, senha) {
     const result = await response.json();
 
     if (!response.ok || !result.success) {
-      return false;
+      let mensagem =
+        result.error?.message ||
+        "Não foi possível realizar o login.";
+
+      if (response.status === 429) {
+        mensagem =
+          "Muitas tentativas de login. Aguarde alguns minutos e tente novamente.";
+      }
+
+      return {
+        sucesso: false,
+        mensagem
+      };
     }
 
     localStorage.setItem("token", result.data.token);
@@ -31,10 +43,16 @@ async function login(email, senha) {
       })
     );
 
-    return true;
+    return {
+      sucesso: true
+    };
   } catch (error) {
     console.error("Erro ao conectar com a API:", error);
-    return false;
+
+    return {
+      sucesso: false,
+      mensagem: "Não foi possível conectar ao servidor."
+    };
   }
 }
 
@@ -219,17 +237,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const email = document.getElementById("email")?.value ?? "";
     const senha = document.getElementById("senha")?.value ?? "";
 
-    const sucesso = await login(email, senha);
-
-    if (sucesso) {
+    const resultado = await login(email, senha);
+      
+    if (resultado.sucesso) {
       const params = new URLSearchParams(window.location.search);
       const redirect = params.get("redirect");
-
+    
       window.location.href = redirect || "index.html";
       return;
     }
-
+    
     if (erro) {
+      erro.textContent = resultado.mensagem;
       erro.hidden = false;
     }
   });
