@@ -14,7 +14,22 @@ const app = express();
 
 // Middlewares globais
 app.use(helmet());
-app.use(cors());
+const allowedOrigins = [
+    "http://localhost:5500",
+    "http://127.0.0.1:5500",
+    "http://localhost:3000",
+    "https://rick-12q.github.io"
+];
+
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+
+        return callback(new Error("Origem não permitida pelo CORS."));
+    }
+}));
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
