@@ -59,6 +59,53 @@ async function login(req, res) {
     }
 }
 
+async function register(req, res) {
+    try {
+        const { nome, email, password } = req.body;
+
+        const user = await authService.register(
+            nome.trim(),
+            email,
+            password
+        );
+
+        if (!user) {
+            return res.status(409).json({
+                success: false,
+                error: {
+                    code: "EMAIL_ALREADY_EXISTS",
+                    message: "Já existe uma conta cadastrada com este e-mail."
+                }
+            });
+        }
+
+        logger.info("USER_REGISTERED", {
+            userId: user.id,
+            email: user.email,
+            perfil: user.perfil,
+            ip: req.ip
+        });
+
+        return res.status(201).json({
+            success: true,
+            data: user
+        });
+    } catch (error) {
+        logger.error("REGISTER_INTERNAL_ERROR", {
+            message: error.message,
+            stack: error.stack
+        });
+
+        return res.status(500).json({
+            success: false,
+            error: {
+                code: "INTERNAL_ERROR",
+                message: "Erro interno do servidor."
+            }
+        });
+    }
+}
+
 async function me(req, res) {
     try {
         const user = await userRepository.findById(req.user.id);
@@ -106,6 +153,7 @@ function logout(req, res) {
 
 module.exports = {
     login,
+    register,
     me,
     logout
 };

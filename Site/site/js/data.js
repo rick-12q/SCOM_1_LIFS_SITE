@@ -125,9 +125,7 @@ function initData() {
   if (!localStorage.getItem('membros')) {
     localStorage.setItem('membros', JSON.stringify(SEED_MEMBROS));
   }
-  if (!localStorage.getItem('agendamentos')) {
-    localStorage.setItem('agendamentos', JSON.stringify([]));
-  }
+
 }
 initData();
 

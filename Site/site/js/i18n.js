@@ -1,6 +1,9 @@
-//lista de palqavras- gerada por GPT
+// Lista de traduções do site LIFS
 const TRANSLATIONS = {
   pt: {
+    // =========================================================
+    // NAVEGAÇÃO
+    // =========================================================
     "nav.home": "Início",
     "nav.repository": "Repositório",
     "nav.machines": "Máquinas",
@@ -17,6 +20,9 @@ const TRANSLATIONS = {
     "nav.mainNavigation": "Navegação principal",
     "nav.skip": "Ir para o conteúdo principal",
 
+    // =========================================================
+    // SIDEBAR
+    // =========================================================
     "sidebar.title": "Acesso rápido",
     "sidebar.home": "Página inicial",
     "sidebar.repository": "Produção científica",
@@ -24,6 +30,9 @@ const TRANSLATIONS = {
     "sidebar.members": "Membros e ex-membros",
     "sidebar.worksAwards": "Trabalhos e prêmios",
 
+    // =========================================================
+    // RODAPÉ
+    // =========================================================
     "footer.portal": "Portal acadêmico do LIFS.",
     "footer.demo": "Portal acadêmico do LIFS.",
     "footer.copyright": "Lab LIFS. Portal do grupo de pesquisa.",
@@ -31,6 +40,9 @@ const TRANSLATIONS = {
     "footer.emailLabel": "E-mail:",
     "footer.phoneLabel": "Telefone:",
 
+    // =========================================================
+    // PÁGINA INICIAL
+    // =========================================================
     "home.title": "Laboratório de Investigação de Filmes Semicondutores",
     "home.description": "Portal institucional para organizar a produção científica, os equipamentos e os integrantes do LIFS em uma interface acessível, responsiva e fácil de consultar.",
     "home.repository": "Explorar repositório",
@@ -60,6 +72,9 @@ const TRANSLATIONS = {
     "home.news2.title": "Acervo de equipamentos",
     "home.news2.text": "O catálogo apresenta informações básicas dos equipamentos e oferece fluxo de agendamento para membros.",
 
+    // =========================================================
+    // REPOSITÓRIO
+    // =========================================================
     "repository.filters": "Filtros de pesquisa",
     "repository.type": "Tipo",
     "repository.all": "Todos",
@@ -76,6 +91,9 @@ const TRANSLATIONS = {
     "repository.title": "Repositório científico",
     "repository.description": "Consulte os registros acadêmicos cadastrados e filtre os resultados por tipo ou ano.",
 
+    // =========================================================
+    // MÁQUINAS
+    // =========================================================
     "machines.title": "Acervo de máquinas e equipamentos",
     "machines.description": "Confira os equipamentos cadastrados e solicite um horário de uso.",
     "machines.list": "Lista de máquinas",
@@ -84,6 +102,7 @@ const TRANSLATIONS = {
     "machines.inUse": "Em uso",
     "machines.schedule": "Agendar",
     "machines.empty": "Nenhum equipamento cadastrado.",
+
     "machines.scheduleTitle": "Agendar equipamento",
     "machines.name": "Nome",
     "machines.namePlaceholder": "Nome completo",
@@ -97,12 +116,14 @@ const TRANSLATIONS = {
     "machines.cancel": "Cancelar",
     "machines.success": "Agendamento realizado com sucesso.",
     "machines.conflict": "Já existe um agendamento para esse equipamento nesse horário.",
+
     "machines.r1": "Reator de baixa pressão 1",
     "machines.r2": "Reator de baixa pressão 2",
     "machines.afm": "Microscópio de força atômica",
     "machines.uvvis": "Espectrômetro UVVIS",
     "machines.probe": "Quatro Pontas Elétricas Linear",
     "machines.rf": "Fonte de Radiofrequência 13,56 MHz",
+
     "machines.r1Description": "Sistema de baixa pressão utilizado para a síntese e deposição de filmes finos. O reator utiliza uma bomba mecânica, permitindo atingir pressões da ordem de 10⁻³ Torr. Pode operar com oxigênio e argônio como gases de processo e possui sistema de aquecimento com temperatura de até 300 °C.",
     "machines.r2Description": "Sistema de baixa pressão utilizado para a síntese e deposição de filmes finos. O reator utiliza uma bomba turbomolecular, permitindo atingir pressões da ordem de 10⁻⁵ Torr. Pode operar com oxigênio e argônio como gases de processo, possui sistema de aquecimento com temperatura de até 300 °C e conta com porta-alvo para líquidos, além de permitir o uso de alvos metálicos e óxidos.",
     "machines.afmDescription": "Equipamento utilizado para a caracterização da topografia e da morfologia superficial de amostras em escala nanométrica, permitindo a análise detalhada da superfície dos materiais.",
@@ -113,6 +134,8 @@ const TRANSLATIONS = {
 
     "machines.lab": "Lab LIFS",
     "machines.labManufactured": "Fabricação própria do laboratório",
+
+    // Administração de máquinas
     "machines.adminTitle": "Administração de equipamentos",
     "machines.adminDescription": "Cadastre, edite ou exclua os equipamentos disponíveis no laboratório.",
     "machines.add": "Adicionar equipamento",
@@ -133,8 +156,12 @@ const TRANSLATIONS = {
     "machines.adminDeleteError": "Não foi possível excluir o equipamento.",
     "machines.adminDeleteConfirm": "Deseja realmente excluir",
 
+    // =========================================================
+    // MEMBROS
+    // =========================================================
     "members.professor": "Docente chefe do grupo",
     "members.undergraduate": "Aluno de iniciação científica",
+    "members.master": "Aluno de mestrado",
     "members.phd": "Aluno de doutorado",
     "members.postdoc": "Aluno de pós-doutorado",
     "members.exchange": "Aluno de intercâmbio",
@@ -149,6 +176,8 @@ const TRANSLATIONS = {
     "members.lattes": "Lattes",
     "members.orcid": "ORCID",
     "members.email": "E-mail",
+
+    // Administração de membros
     "members.adminTitle": "Administração de membros",
     "members.adminDescription": "Cadastre, edite ou exclua os membros do laboratório.",
     "members.add": "Adicionar membro",
@@ -170,8 +199,10 @@ const TRANSLATIONS = {
     "members.adminDeleteConfirm": "Deseja realmente excluir",
     "members.adminDeleteError": "Não foi possível excluir o membro.",
     "members.adminTypeSelect": "Selecione",
-    "members.master": "Aluno de mestrado",
 
+    // =========================================================
+    // LOGIN
+    // =========================================================
     "login.title": "Login de membro",
     "login.description": "Entre com sua conta para acessar as funcionalidades restritas aos membros do LIFS.",
     "login.demo": "Acesso ao sistema:",
@@ -180,6 +211,9 @@ const TRANSLATIONS = {
     "login.invalid": "E-mail ou senha inválidos.",
     "login.enter": "Entrar",
 
+    // =========================================================
+    // TRABALHOS
+    // =========================================================
     "work.title": "Adicionar trabalho",
     "work.description": "Cadastre um novo registro no repositório do LIFS.",
     "work.titleField": "Título do trabalho",
@@ -193,13 +227,71 @@ const TRANSLATIONS = {
     "work.success": "Trabalho cadastrado no acervo local com sucesso.",
     "work.required": "Preencha todos os campos obrigatórios.",
 
+    // =========================================================
+    // MINHA CONTA
+    // =========================================================
+    "account.title": "Minha conta",
+    "account.description": "Informações da sua conta no portal do LIFS.",
+    "account.name": "Nome",
+    "account.email": "E-mail",
+    "account.profile": "Perfil",
+
+    "account.roleUser": "USUÁRIO",
+    "account.roleMember": "MEMBRO",
+    "account.roleAdmin": "ADMIN",
+
+    "account.schedulesTitle": "Meus agendamentos",
+    "account.schedulesLoading": "Carregando agendamentos...",
+    "account.schedulesEmpty": "Você ainda não possui agendamentos.",
+    "account.schedulesError": "Não foi possível carregar seus agendamentos.",
+
+    "account.equipment": "Equipamento",
+    "account.dateTime": "Data e horário:",
+    "account.at": "às",
+    "account.institution": "Instituição:",
+    "account.status": "Status:",
+    "account.reason": "Motivo:",
+
+    "account.statusPending": "PENDENTE",
+    "account.statusApproved": "APROVADO",
+    "account.statusCanceled": "CANCELADO",
+
+    // =========================================================
+    // NOTIFICAÇÕES
+    // =========================================================
+    "notifications.title": "Configurações de notificações",
+    "notifications.description": "Configure para onde serão enviadas as notificações quando um novo agendamento for realizado.",
+    "notifications.email": "E-mail para notificações",
+    "notifications.emailPlaceholder": "exemplo@email.com",
+    "notifications.enableEmail": "Ativar notificações por e-mail",
+    "notifications.save": "Salvar configurações",
+    "notifications.success": "Configurações salvas com sucesso.",
+    "notifications.loadError": "Não foi possível carregar as configurações.",
+    "notifications.saveError": "Não foi possível salvar as configurações.",
+
+    // =========================================================
+    // ERROS
+    // =========================================================
     "error.404": "Erro 404",
     "error.title": "Página não encontrada",
     "error.description": "O endereço solicitado não existe neste projeto.",
-    "error.back": "Voltar à página inicial"
+    "error.back": "Voltar à página inicial",
+
+    "adminSchedules.title": "Gerenciar agendamentos",
+    "adminSchedules.description": "Aprove ou cancele os agendamentos realizados pelos usuários.",
+    "adminSchedules.loading": "Carregando agendamentos...",
+    "adminSchedules.empty": "Nenhum agendamento encontrado.",
+    "adminSchedules.error": "Não foi possível carregar os agendamentos.",
+    "adminSchedules.user": "Usuário:",
+    "adminSchedules.approve": "Aprovar",
+    "adminSchedules.cancel": "Cancelar",
+    "adminSchedules.updateError": "Não foi possível alterar o status do agendamento.",
   },
 
   en: {
+    // =========================================================
+    // NAVIGATION
+    // =========================================================
     "nav.home": "Home",
     "nav.repository": "Repository",
     "nav.machines": "Equipment",
@@ -216,6 +308,9 @@ const TRANSLATIONS = {
     "nav.mainNavigation": "Main navigation",
     "nav.skip": "Skip to main content",
 
+    // =========================================================
+    // SIDEBAR
+    // =========================================================
     "sidebar.title": "Quick access",
     "sidebar.home": "Home page",
     "sidebar.repository": "Scientific production",
@@ -223,6 +318,9 @@ const TRANSLATIONS = {
     "sidebar.members": "Members and former members",
     "sidebar.worksAwards": "Works and awards",
 
+    // =========================================================
+    // FOOTER
+    // =========================================================
     "footer.portal": "LIFS academic portal.",
     "footer.demo": "LIFS academic portal.",
     "footer.copyright": "Lab LIFS. Research group portal.",
@@ -230,6 +328,9 @@ const TRANSLATIONS = {
     "footer.emailLabel": "Email:",
     "footer.phoneLabel": "Phone:",
 
+    // =========================================================
+    // HOME
+    // =========================================================
     "home.title": "Semiconductor Thin Films Research Laboratory",
     "home.description": "Institutional portal for organizing the scientific production, equipment and members of LIFS in an accessible, responsive and easy-to-use interface.",
     "home.repository": "Explore repository",
@@ -259,6 +360,9 @@ const TRANSLATIONS = {
     "home.news2.title": "Equipment collection",
     "home.news2.text": "The catalog provides basic equipment information and offers a scheduling system for members.",
 
+    // =========================================================
+    // REPOSITORY
+    // =========================================================
     "repository.filters": "Search filters",
     "repository.type": "Type",
     "repository.all": "All",
@@ -275,6 +379,9 @@ const TRANSLATIONS = {
     "repository.title": "Scientific repository",
     "repository.description": "Browse registered academic records and filter the results by type or year.",
 
+    // =========================================================
+    // EQUIPMENT
+    // =========================================================
     "machines.title": "Equipment collection",
     "machines.description": "Check the registered equipment and request a usage time.",
     "machines.list": "Equipment list",
@@ -283,6 +390,7 @@ const TRANSLATIONS = {
     "machines.inUse": "In use",
     "machines.schedule": "Schedule",
     "machines.empty": "No equipment registered.",
+
     "machines.scheduleTitle": "Schedule equipment",
     "machines.name": "Name",
     "machines.namePlaceholder": "Full name",
@@ -296,12 +404,14 @@ const TRANSLATIONS = {
     "machines.cancel": "Cancel",
     "machines.success": "Schedule completed successfully.",
     "machines.conflict": "There is already a schedule for this equipment at this time.",
+
     "machines.r1": "Low-pressure reactor 1",
     "machines.r2": "Low-pressure reactor 2",
     "machines.afm": "Atomic force microscope",
     "machines.uvvis": "UV-Vis spectrometer",
     "machines.probe": "Linear four-point probe",
     "machines.rf": "13.56 MHz radio-frequency source",
+
     "machines.r1Description": "Low-pressure system used for the synthesis and deposition of thin films. The reactor uses a mechanical pump, allowing pressures on the order of 10⁻³ Torr to be reached. It can operate with oxygen and argon as process gases and features a heating system with temperatures of up to 300 °C.",
     "machines.r2Description": "Low-pressure system used for the synthesis and deposition of thin films. The reactor uses a turbomolecular pump, allowing pressures on the order of 10⁻⁵ Torr to be reached. It can operate with oxygen and argon as process gases, features a heating system with temperatures of up to 300 °C, and includes a liquid-target holder, as well as allowing the use of metallic and oxide targets.",
     "machines.afmDescription": "Equipment used for the characterization of the topography and surface morphology of samples at the nanometer scale, enabling detailed analysis of material surfaces.",
@@ -311,6 +421,9 @@ const TRANSLATIONS = {
     "machines.photo": "Image of",
 
     "machines.lab": "LIFS Laboratory",
+    "machines.labManufactured": "Laboratory-built",
+
+    // Equipment administration
     "machines.adminTitle": "Equipment administration",
     "machines.adminDescription": "Add, edit or delete equipment available in the laboratory.",
     "machines.add": "Add equipment",
@@ -329,10 +442,14 @@ const TRANSLATIONS = {
     "machines.adminNameRequired": "Enter the equipment name.",
     "machines.adminSaveError": "Unable to save the equipment.",
     "machines.adminDeleteError": "Unable to delete the equipment.",
-    "machines.adminDeleteConfirm": "Do you really want to delete",    "machines.labManufactured": "Laboratory-built",
+    "machines.adminDeleteConfirm": "Do you really want to delete",
 
+    // =========================================================
+    // MEMBERS
+    // =========================================================
     "members.professor": "Group leader",
     "members.undergraduate": "Undergraduate research student",
+    "members.master": "Master's student",
     "members.phd": "PhD student",
     "members.postdoc": "Postdoctoral researcher",
     "members.exchange": "Exchange student",
@@ -347,6 +464,8 @@ const TRANSLATIONS = {
     "members.lattes": "Lattes",
     "members.orcid": "ORCID",
     "members.email": "Email",
+
+    // Member administration
     "members.adminTitle": "Member administration",
     "members.adminDescription": "Add, edit or delete laboratory members.",
     "members.add": "Add member",
@@ -368,16 +487,21 @@ const TRANSLATIONS = {
     "members.adminDeleteConfirm": "Do you really want to delete",
     "members.adminDeleteError": "Could not delete the member.",
     "members.adminTypeSelect": "Select",
-    "members.master": "Master's student",
 
+    // =========================================================
+    // LOGIN
+    // =========================================================
     "login.title": "Member sign in",
     "login.description": "Sign in with your account to access features restricted to LIFS members.",
     "login.demo": "System access:",
-    "login.email": "Institutional e-mail",
+    "login.email": "Institutional email",
     "login.password": "Password",
-    "login.invalid": "Invalid e-mail or password.",
+    "login.invalid": "Invalid email or password.",
     "login.enter": "Sign in",
 
+    // =========================================================
+    // WORKS
+    // =========================================================
     "work.title": "Add work",
     "work.description": "Register a new record in the LIFS repository.",
     "work.titleField": "Work title",
@@ -391,13 +515,72 @@ const TRANSLATIONS = {
     "work.success": "Work successfully added to the local collection.",
     "work.required": "Please fill in all required fields.",
 
+    // =========================================================
+    // MY ACCOUNT
+    // =========================================================
+    "account.title": "My account",
+    "account.description": "Your account information on the LIFS portal.",
+    "account.name": "Name",
+    "account.email": "Email",
+    "account.profile": "Profile",
+
+    "account.roleUser": "USER",
+    "account.roleMember": "MEMBER",
+    "account.roleAdmin": "ADMIN",
+
+    "account.schedulesTitle": "My schedules",
+    "account.schedulesLoading": "Loading schedules...",
+    "account.schedulesEmpty": "You do not have any schedules yet.",
+    "account.schedulesError": "Unable to load your schedules.",
+
+    "account.equipment": "Equipment",
+    "account.dateTime": "Date and time:",
+    "account.at": "at",
+    "account.institution": "Institution:",
+    "account.status": "Status:",
+    "account.reason": "Reason:",
+
+    "account.statusPending": "PENDING",
+    "account.statusApproved": "APPROVED",
+    "account.statusCanceled": "CANCELED",
+
+    // =========================================================
+    // NOTIFICATIONS
+    // =========================================================
+    "notifications.title": "Notification settings",
+    "notifications.description": "Configure where notifications will be sent when a new equipment schedule is created.",
+    "notifications.email": "Notification email",
+    "notifications.emailPlaceholder": "example@email.com",
+    "notifications.enableEmail": "Enable email notifications",
+    "notifications.save": "Save settings",
+    "notifications.success": "Settings saved successfully.",
+    "notifications.loadError": "Unable to load notification settings.",
+    "notifications.saveError": "Unable to save notification settings.",
+
+    // =========================================================
+    // ERRORS
+    // =========================================================
     "error.404": "Error 404",
     "error.title": "Page not found",
     "error.description": "The requested address does not exist in this project.",
-    "error.back": "Back to home page"
+    "error.back": "Back to home page",
+
+    "adminSchedules.title": "Manage schedules",
+    "adminSchedules.description": "Approve or cancel schedules submitted by users.",
+    "adminSchedules.loading": "Loading schedules...",
+    "adminSchedules.empty": "No schedules found.",
+    "adminSchedules.error": "Unable to load schedules.",
+    "adminSchedules.user": "User:",
+    "adminSchedules.approve": "Approve",
+    "adminSchedules.cancel": "Cancel",
+    "adminSchedules.updateError": "Unable to update the schedule status.",
   }
 };
-// Trecho feito por mim e reestruturado pela IA, a ideia é basicamente determinar a opcao de lingua do user. 
+
+// =============================================================
+// IDIOMA ATUAL
+// =============================================================
+
 function getLanguage() {
   const language = localStorage.getItem("language");
 
@@ -408,6 +591,10 @@ function getLanguage() {
   return "pt";
 }
 
+// =============================================================
+// TRADUÇÃO POR CHAVE
+// =============================================================
+
 function t(key) {
   const language = getLanguage();
 
@@ -416,53 +603,74 @@ function t(key) {
     ?? key;
 }
 
+// =============================================================
+// APLICAR TRADUÇÕES
+// =============================================================
+
 function applyTranslations() {
   const language = getLanguage();
 
-  document.documentElement.lang = language === "en" ? "en" : "pt-BR";
+  document.documentElement.lang =
+    language === "en" ? "en" : "pt-BR";
 
-  document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const key = element.dataset.i18n;
+  document
+    .querySelectorAll("[data-i18n]")
+    .forEach((element) => {
+      const key = element.dataset.i18n;
 
-    if (TRANSLATIONS[language]?.[key]) {
-      element.textContent = TRANSLATIONS[language][key];
-    }
-  });
+      if (TRANSLATIONS[language]?.[key]) {
+        element.textContent =
+          TRANSLATIONS[language][key];
+      }
+    });
 
-  document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
-    const key = element.dataset.i18nPlaceholder;
+  document
+    .querySelectorAll("[data-i18n-placeholder]")
+    .forEach((element) => {
+      const key =
+        element.dataset.i18nPlaceholder;
 
-    if (TRANSLATIONS[language]?.[key]) {
-      element.placeholder = TRANSLATIONS[language][key];
-    }
-  });
+      if (TRANSLATIONS[language]?.[key]) {
+        element.placeholder =
+          TRANSLATIONS[language][key];
+      }
+    });
 
-  document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
-    const key = element.dataset.i18nAriaLabel;
+  document
+    .querySelectorAll("[data-i18n-aria-label]")
+    .forEach((element) => {
+      const key =
+        element.dataset.i18nAriaLabel;
 
-    if (TRANSLATIONS[language]?.[key]) {
-      element.setAttribute(
-        "aria-label",
-        TRANSLATIONS[language][key]
-      );
-    }
-  });
+      if (TRANSLATIONS[language]?.[key]) {
+        element.setAttribute(
+          "aria-label",
+          TRANSLATIONS[language][key]
+        );
+      }
+    });
 
-  document.querySelectorAll("[data-i18n-title]").forEach((element) => {
-    const key = element.dataset.i18nTitle;
+  document
+    .querySelectorAll("[data-i18n-title]")
+    .forEach((element) => {
+      const key =
+        element.dataset.i18nTitle;
 
-    if (TRANSLATIONS[language]?.[key]) {
-      element.setAttribute(
-        "title",
-        TRANSLATIONS[language][key]
-      );
-    }
-  });
+      if (TRANSLATIONS[language]?.[key]) {
+        element.setAttribute(
+          "title",
+          TRANSLATIONS[language][key]
+        );
+      }
+    });
 
-  const languageButton = document.getElementById("language-toggle");
+  const languageButton =
+    document.getElementById("language-toggle");
 
   if (languageButton) {
-    languageButton.textContent = language === "pt" ? "EN" : "PT";
+    languageButton.textContent =
+      language === "pt" ? "EN" : "PT";
+
     languageButton.setAttribute(
       "aria-label",
       language === "pt"
@@ -474,8 +682,13 @@ function applyTranslations() {
   document.title = getPageTitle(language);
 }
 
+// =============================================================
+// TÍTULOS DAS PÁGINAS
+// =============================================================
+
 function getPageTitle(language) {
-  const page = window.location.pathname.split("/").pop();
+  const page =
+    window.location.pathname.split("/").pop();
 
   const titles = {
     pt: {
@@ -485,8 +698,10 @@ function getPageTitle(language) {
       "membros.html": "Lab LIFS | Membros",
       "login.html": "Lab LIFS | Login",
       "adicionar-trabalho.html": "Lab LIFS | Adicionar trabalho",
+      "minha-conta.html": "Lab LIFS | Minha conta",
       "404.html": "Lab LIFS | Página não encontrada"
     },
+
     en: {
       "index.html": "Lab LIFS | Home",
       "repositorio.html": "Lab LIFS | Repository",
@@ -494,12 +709,17 @@ function getPageTitle(language) {
       "membros.html": "Lab LIFS | Members",
       "login.html": "Lab LIFS | Sign in",
       "adicionar-trabalho.html": "Lab LIFS | Add work",
+      "minha-conta.html": "Lab LIFS | My account",
       "404.html": "Lab LIFS | Page not found"
     }
   };
 
-  return titles[language][page] ?? "Lab LIFS";
+  return titles[language]?.[page] ?? "Lab LIFS";
 }
+
+// =============================================================
+// TROCAR IDIOMA
+// =============================================================
 
 function setLanguage(language) {
   if (language !== "pt" && language !== "en") {
@@ -507,7 +727,10 @@ function setLanguage(language) {
   }
 
   const elements = document.querySelectorAll(
-    "[data-i18n], [data-i18n-placeholder], [data-i18n-aria-label], [data-i18n-title]"
+    "[data-i18n], " +
+    "[data-i18n-placeholder], " +
+    "[data-i18n-aria-label], " +
+    "[data-i18n-title]"
   );
 
   elements.forEach((element) => {
@@ -515,29 +738,57 @@ function setLanguage(language) {
   });
 
   setTimeout(() => {
-    localStorage.setItem("language", language);
+    localStorage.setItem(
+      "language",
+      language
+    );
+
     applyTranslations();
 
     requestAnimationFrame(() => {
       elements.forEach((element) => {
-        element.classList.remove("language-fade");
+        element.classList.remove(
+          "language-fade"
+        );
       });
     });
 
     document.dispatchEvent(
-      new CustomEvent("languagechange", {
-        detail: { language }
-      })
+      new CustomEvent(
+        "languagechange",
+        {
+          detail: {
+            language
+          }
+        }
+      )
     );
   }, 250);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  applyTranslations();
+// =============================================================
+// INICIALIZAÇÃO
+// =============================================================
 
-  const languageButton = document.getElementById("language-toggle");
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    applyTranslations();
 
-  languageButton?.addEventListener("click", () => {
-    setLanguage(getLanguage() === "pt" ? "en" : "pt");
-  });
-});
+    const languageButton =
+      document.getElementById(
+        "language-toggle"
+      );
+
+    languageButton?.addEventListener(
+      "click",
+      () => {
+        setLanguage(
+          getLanguage() === "pt"
+            ? "en"
+            : "pt"
+        );
+      }
+    );
+  }
+);

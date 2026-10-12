@@ -16,7 +16,7 @@ CREATE TABLE usuarios (
     email VARCHAR(255) NOT NULL UNIQUE,
     senha_hash VARCHAR(255) NOT NULL,
     perfil VARCHAR(20) NOT NULL
-        CHECK (perfil IN ('ADMIN', 'MEMBRO')),
+        CHECK (perfil IN ('ADMIN', 'MEMBRO', 'USUARIO')),
     ativo BOOLEAN NOT NULL DEFAULT TRUE,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
@@ -134,3 +134,14 @@ CREATE INDEX idx_agendamentos_data
 
 CREATE INDEX idx_agendamentos_usuario
     ON agendamentos(usuario_id);
+
+-- ============================================================
+-- CONFIGURAÇÕES DE NOTIFICAÇÃO
+-- ============================================================
+
+CREATE TABLE configuracoes_notificacao (
+    id SERIAL PRIMARY KEY,
+    email_destino VARCHAR(255),
+    email_ativo BOOLEAN NOT NULL DEFAULT FALSE,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

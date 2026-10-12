@@ -245,6 +245,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function vincularEventos() {
     document.querySelectorAll(".btn-agendar").forEach((btn) => {
       btn.addEventListener("click", () => {
+        if (!usuarioLogado()) {
+          window.location.href =
+            "login.html?redirect=maquinas.html";
+          return;
+        }
+      
         inputMaquinaId.value = btn.dataset.id;
         modal.showModal();
       });
@@ -451,40 +457,70 @@ document.addEventListener("DOMContentLoaded", () => {
     modalImagem.close();
   });
 
-  form?.addEventListener("submit", (event) => {
+  form?.addEventListener("submit", async (event) => {
     event.preventDefault();
-
-    const agendamentos =
-      JSON.parse(localStorage.getItem("agendamentos")) || [];
-
-    agendamentos.push({
-      id: Date.now(),
-      maquinaId: inputMaquinaId.value,
-      nome:
-        document.getElementById("nome-agendamento").value,
-      instituicao:
-        document.getElementById(
-          "instituicao-agendamento"
-        ).value,
-      resumo:
-        document.getElementById(
-          "resumo-agendamento"
-        ).value,
-      data:
-        document.getElementById("data-agendamento").value,
-      hora:
-        document.getElementById("hora-agendamento").value
-    });
-
-    localStorage.setItem(
-      "agendamentos",
-      JSON.stringify(agendamentos)
-    );
-
-    modal.close();
-    form.reset();
-
-    alert("Agendamento realizado com sucesso!");
+  
+    const token = obterToken();
+  
+    if (!token) {
+      alert("Você precisa estar logado para realizar um agendamento.");
+      return;
+    }
+  
+    const dados = {
+      maquina_id: Number(inputMaquinaId.value),
+      nome: document.getElementById("nome-agendamento").value.trim(),
+      instituicao: document
+        .getElementById("instituicao-agendamento")
+        .value.trim(),
+      resumo: document
+        .getElementById("resumo-agendamento")
+        .value.trim(),
+      data: document.getElementById("data-agendamento").value,
+      hora: document.getElementById("hora-agendamento").value
+    };
+  
+    try {
+      const response = await fetch(`${API_BASE_URL}/agendamentos`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`
+        },
+        body: JSON.stringify(dados)
+      });
+    
+      const resultado = await response.json();
+    
+      if (!response.ok) {
+        if (resultado.error?.code === "SCHEDULE_CONFLICT") {
+          alert(t("machines.conflict"));
+          return;
+        }
+      
+        if (resultado.error?.code === "INVALID_DATE") {
+          alert(resultado.error.message);
+          return;
+        }
+      
+        alert(
+          resultado.error?.message ||
+            "Não foi possível realizar o agendamento."
+        );
+        return;
+      }
+    
+      modal.close();
+      form.reset();
+    
+      alert(t("machines.success"));
+    } catch (error) {
+      console.error("Erro ao realizar agendamento:", error);
+    
+      alert(
+        "Não foi possível conectar ao servidor para realizar o agendamento."
+      );
+    }
   });
 
   atualizarPainelAdmin();

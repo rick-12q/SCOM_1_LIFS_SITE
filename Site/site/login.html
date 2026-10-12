@@ -125,6 +125,102 @@
 
       <button type="submit" class="btn btn-primary" data-i18n="login.enter">Entrar</button>
     </form>
+    
+    <div class="login-register">
+      <p>Não possui uma conta?</p>
+
+      <button
+        type="button"
+        id="abrir-cadastro"
+        class="btn btn-secondary"
+      >
+        Criar conta
+      </button>
+    </div>
+
+    <form id="cadastro-form" hidden novalidate>
+      <h2>Criar conta</h2>
+    
+      <p>
+        Crie uma conta para realizar agendamentos dos equipamentos do LIFS.
+      </p>
+    
+      <div class="form-field">
+        <label for="cadastro-nome">Nome completo</label>
+        <input
+          type="text"
+          id="cadastro-nome"
+          name="nome"
+          required
+          minlength="3"
+          maxlength="150"
+          autocomplete="name"
+        >
+      </div>
+    
+      <div class="form-field">
+        <label for="cadastro-email">E-mail</label>
+        <input
+          type="email"
+          id="cadastro-email"
+          name="email"
+          required
+          autocomplete="email"
+        >
+      </div>
+    
+      <div class="form-field">
+        <label for="cadastro-senha">Senha</label>
+        <input
+          type="password"
+          id="cadastro-senha"
+          name="senha"
+          required
+          minlength="8"
+          autocomplete="new-password"
+        >
+      </div>
+    
+      <div class="form-field">
+        <label for="cadastro-confirmar-senha">
+          Confirmar senha
+        </label>
+        <input
+          type="password"
+          id="cadastro-confirmar-senha"
+          name="confirmar-senha"
+          required
+          minlength="8"
+          autocomplete="new-password"
+        >
+      </div>
+    
+      <p
+        id="cadastro-erro"
+        class="form-error"
+        role="alert"
+        hidden
+      ></p>
+    
+      <p
+        id="cadastro-sucesso"
+        hidden
+      >
+        Conta criada com sucesso. Agora você pode entrar.
+      </p>
+    
+      <button type="submit" class="btn btn-primary">
+        Criar conta
+      </button>
+    
+      <button
+        type="button"
+        id="voltar-login"
+        class="btn btn-secondary"
+      >
+        Voltar ao login
+      </button>
+    </form>
   </section>
 
 </main>

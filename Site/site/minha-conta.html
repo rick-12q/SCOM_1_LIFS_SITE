@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="img/logos/LIFS_LOGO.png"
+  >
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme === "light") {
+      document.documentElement.setAttribute("data-theme", "light");
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+    }
+  </script>
+
+  <meta
+    name="description"
+    content="Área pessoal do usuário do Lab LIFS."
+  >
+
+  <title>Lab LIFS | Minha conta</title>
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body data-protected="true">
+
+  <a
+    class="skip-link"
+    href="#main"
+    data-i18n="nav.skip"
+  >
+    Ir para o conteúdo principal
+  </a>
+
+  <header class="site-header">
+
+    <div class="logo">
+      <a
+        href="index.html"
+        aria-label="Lab LIFS — página inicial"
+      >
+        <img
+          src="img/logos/LIFS_LOGO.png"
+          alt="Logo do LIFS"
+        >
+        <span>Lab LIFS</span>
+      </a>
+    </div>
+
+    <button
+      class="mobile-nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="main-navigation"
+    >
+      Menu
+    </button>
+
+    <nav
+      class="main-nav"
+      id="main-navigation"
+      aria-label="Navegação principal"
+      data-i18n-aria-label="nav.mainNavigation"
+    >
+      <ul>
+        <li>
+          <a href="index.html" data-i18n="nav.home">
+            Início
+          </a>
+        </li>
+
+        <li>
+          <a href="repositorio.html" data-i18n="nav.repository">
+            Repositório
+          </a>
+        </li>
+
+        <li>
+          <a href="maquinas.html" data-i18n="nav.machines">
+            Máquinas
+          </a>
+        </li>
+
+        <li>
+          <a href="membros.html" data-i18n="nav.members">
+            Membros
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="Ativar tema escuro"
+        title="Ativar tema escuro"
+        data-i18n-aria-label="nav.darkTheme"
+        data-i18n-title="nav.darkTheme"
+      >
+        <span
+          class="theme-toggle-icon"
+          aria-hidden="true"
+        >
+          🌙
+        </span>
+
+        <span
+          class="theme-toggle-text"
+          data-i18n="nav.theme"
+        >
+          Tema
+        </span>
+      </button>
+
+      <button
+        id="language-toggle"
+        class="language-toggle"
+        type="button"
+        aria-label="Switch to English"
+      >
+        EN
+      </button>
+
+      <a
+        href="login.html"
+        class="btn btn-login btn-secondary"
+        data-i18n="nav.login"
+      >
+        Entrar
+      </a>
+
+    </div>
+  </header>
+
+  <main
+    class="container page-container"
+    id="main"
+  >
+
+    <section
+      class="form-card"
+      aria-labelledby="conta-title"
+    >
+
+      <h1
+        id="conta-title"
+        data-i18n="account.title"
+      >
+        Minha conta
+      </h1>
+
+      <p data-i18n="account.description">
+        Informações da sua conta no portal do LIFS.
+      </p>
+
+      <div class="conta-dados">
+
+        <div class="conta-campo">
+          <strong data-i18n="account.name">
+            Nome
+          </strong>
+          <span id="conta-nome">—</span>
+        </div>
+
+        <div class="conta-campo">
+          <strong data-i18n="account.email">
+            E-mail
+          </strong>
+          <span id="conta-email">—</span>
+        </div>
+
+        <div class="conta-campo">
+          <strong data-i18n="account.profile">
+            Perfil
+          </strong>
+          <span id="conta-perfil">—</span>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section
+      class="form-card"
+      aria-labelledby="agendamentos-title"
+    >
+
+      <h2
+        id="agendamentos-title"
+        data-i18n="account.schedulesTitle"
+      >
+        Meus agendamentos
+      </h2>
+
+      <p
+        id="agendamentos-carregando"
+        data-i18n="account.schedulesLoading"
+      >
+        Carregando agendamentos...
+      </p>
+
+      <p
+        id="agendamentos-vazio"
+        data-i18n="account.schedulesEmpty"
+        hidden
+      >
+        Você ainda não possui agendamentos.
+      </p>
+
+      <p
+        id="agendamentos-erro"
+        class="form-error"
+        role="alert"
+        data-i18n="account.schedulesError"
+        hidden
+      >
+        Não foi possível carregar seus agendamentos.
+      </p>
+
+      <div id="lista-agendamentos"></div>
+
+    </section>
+    
+    <section
+      id="painel-admin-agendamentos"
+      class="form-card"
+      hidden
+    >
+      <h2 data-i18n="adminSchedules.title">
+        Gerenciar agendamentos
+      </h2>
+    
+      <p data-i18n="adminSchedules.description">
+        Aprove ou cancele os agendamentos realizados pelos usuários.
+      </p>
+    
+      <p
+        id="admin-agendamentos-carregando"
+        data-i18n="adminSchedules.loading"
+      >
+        Carregando agendamentos...
+      </p>
+    
+      <p
+        id="admin-agendamentos-vazio"
+        data-i18n="adminSchedules.empty"
+        hidden
+      >
+        Nenhum agendamento encontrado.
+      </p>
+    
+      <p
+        id="admin-agendamentos-erro"
+        class="form-error"
+        role="alert"
+        data-i18n="adminSchedules.error"
+        hidden
+      >
+        Não foi possível carregar os agendamentos.
+      </p>
+    
+      <div id="admin-lista-agendamentos"></div>
+    </section>
+
+    <section
+      id="painel-admin-notificacoes"
+      class="form-card"
+      hidden
+    >
+
+      <h2 data-i18n="notifications.title">
+        Configurações de notificações
+      </h2>
+
+      <p data-i18n="notifications.description">
+        Configure para onde serão enviadas as notificações
+        quando um novo agendamento for realizado.
+      </p>
+
+      <form id="form-notificacoes">
+
+        <div class="form-field">
+          <label
+            for="notificacao-email"
+            data-i18n="notifications.email"
+          >
+            E-mail para notificações
+          </label>
+
+          <input
+            type="email"
+            id="notificacao-email"
+            placeholder="exemplo@email.com"
+            data-i18n-placeholder="notifications.emailPlaceholder"
+          >
+        </div>
+
+        <div class="form-field">
+          <label class="admin-checkbox">
+            <input
+              type="checkbox"
+              id="notificacao-email-ativo"
+            >
+
+            <span data-i18n="notifications.enableEmail">
+              Ativar notificações por e-mail
+            </span>
+          </label>
+        </div>
+
+        <p
+          id="notificacao-erro"
+          class="form-error"
+          role="alert"
+          hidden
+        ></p>
+
+        <p
+          id="notificacao-sucesso"
+          class="form-success"
+          role="status"
+          hidden
+        ></p>
+
+        <div class="form-actions">
+          <button
+            type="submit"
+            class="btn btn-primary"
+            data-i18n="notifications.save"
+          >
+            Salvar configurações
+          </button>
+        </div>
+
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+
+    <div class="footer-content">
+
+      <div class="footer-logo footer-logo-left">
+        <img
+          src="img/logos/LOGO_POSMAT.jpg"
+          alt="Logo do POSMAT"
+        >
+      </div>
+
+      <div class="footer-contact">
+
+        <h2 data-i18n="footer.contactTitle">
+          Contato
+        </h2>
+
+        <p>
+          <strong data-i18n="footer.emailLabel">
+            E-mail:
+          </strong>
+
+          <a href="mailto:lifsunesp@gmail.com">
+            lifsunesp@gmail.com
+          </a>
+        </p>
+
+        <p>
+          <strong data-i18n="footer.phoneLabel">
+            Telefone:
+          </strong>
+
+          <a href="tel:+551532383409">
+            (15) 3238-3409
+          </a>
+        </p>
+
+      </div>
+
+      <div class="footer-logo footer-logo-right">
+        <img
+          src="img/logos/UNESP_LOGO.webp"
+          alt="Logo da UNESP"
+        >
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy;
+        <span data-current-year>2026</span>
+
+        <span data-i18n="footer.copyright">
+          Lab LIFS. Portal do grupo de pesquisa.
+        </span>
+      </p>
+    </div>
+
+  </footer>
+
+  <script src="js/data.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/ui.js" defer></script>
+  <script src="js/auth.js" defer></script>
+  <script src="js/minha-conta.js" defer></script>
+  <script src="js/tema.js" defer></script>
+
+</body>
+</html>

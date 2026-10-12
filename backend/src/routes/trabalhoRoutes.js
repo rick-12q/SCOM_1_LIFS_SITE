@@ -1,7 +1,10 @@
 const express = require("express");
 
 const trabalhoController = require("../controllers/trabalhoController");
-const { authenticate } = require("../middleware/authMiddleware");
+const {
+    authenticate,
+    authorize
+} = require("../middleware/authMiddleware");
 const { validateRequest } = require("../middleware/validationMiddleware");
 const {
     idValidation,
@@ -26,11 +29,12 @@ router.get(
 );
 
 /*
- * Rotas protegidas
+ * Rotas protegidas - somente MEMBRO e ADMIN
  */
 router.post(
     "/",
     authenticate,
+    authorize("MEMBRO", "ADMIN"),
     trabalhoValidation,
     validateRequest,
     trabalhoController.create
@@ -39,6 +43,7 @@ router.post(
 router.put(
     "/:id",
     authenticate,
+    authorize("MEMBRO", "ADMIN"),
     idValidation,
     trabalhoValidation,
     validateRequest,
@@ -48,6 +53,7 @@ router.put(
 router.delete(
     "/:id",
     authenticate,
+    authorize("MEMBRO", "ADMIN"),
     idValidation,
     validateRequest,
     trabalhoController.remove

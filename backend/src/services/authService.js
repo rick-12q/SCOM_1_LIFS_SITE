@@ -45,6 +45,22 @@ async function login(email, password) {
     };
 }
 
+async function register(nome, email, password) {
+    const existingUser = await userRepository.findByEmail(email);
+
+    if (existingUser) {
+        return null;
+    }
+
+    const senhaHash = await bcrypt.hash(password, 12);
+
+    return userRepository.create({
+        nome,
+        email,
+        senhaHash
+    });
+}
+
 function verifyToken(token) {
     if (!process.env.JWT_SECRET) {
         throw new Error("JWT_SECRET não está configurado.");
@@ -55,5 +71,6 @@ function verifyToken(token) {
 
 module.exports = {
     login,
+    register,
     verifyToken
 };

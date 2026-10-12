@@ -33,7 +33,32 @@ async function findById(id) {
     return result.rows[0] || null;
 }
 
+async function create({ nome, email, senhaHash }) {
+    const result = await pool.query(
+        `
+        INSERT INTO usuarios (
+            nome,
+            email,
+            senha_hash,
+            perfil
+        )
+        VALUES ($1, $2, $3, 'USUARIO')
+        RETURNING
+            id,
+            nome,
+            email,
+            perfil,
+            ativo,
+            created_at
+        `,
+        [nome, email, senhaHash]
+    );
+
+    return result.rows[0];
+}
+
 module.exports = {
     findByEmail,
-    findById
+    findById,
+    create
 };
