@@ -6,6 +6,7 @@ const pool = require("./config/database");
 const authRoutes = require("./routes/authRoutes");
 const trabalhoRoutes = require("./routes/trabalhoRoutes");
 const maquinaRoutes = require("./routes/maquinaRoutes");
+const membroRoutes = require("./routes/membroRoutes");
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/trabalhos", trabalhoRoutes);
 app.use("/api/maquinas", maquinaRoutes);
+app.use("/api/membros", membroRoutes);
 
 // Verifica se a API e o banco de dados estão funcionando
 app.get("/api/health", async (req, res) => {

@@ -104,12 +104,222 @@
       </header>
 
       <section
+        id="painel-admin-membros"
+        class="painel-admin-membros"
+        hidden
+      >
+        <div class="painel-admin-membros-texto">
+          <h2 data-i18n="members.adminTitle">
+            Administração de membros
+          </h2>
+        
+          <p data-i18n="members.adminDescription">
+            Cadastre, edite ou exclua os membros do laboratório.
+          </p>
+        </div>
+      
+        <button
+          type="button"
+          class="btn btn-primary"
+          id="adicionar-membro"
+          data-i18n="members.add"
+        >
+          Adicionar membro
+        </button>
+      </section>
+
+      <section
         id="lista-membros"
         class="card-grid"
         aria-live="polite"
         aria-label="Lista de membros"
         data-i18n-aria-label="members.list"
       ></section>
+
+      <dialog id="modal-admin-membro" class="modal">
+        <form id="form-admin-membro">
+        
+          <h2
+            id="titulo-modal-admin-membro"
+            data-i18n="members.adminAddTitle"
+          >
+            Adicionar membro
+          </h2>
+        
+          <input type="hidden" id="admin-membro-id">
+        
+          <div class="form-field">
+            <label
+              for="admin-membro-nome"
+              data-i18n="members.adminName"
+            >
+              Nome
+            </label>
+          
+            <input
+              type="text"
+              id="admin-membro-nome"
+              required
+            >
+          </div>
+        
+          <div class="form-field">
+            <label
+              for="admin-membro-tipo"
+              data-i18n="members.adminType"
+            >
+              Tipo
+            </label>
+          
+            <select id="admin-membro-tipo" required>
+              <option value="" data-i18n="members.adminTypeSelect">
+                Selecione
+              </option>
+            
+              <option
+                value="Aluno de iniciação científica"
+                data-i18n="members.undergraduate"
+              >
+                Aluno de iniciação científica
+              </option>
+            
+              <option
+                value="Docente chefe do grupo"
+                data-i18n="members.professor"
+              >
+                Professor
+              </option>
+            
+              <option
+                value="Aluno de mestrado"
+                data-i18n="members.master"
+              >
+                Aluno de mestrado
+              </option>
+            
+              <option
+                value="Aluno de doutorado"
+                data-i18n="members.phd"
+              >
+                Aluno de doutorado
+              </option>
+            
+              <option
+                value="Aluno de intercâmbio"
+                data-i18n="members.exchange"
+              >
+                Aluno de intercâmbio
+              </option>
+            </select>
+          </div>
+        
+          <div class="form-field">
+            <label
+              for="admin-membro-situacao"
+              data-i18n="members.adminStatus"
+            >
+              Situação
+            </label>
+          
+            <select id="admin-membro-situacao" required>
+              <option
+                value="atual"
+                data-i18n="members.adminCurrent"
+              >
+                Atual
+              </option>
+            
+              <option
+                value="egresso"
+                data-i18n="members.adminFormer"
+              >
+                Egresso
+              </option>
+            </select>
+          </div>
+        
+          <div class="form-field">
+            <label
+              for="admin-membro-imagem"
+              data-i18n="members.adminPhoto"
+            >
+              Foto — caminho ou URL
+            </label>
+          
+            <input
+              type="text"
+              id="admin-membro-imagem"
+              placeholder="img/membros/none.jpg"
+            >
+          </div>
+        
+          <div class="form-field">
+            <label for="admin-membro-lattes">
+              Lattes
+            </label>
+          
+            <input
+              type="url"
+              id="admin-membro-lattes"
+              placeholder="http://lattes.cnpq.br/..."
+            >
+          </div>
+        
+          <div class="form-field">
+            <label for="admin-membro-orcid">
+              ORCID
+            </label>
+          
+            <input
+              type="url"
+              id="admin-membro-orcid"
+              placeholder="https://orcid.org/..."
+            >
+          </div>
+        
+          <div class="form-field">
+            <label
+              for="admin-membro-email"
+              data-i18n="members.adminEmail"
+            >
+              E-mail
+            </label>
+          
+            <input
+              type="email"
+              id="admin-membro-email"
+            >
+          </div>
+        
+          <p
+            id="erro-admin-membro"
+            class="form-error"
+            role="alert"
+            hidden
+          ></p>
+        
+          <div class="modal-actions">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              data-i18n="members.adminSave"
+            >
+              Salvar
+            </button>
+          
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="cancelar-admin-membro"
+              data-i18n="members.adminCancel"
+            >
+              Cancelar
+            </button>
+          </div>
+        
+        </form>
+      </dialog>
+
     </main>
   </div>
 

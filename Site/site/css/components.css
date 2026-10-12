@@ -2031,3 +2031,199 @@ html[data-theme="dark"] #modal-admin-maquina .btn-secondary:hover {
     padding: 1.25rem;
   }
 }
+
+/* =========================================================
+   ADMINISTRAÇÃO DE MEMBROS
+   ========================================================= */
+
+.painel-admin-membros {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+
+  margin-bottom: var(--space-lg);
+  padding: var(--space-md);
+
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.painel-admin-membros[hidden] {
+  display: none;
+}
+
+.painel-admin-membros-texto h2 {
+  margin-bottom: var(--space-2xs);
+}
+
+.painel-admin-membros-texto p {
+  margin: 0;
+  color: var(--color-text-muted);
+}
+
+
+/* Ações ADMIN dentro do card */
+
+.acoes-admin-membro {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+.acoes-admin-membro .btn {
+  font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   MODAL DE MEMBROS
+   ========================================================= */
+
+#modal-admin-membro {
+  width: min(560px, calc(100% - 32px));
+  max-height: 90vh;
+  padding: 0;
+
+  color: var(--color-text);
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-lg);
+}
+
+#modal-admin-membro::backdrop {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+#form-admin-membro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+
+  max-height: 90vh;
+  padding: var(--space-lg);
+
+  overflow-y: auto;
+}
+
+#form-admin-membro h2 {
+  margin: 0;
+}
+
+
+/* Campos */
+
+#form-admin-membro .form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+#form-admin-membro label {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+#form-admin-membro input,
+#form-admin-membro select {
+  width: 100%;
+  padding: 10px 12px;
+
+  color: var(--color-text);
+  background: var(--color-background);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  font: inherit;
+}
+
+#form-admin-membro input:focus,
+#form-admin-membro select:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+#form-admin-membro input::placeholder {
+  color: var(--color-text-muted);
+}
+
+
+/* Erros */
+
+#erro-admin-membro {
+  margin: 0;
+}
+
+
+/* Botões do modal */
+
+#form-admin-membro .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+
+  margin-top: var(--space-xs);
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .painel-admin-membros {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .painel-admin-membros > .btn {
+    width: 100%;
+  }
+
+  .acoes-admin-membro {
+    width: 100%;
+  }
+
+  .acoes-admin-membro .btn {
+    flex: 1;
+  }
+
+  #form-admin-membro {
+    padding: var(--space-md);
+  }
+
+  #form-admin-membro .modal-actions {
+    flex-direction: column;
+  }
+
+  #form-admin-membro .modal-actions .btn {
+    width: 100%;
+  }
+}
+
+/* Selects do formulário de membros */
+
+#form-admin-membro select {
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* Menu suspenso nativo do Windows/Chrome */
+#form-admin-membro select option {
+  color: #111111;
+  background-color: #ffffff;
+}
+
+/* Opção selecionada/hover */
+#form-admin-membro select option:checked {
+  color: #ffffff;
+  background-color: #1b4332;
+}
