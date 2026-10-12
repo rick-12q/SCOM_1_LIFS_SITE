@@ -3,7 +3,7 @@ name: Deploy do site no GitHub Pages
 on:
   push:
     branches:
-      - main
+      - trabalho-2
   workflow_dispatch:
 
 permissions:
